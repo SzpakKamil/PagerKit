@@ -48,30 +48,30 @@ public class TKPagesUIViewController: UIPageViewController {
         guard !pages.isEmpty, index >= 0, index < pages.count else { return }
         let targetViewController = pages[index]
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse
-        setViewControllers([targetViewController], direction: direction, animated: true) { [weak self] _ in
-            guard let self = self else { return }
-            self.currentPageIndexBinding.wrappedValue = index
-            self.lastValueOfCurrentPageIndex = index
-            self.pageControl.currentPage = index
-            self.options.pageChangeFunction?(index)
-            
-            if #available(iOS 17.0, *){
-                if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
-                    if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
-                        self.pageControl.progress = durationProgress
-                        return
-                    }else{
-                        self.pageControl.progress = progress
-                        return
-                    }
+
+        currentPageIndexBinding.wrappedValue = index
+        lastValueOfCurrentPageIndex = index
+        pageControl.currentPage = index
+        options.pageChangeFunction?(index)
+        
+        if #available(iOS 17.0, *){
+            if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
+                if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
+                    pageControl.progress = durationProgress
+                    return
+                }else{
+                    pageControl.progress = progress
+                    return
                 }
-                self.pageControl.progress = nil
             }
+            pageControl.progress = nil
         }
+        setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
     }
     
     @objc private func pageControlHandle(sender: UIPageControl){
         navigateToPage(sender.currentPage)
     }
 }
+
 
