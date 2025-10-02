@@ -63,6 +63,7 @@ public class TKPagesUIViewController: UIPageViewController {
             if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
                 if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
                     pageControl.progress = durationProgress
+                    print("Duration for index: \(index), \(durationProgress)")
                     return
                 }else{
                     pageControl.progress = progress
