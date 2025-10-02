@@ -48,7 +48,7 @@ public class TKPagesUIViewController: UIPageViewController {
         guard !pages.isEmpty, index >= 0, index < pages.count else { return }
         let targetViewController = pages[index]
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse
-
+        setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
         currentPageIndexBinding.wrappedValue = index
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
@@ -66,7 +66,6 @@ public class TKPagesUIViewController: UIPageViewController {
             }
             pageControl.progress = nil
         }
-        setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
     }
     
     @objc private func pageControlHandle(sender: UIPageControl){
