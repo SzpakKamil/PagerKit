@@ -36,7 +36,10 @@ public struct TKPageBuilder {
     public static func buildEither(second component: [TKPage]) -> [TKPage] {
         component
     }
-    
+    @_documentation(visibility: internal)
+    public static func buildExpression<Data, ID>(_ forEach: TKForEach<Data, ID>) -> [TKPage] where Data: RandomAccessCollection, ID: Hashable {
+        forEach.components
+    }
     public static func buildLimitedAvailability(_ component: [TKPage]) -> [TKPage] {
         component
     }
