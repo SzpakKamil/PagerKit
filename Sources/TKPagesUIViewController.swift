@@ -54,7 +54,10 @@ public class TKPagesUIViewController: UIPageViewController {
         }
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
-        options.pageChangeFunction?(index)
+        DispatchQueue.main.async{
+            self.options.pageChangeFunction?(index)
+        }
+
         
         if #available(iOS 17.0, *){
             if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
