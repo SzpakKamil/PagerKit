@@ -114,9 +114,10 @@ public extension TKPagesView{
 
 public extension TKPage{
     @available(iOS 17.0, *)
-    func tkPageDuration(_ duration: Double) -> Self {
+    func tkPageDuration(_ duration: Double?) -> Self {
         var copy = self
         copy.progress = {
+            guard let duration else { return UIPageControlProgress() }
             let timerProgress = UIPageControlTimerProgress(preferredDuration: duration)
             timerProgress.resumeTimer()
             timerProgress.resetsToInitialPageAfterEnd = true
