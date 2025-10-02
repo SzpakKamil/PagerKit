@@ -41,13 +41,6 @@ public class TKPagesUIViewController: UIPageViewController {
         pageControl.numberOfPages = pages.count
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.addTarget(self, action: #selector(pageControlHandle), for: .valueChanged)
-        if #available(iOS 17.0, *){
-            for (index, progressSet) in options.pages.compactMap({ $0.progress?() as? UIPageControlTimerProgress }).enumerated() {
-                let progress = UIPageControlTimerProgress(preferredDuration: 1)
-                progress.setDuration(progressSet.preferredDuration, forPage: index)
-                pageControl.progress = progress
-            }
-        }
         view.addSubview(pageControl)
     }
     
@@ -68,7 +61,10 @@ public class TKPagesUIViewController: UIPageViewController {
         
         if #available(iOS 17.0, *){
             if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
-                if nil == progress as? UIPageControlTimerProgress{
+                if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
+                    pageControl.progress = durationProgress
+                    return
+                }else{
                     pageControl.progress = progress
                     return
                 }
