@@ -122,7 +122,7 @@ public struct TKPagesView: UIViewControllerRepresentable {
             }
         }
         
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, tvOS 16.0, *) {
             if pageControl.direction != pageControlStyle.getDirection() {
                 pageControl.direction = pageControlStyle.getDirection()
             }
@@ -141,7 +141,7 @@ public struct TKPagesView: UIViewControllerRepresentable {
             }
         }
         
-        if #available(iOS 17.0, *){
+        if #available(iOS 17.0, tvOS 17.0, *){
             if let progress = pages[customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding].progress?() as? UIPageControlProgress{
                 if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
                     pageControl.progress = durationProgress

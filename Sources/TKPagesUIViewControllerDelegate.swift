@@ -15,7 +15,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
         guard let previousVoiewController = previousViewControllers.first as? TKPageViewController else { return }
         
         
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, tvOS 17.0, *) {
             if let progress = self.pageControl.progress as? UIPageControlTimerProgress{
                 progress.resumeTimer()
             }
@@ -34,7 +34,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
             let destinationViewController = pendingViewControllers.first as? TKPageViewController
         else { return }
         print(currentViewController.isMovingToParent)
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, tvOS 17.0, *) {
             if let progress = self.pageControl.progress as? UIPageControlTimerProgress{
                 progress.pauseTimer()
             }
