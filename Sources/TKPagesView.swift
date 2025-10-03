@@ -140,6 +140,19 @@ public struct TKPagesView: UIViewControllerRepresentable {
                 }
             }
         }
+        
+        if #available(iOS 17.0, *){
+            if let progress = pages[customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding].progress?() as? UIPageControlProgress{
+                if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
+                    pageControl.progress = durationProgress
+                    return
+                }else{
+                    pageControl.progress = progress
+                    return
+                }
+            }
+            pageControl.progress = nil
+        }
     }
     
 }

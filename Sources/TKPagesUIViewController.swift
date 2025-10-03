@@ -66,20 +66,6 @@ public class TKPagesUIViewController: UIPageViewController {
         }
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
-
-        
-        if #available(iOS 17.0, *){
-            if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
-                if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
-                    pageControl.progress = durationProgress
-                    return
-                }else{
-                    pageControl.progress = progress
-                    return
-                }
-            }
-            pageControl.progress = nil
-        }
     }
     
     @objc private func detectTapGesture(sender: UIPageControl){
