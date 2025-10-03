@@ -49,9 +49,10 @@ public class TKPagesUIViewController: UIPageViewController {
         let targetViewController = pages[index]
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse
         setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
+        let lastIndex = lastValueOfCurrentPageIndex
         DispatchQueue.main.async{
             self.currentPageIndexBinding.wrappedValue = index
-            self.options.pageChangeIndexFunction?(self.lastValueOfCurrentPageIndex, index)
+            self.options.pageChangeIndexFunction?(lastIndex, index)
             self.options.pageChangeDirectionFunction?(index, direction)
         }
         lastValueOfCurrentPageIndex = index
