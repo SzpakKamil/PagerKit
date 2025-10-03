@@ -15,6 +15,7 @@ public class TKPagesUIViewController: UIPageViewController {
     let pages: [TKPageViewController]
     let options: TKPageOptions
     var pageControl: UIPageControl = UIPageControl()
+    private var isHandlingManualChange = false
 
     init(currentPageIndex: Binding<Int>, options: TKPageOptions) {
         self.currentPageIndexBinding = currentPageIndex
@@ -41,8 +42,8 @@ public class TKPagesUIViewController: UIPageViewController {
         pageControl.currentPage = lastValueOfCurrentPageIndex
         pageControl.numberOfPages = pages.count
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.addTarget(self, action: #selector(pageControlHandle), for: .touchDown)
-        pageControl.addTarget(self, action: #selector(pageChangeHandle), for: .valueChanged)
+        pageControl.addTarget(self, action: #selector(detectTapGesture), for: .touchUpInside)
+        pageControl.addTarget(self, action: #selector(pageControlHandle), for: .valueChanged)
         view.addSubview(pageControl)
     }
     
@@ -81,13 +82,13 @@ public class TKPagesUIViewController: UIPageViewController {
         }
     }
     
+    @objc private func detectTapGesture(sender: UIPageControl){
+        isHandlingManualChange = true
+    }
     @objc private func pageControlHandle(sender: UIPageControl){
         print("Page Control")
-        navigateToPage(sender.currentPage, isManualChange: true)
-    }
-    @objc private func pageChangeHandle(sender: UIPageControl){
-        print("Page Control")
-        navigateToPage(sender.currentPage, isManualChange: false)
+        navigateToPage(sender.currentPage, isManualChange: isHandlingManualChange)
+        isHandlingManualChange = false
     }
 }
 
