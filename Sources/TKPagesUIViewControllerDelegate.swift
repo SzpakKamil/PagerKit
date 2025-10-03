@@ -24,6 +24,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
         DispatchQueue.main.async{
             self.options.transitionEndFunction?(previousVoiewController.index, visibleViewController.index)
         }
+        print("Animation Finished")
         self.navigateToPage(visibleViewController.index, isManualChange: false)
 
     }
@@ -39,6 +40,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
                 progress.pauseTimer()
             }
         }
+        print("Animation Triggerd")
         DispatchQueue.main.async{
             self.options.transitionStartFunction?(currentViewController.index, destinationViewController.index)
         }

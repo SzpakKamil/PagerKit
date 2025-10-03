@@ -33,6 +33,7 @@ public struct TKPagesView: UIViewControllerRepresentable {
     
     public func updateUIViewController(_ uiViewController: TKPagesUIViewController, context: Context) {
         if uiViewController.lastValueOfCurrentPageIndex != customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding {
+            print("Index Changed In Update")
             uiViewController.navigateToPage(customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding, isManualChange: true)
         }
         updatePageIndicatorStyle(for: uiViewController)
