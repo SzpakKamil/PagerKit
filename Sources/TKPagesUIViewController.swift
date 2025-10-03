@@ -41,7 +41,7 @@ public class TKPagesUIViewController: UIPageViewController {
         pageControl.currentPage = lastValueOfCurrentPageIndex
         pageControl.numberOfPages = pages.count
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.addTarget(self, action: #selector(pageControlHandle), for: .valueChanged)
+        pageControl.addTarget(self, action: #selector(pageControlHandle), for: .touchDown)
         view.addSubview(pageControl)
     }
     
