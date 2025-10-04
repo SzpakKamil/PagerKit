@@ -33,6 +33,7 @@ public class TKPagesUIViewController: UIPageViewController {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
+        self.view.backgroundColor = .clear
         configuratePageControl()
         print("View Dit load")
         navigateToPage(0, isManualChange: false)
