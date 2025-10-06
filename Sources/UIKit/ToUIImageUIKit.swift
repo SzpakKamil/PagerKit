@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
+#if canImport(UIKit)
 import SwiftUI
 import UIKit
 
@@ -46,3 +47,4 @@ extension CGSize {
         width > 0 && height > 0 && !width.isInfinite && !height.isInfinite
     }
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
+#if canImport(UIKit)
 import UIKit
 import SwiftUI
 
@@ -31,7 +32,6 @@ public class TKPageViewController: UIViewController{
         hostingView.translatesAutoresizingMaskIntoConstraints = false
         
         view.backgroundColor = .clear
-        
         view.insetsLayoutMarginsFromSafeArea = false
         
         NSLayoutConstraint.activate([
@@ -60,3 +60,4 @@ public class TKPageViewController: UIViewController{
     }
 }
 
+#endif

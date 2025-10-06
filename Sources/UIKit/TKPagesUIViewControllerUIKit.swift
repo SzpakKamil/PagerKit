@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
+#if canImport(UIKit)
 import SwiftUI
 import UIKit
 
@@ -58,10 +59,10 @@ public class TKPagesUIViewController: UIPageViewController {
             self.currentPageIndexBinding.wrappedValue = index
             if isManualChange{
                 self.options.pageManualChangeIndexFunction?(lastIndex, index)
-                self.options.pageManualChangeDirectionFunction?(index, direction)
+                self.options.pageManualChangeDirectionFunction?(index, .caseFor(uiKitValue: direction))
             }else{
                 self.options.pageAutoChangeIndexFunction?(lastIndex, index)
-                self.options.pageAutoChangeDirectionFunction?(index, direction)
+                self.options.pageAutoChangeDirectionFunction?(index, .caseFor(uiKitValue: direction))
             }
 
         }
@@ -78,3 +79,4 @@ public class TKPagesUIViewController: UIPageViewController {
         isHandlingManualChange = false
     }
 }
+#endif

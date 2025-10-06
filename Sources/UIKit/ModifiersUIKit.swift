@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
+#if canImport(UIKit)
 import SwiftUI
 
 public extension TKPagesView{
@@ -13,15 +14,15 @@ public extension TKPagesView{
         copy.pageControlStyle.hidesForSinglePage = condition
         return copy
     }
-    func tkPageNavigationOrientation(_ orientation: UIPageViewController.NavigationOrientation) -> Self{
-        var copy = self
-        copy.options.orientation = orientation
+    func tkPageNavigationOrientation(_ orientation: Axis) -> Self{
+        let copy = self
+        copy.options.orientationRaw = orientation
         return copy
     }
     
     
     func tkPageOptions(_ options: [UIPageViewController.OptionsKey : Any]?) -> Self{
-        var copy = self
+        let copy = self
         copy.options.options = options
         return copy
     }
@@ -58,7 +59,7 @@ public extension TKPagesView{
         copy.pageControlStyle.hidden = condition
         return copy
     }
-    func tkPageControlBackgroundStyle(_ style: UIPageControl.BackgroundStyle = .automatic) -> Self{
+    func tkPageControlBackgroundStyle(_ style: TKPageControlStyle.BackgroundStyle = .automatic) -> Self{
         var copy = self
         copy.pageControlStyle.backgroundStyle = style
         return copy
@@ -85,9 +86,9 @@ public extension TKPagesView{
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlDirection(_ direction: UIPageControl.Direction) -> Self{
+    func tkPageControlDirection(_ direction: TKPageControlStyle.Direction) -> Self{
         var copy = self
-        copy.pageControlStyle.direction = direction.rawValue
+        copy.pageControlStyle.direction = direction
         return copy
     }
     func tkCurrentPageIndex(index: Binding<Int>) -> Self{
@@ -96,7 +97,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: UIPageViewController.NavigationDirection) -> Void) -> Self{
+    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageOptions.Direction) -> Void) -> Self{
         let copy = self
         copy.options.pageManualChangeDirectionFunction = action
         return copy
@@ -108,7 +109,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: UIPageViewController.NavigationDirection) -> Void) -> Self{
+    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageOptions.Direction) -> Void) -> Self{
         let copy = self
         copy.options.pageAutoChangeDirectionFunction = action
         return copy
@@ -160,3 +161,4 @@ public extension TKPage{
         return copy
     }
 }
+#endif
