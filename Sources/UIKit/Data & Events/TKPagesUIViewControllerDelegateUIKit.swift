@@ -1,5 +1,5 @@
 //
-//  TKPagesUIViewControllerDelegate.swift
+//  TKPagesUIViewControllerDelegateUIKit.swift
 //  TabKit
 //
 //  Created by Kamil Szpak on 01/10/2025.

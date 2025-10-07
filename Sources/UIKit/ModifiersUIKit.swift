@@ -1,5 +1,5 @@
 //
-//  TKPage.swift
+//  ModifiersUIKit.swift
 //  TabKit
 //
 //  Created by Kamil Szpak on 30/09/2025.
