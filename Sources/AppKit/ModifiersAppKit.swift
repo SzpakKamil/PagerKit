@@ -73,7 +73,7 @@ public extension TKPagesView{
         copy.pageControlStyle.currentIndicatorImage[forPage] = image
         return copy
     }
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, tvOS 16.0, *)
     func tkPageControlPreferredCurrentPageIndicatorImage(image: NSImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
