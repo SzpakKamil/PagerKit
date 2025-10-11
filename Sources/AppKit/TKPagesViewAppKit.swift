@@ -5,9 +5,10 @@
 //  Created by Kamil Szpak on 06/10/2025.
 //
 
-#if canImport(AppKit)
 
 import SwiftUI
+
+#if canImport(AppKit)
 
 public struct TKPagesView: View {
     var customSelectedIndex: Binding<Int>?
@@ -187,39 +188,42 @@ public struct TKPagesView: View {
     }
 }
 
+#endif
+
 #Preview {
-    TKPagesView {
-        TKPage {
-            ZStack {
-                Color.red
-                Text("Apple")
+    if #available(iOS 17.0, tvOS 17.0, *) {
+        TKPagesView {
+            TKPage {
+                ZStack {
+                    Color.red
+                    Text("Apple")
+                }
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
-        }
-        .tkPageDuration(3)
-        TKPage {
-            ZStack {
-                Color.green
-                Text("Banana")
+            .tkPageDuration(3)
+            TKPage {
+                ZStack {
+                    Color.green
+                    Text("Banana")
+                }
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
-        }
-        .tkPageDuration(3)
-        TKPage {
-            ZStack {
-                Color.orange
-                Text("Tomato")
+            .tkPageDuration(3)
+            TKPage {
+                ZStack {
+                    Color.orange
+                    Text("Tomato")
+                }
+                .ignoresSafeArea()
             }
-            .ignoresSafeArea()
+            .tkPageDuration(3)
         }
-        .tkPageDuration(3)
+        .tkOnManualPageChange { _, new in let n: Int = new;  print("Manual change") }
+        .tkOnAutoPageChange { _, new in let n: Int = new;  print("Auto change") }
+        .tkPageNavigationOrientation(.horizontal)
+        .tkPageControlAlignment(.bottom)
+        .tkPageControlDirection(.natural)
+        .ignoresSafeArea()
     }
-    .tkOnManualPageChange { _, new in let n: Int = new;  print("Manual change") }
-    .tkOnAutoPageChange { _, new in let n: Int = new;  print("Auto change") }
-    .tkPageNavigationOrientation(.horizontal)
-    .tkPageControlAlignment(.bottom)
-    .tkPageControlDirection(.natural)
-    .ignoresSafeArea()
 }
 
-#endif

@@ -11,10 +11,11 @@ public struct ForEach<Data, ID>: View where Data: RandomAccessCollection, ID: Ha
     let data: Data
     let keyPath: KeyPath<Data.Element, ID>
     let content: ((Data.Element) -> [TKPage])?
-
+    @_documentation(visibility: internal)
     public var components: [TKPage] {
         data.flatMap { content?($0) ?? [] }
     }
+    @_documentation(visibility: internal)
     public var body: some View{
         if !components.isEmpty{
             SwiftUI.ForEach(components.indices, id: \.self){index in
