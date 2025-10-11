@@ -22,9 +22,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
             }
         }
 
-        DispatchQueue.main.async{
-            self.options.transitionEndFunction?(previousVoiewController.index, visibleViewController.index)
-        }
+        self.options.transitionEndFunction?(previousVoiewController.index, visibleViewController.index)
         self.navigateToPage(visibleViewController.index, isManualChange: true)
 
     }
@@ -40,10 +38,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
                 progress.pauseTimer()
             }
         }
-        DispatchQueue.main.async{
-            self.options.transitionStartFunction?(currentViewController.index, destinationViewController.index)
-        }
-        
+        self.options.transitionStartFunction?(currentViewController.index, destinationViewController.index)
     }
     
 }
