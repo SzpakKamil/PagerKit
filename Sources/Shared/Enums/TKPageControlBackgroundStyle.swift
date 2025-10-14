@@ -7,25 +7,24 @@
 
 import SwiftUI
 
-public extension TKPageControlStyle{
-    enum BackgroundStyle{
-        case automatic
-        case minimal
-        case prominent
-        
-        #if canImport(UIKit)
-        var uiKitValue: UIPageControl.BackgroundStyle{
-            switch self{
+public enum TKPageControlBackgroundStyle{
+    case automatic
+    case minimal
+    case prominent
+    
+    #if canImport(UIKit)
+    var uiKitValue: UIPageControl.BackgroundStyle{
+        switch self{
             case .minimal:
                 return .minimal
             case .prominent:
                 return .prominent
             case .automatic:
                 return .automatic
-            }
         }
-        static func caseFor(uiKitValue: UIPageControl.BackgroundStyle) -> Self{
-            switch uiKitValue{
+    }
+    static func caseFor(uiKitValue: UIPageControl.BackgroundStyle) -> Self{
+        switch uiKitValue{
             case .minimal:
                 return .minimal
             case .prominent:
@@ -34,8 +33,7 @@ public extension TKPageControlStyle{
                 return .automatic
             @unknown default:
                 return .automatic
-            }
         }
-        #endif
     }
+    #endif
 }

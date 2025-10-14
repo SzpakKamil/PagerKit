@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-public extension TKPageControlStyle{
-    enum Direction{
-        case natural
-        case leftToRight
-        case rightToLeft
-        case topToBottom
-        case bottomToTop
-        
-        #if canImport(UIKit)
-        @available(iOS 16.0, tvOS 16.0, *)
-        var uiKitValue: UIPageControl.Direction{
-            switch self {
+public enum TKPageControlDirection{
+    case natural
+    case leftToRight
+    case rightToLeft
+    case topToBottom
+    case bottomToTop
+    
+#if canImport(UIKit)
+    @available(iOS 16.0, tvOS 16.0, *)
+    var uiKitValue: UIPageControl.Direction{
+        switch self {
             case .natural:
                 return .natural
             case .leftToRight:
@@ -29,11 +28,11 @@ public extension TKPageControlStyle{
                 return .topToBottom
             case .bottomToTop:
                 return .bottomToTop
-            }
         }
-        @available(iOS 16.0, tvOS 16.0, *)
-        static func caseFor(uiKitValue: UIPageControl.Direction) -> Self{
-            switch uiKitValue {
+    }
+    @available(iOS 16.0, tvOS 16.0, *)
+    static func caseFor(uiKitValue: UIPageControl.Direction) -> Self{
+        switch uiKitValue {
             case .natural:
                 return .natural
             case .leftToRight:
@@ -46,8 +45,7 @@ public extension TKPageControlStyle{
                 return .bottomToTop
             @unknown default:
                 return .natural
-            }
         }
-        #endif
     }
+#endif
 }

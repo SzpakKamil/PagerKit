@@ -14,8 +14,8 @@ public struct TKPageControlStyle{
     var indicatorTintColor: Color?
     var spacing: CGFloat
     var currentPageIndicatorTintColor: Color?
-    var backgroundStyle: BackgroundStyle
-    var direction: Direction = .natural
+    var backgroundStyle: TKPageControlBackgroundStyle
+    var direction: TKPageControlDirection = .natural
     #if canImport(UIKit)
     var indicatorImage: [Int: UIImage?]
     var currentIndicatorImage: [Int: UIImage?]

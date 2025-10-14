@@ -11,9 +11,9 @@ public class TKPageOptions{
     var orientationRaw: Axis
     var pages: [TKPage]
     var pageAutoChangeIndexFunction: ((Int, Int) -> Void)?
-    var pageAutoChangeDirectionFunction: ((Int, Direction) -> Void)?
+    var pageAutoChangeDirectionFunction: ((Int, TKPageDirection) -> Void)?
     var pageManualChangeIndexFunction: ((Int, Int) -> Void)?
-    var pageManualChangeDirectionFunction: ((Int, Direction) -> Void)?
+    var pageManualChangeDirectionFunction: ((Int, TKPageDirection) -> Void)?
     var transitionStartFunction: ((Int, Int) -> Void)?
     var transitionEndFunction: ((Int, Int) -> Void)?
     
