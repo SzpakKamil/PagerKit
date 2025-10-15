@@ -20,7 +20,7 @@ Represents a reverse page transition.
 
 ## Overview
 
-The `reverse` case of the `TKPageDirection` enum in the `TabKit` framework indicates a transition to the previous page in a `TKPagesView`. It is returned when the previous page index is greater than the current page index, used for styling or implementing custom backward navigation transitions.
+The `reverse` case of the ``TKPageDirection`` enum in the `TabKit` framework indicates a transition to the previous page in a ``TKPagesView``. It is returned when the previous page index is greater than the current page index, used for styling or implementing custom backward navigation transitions.
 
 ## Read Also
 - ``TabKit/TKPage``

@@ -10,12 +10,24 @@
 import SwiftUI
 
 struct TKPagesControlView: View{
+    @Environment(\.colorScheme) var colorScheme
     @Binding var currentSelectedElement: Int
     let progress: Double?
     let duration: Double?
     let numberOfElements: Int
     let style: TKPageControlStyle
     
+    var invertedPrimary: Color{
+        switch style.backgroundStyle {
+            case .automatic:
+                return .clear
+            case .minimal:
+                return .clear
+            case .prominent:
+                return .black
+        }
+
+    }
     
     var indicies: [Int]{
         switch style.direction{
@@ -27,20 +39,26 @@ struct TKPagesControlView: View{
     }
     var body: some View{
         switch style.direction{
-        case .natural, .leftToRight, .rightToLeft:
-            HStack{
-                SwiftUI.ForEach(indicies, id: \.self){ index in
-                    button(index: index, isHorizontal: true, isForward: style.direction != .rightToLeft)
+            case .natural, .leftToRight, .rightToLeft:
+                HStack{
+                    SwiftUI.ForEach(indicies, id: \.self){ index in
+                        button(index: index, isHorizontal: true, isForward: style.direction != .rightToLeft)
+                    }
                 }
-            }
-            .padding(.all, style.spacing)
-        case .topToBottom, .bottomToTop:
-            VStack{
-                SwiftUI.ForEach(indicies, id: \.self){ index in
-                    button(index: index, isHorizontal: false, isForward: style.direction == .topToBottom)
+                .padding(7)
+                .background(invertedPrimary.opacity(0.1))
+                .clipShape(.capsule)
+                .padding(.all, style.spacing)
+            case .topToBottom, .bottomToTop:
+                VStack{
+                    SwiftUI.ForEach(indicies, id: \.self){ index in
+                        button(index: index, isHorizontal: false, isForward: style.direction == .topToBottom)
+                    }
                 }
-            }
-            .padding(.all, style.spacing)
+                .padding(7)
+                .background(invertedPrimary.opacity(0.1))
+                .clipShape(.capsule)
+                .padding(.all, style.spacing)
         }
     }
     
@@ -154,7 +172,8 @@ struct TKPagesControlView: View{
         }
         .tkPageDuration(1)
     }
-    .tkPageControlAlignment(.leading)
+    .tkPageControlAlignment(spacing: 5, alignment: .leading)
+    .tkPageControlBackgroundStyle(.prominent)
     .tkPageControlDirection(.topToBottom)
     .tkPageControlPreferredCurrentPageIndicatorImage(image: NSImage(systemSymbolName: "bus", accessibilityDescription: ""))
     .tkPageControlPreferredIndicatorImage(image: NSImage(systemSymbolName: "car", accessibilityDescription: ""))

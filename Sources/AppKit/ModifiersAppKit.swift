@@ -80,7 +80,7 @@ public extension TKPagesView{
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlDirection(_ direction: TKPageControlStyle.Direction) -> Self{
+    func tkPageControlDirection(_ direction: TKPageControlDirection) -> Self{
         var copy = self
         copy.pageControlStyle.direction = direction
         return copy
@@ -91,7 +91,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageOptions.Direction) -> Void) -> Self{
+    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageManualChangeDirectionFunction = action
         return copy
@@ -103,7 +103,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageOptions.Direction) -> Void) -> Self{
+    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageAutoChangeDirectionFunction = action
         return copy

@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-
-public struct TKPageControlStyle{
+struct TKPageControlStyle{
     var hidden: Bool
     var hidesForSinglePage: Bool
     var indicatorTintColor: Color?
