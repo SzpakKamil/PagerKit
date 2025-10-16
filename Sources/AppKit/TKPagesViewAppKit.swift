@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-#if canImport(AppKit)
+#if os(macOS) || os(watchOS)
 
 public struct TKPagesView: View {
     var customSelectedIndex: Binding<Int>?
@@ -44,6 +44,7 @@ public struct TKPagesView: View {
                 )
             }
         }
+        .ignoresSafeArea()
         .onAppear {
             onPageChange(oldValue: selectedIndex.wrappedValue, newValue: selectedIndex.wrappedValue, isInitial: true)
         }
@@ -214,7 +215,6 @@ public struct TKPagesView: View {
                     Color.orange
                     Text("Tomato")
                 }
-                .ignoresSafeArea()
             }
             .tkPageDuration(3)
         }

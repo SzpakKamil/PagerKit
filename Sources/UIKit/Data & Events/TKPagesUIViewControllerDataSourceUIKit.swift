@@ -5,7 +5,7 @@
 //  Created by Kamil Szpak on 01/10/2025.
 //
 
-#if canImport(UIKit)
+#if !(os(macOS) || os(watchOS))
 import UIKit
 import SwiftUI
 

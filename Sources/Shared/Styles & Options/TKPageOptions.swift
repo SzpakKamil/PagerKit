@@ -17,7 +17,7 @@ class TKPageOptions{
     var transitionStartFunction: ((Int, Int) -> Void)?
     var transitionEndFunction: ((Int, Int) -> Void)?
     
-    #if canImport(UIKit)
+    #if !(os(macOS) || os(watchOS))
     var options: [UIPageViewController.OptionsKey : Any]?
     var orientation: UIPageViewController.NavigationOrientation{
         switch orientationRaw {
@@ -38,7 +38,7 @@ class TKPageOptions{
     ) {
         self.orientationRaw = .horizontal
         self.pages = pages
-        #if canImport(UIKit)
+        #if !(os(macOS) || os(watchOS))
         self.options = nil
         #endif
         self.pageAutoChangeIndexFunction = nil

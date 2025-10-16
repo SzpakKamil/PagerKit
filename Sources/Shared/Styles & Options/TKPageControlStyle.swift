@@ -15,7 +15,7 @@ struct TKPageControlStyle{
     var currentPageIndicatorTintColor: Color?
     var backgroundStyle: TKPageControlBackgroundStyle
     var direction: TKPageControlDirection = .natural
-    #if canImport(UIKit)
+    #if !(os(macOS))
     var indicatorImage: [Int: UIImage?]
     var currentIndicatorImage: [Int: UIImage?]
     var preferredIndicatorImage: UIImage?
@@ -30,11 +30,26 @@ struct TKPageControlStyle{
     var allowsContinuousInteraction: Bool
     var alignment: Alignment
     
-    #if canImport(UIKit)
+    #if !(os(macOS) || os(watchOS))
     @available(iOS 16.0, tvOS 16.0, *)
     func getDirection() -> UIPageControl.Direction{
         return direction.uiKitValue
     }
+    var indicatorTintUIColor: UIColor?{
+        if let indicatorTintColor{
+            return UIColor(indicatorTintColor)
+        }else{
+            return UIColor(Color.secondary)
+        }
+    }
+    var currentPageIndicatorTintUIColor: UIColor?{
+        if let currentPageIndicatorTintColor{
+            return UIColor(currentPageIndicatorTintColor)
+        }else{
+            return UIColor(Color.primary)
+        }
+    }
+    #elseif os(watchOS)
     var indicatorTintUIColor: UIColor?{
         if let indicatorTintColor{
             return UIColor(indicatorTintColor)

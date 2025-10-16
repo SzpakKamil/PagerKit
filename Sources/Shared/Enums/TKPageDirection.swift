@@ -11,7 +11,7 @@ public enum TKPageDirection{
     case forward
     case reverse
     
-#if canImport(UIKit)
+#if !(os(macOS) || os(watchOS))
     var uiKitValue: UIPageViewController.NavigationDirection{
         switch self {
             case .forward:

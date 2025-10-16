@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct TKPage {
     let content: AnyView
-    #if canImport(UIKit)
+    #if !(os(macOS) || os(watchOS))
     let hostingViewController: UIHostingController<AnyView>
     #endif
     var progress: (() -> Any)?
@@ -18,7 +18,7 @@ public struct TKPage {
     
     public init(@ViewBuilder content: () -> some View) {
         self.content = AnyView(content())
-        #if canImport(UIKit)
+        #if !(os(macOS) || os(watchOS))
         self.hostingViewController = UIHostingController(rootView: AnyView(content()))
         #endif
         self.progress = nil
