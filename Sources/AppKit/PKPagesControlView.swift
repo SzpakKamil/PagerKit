@@ -24,12 +24,16 @@ struct PKPagesControlView: View{
             case .minimal:
                 return .clear
             case .prominent:
+                #if os(watchOS)
+                return .white.opacity(0.25)
+                #else
                 if colorScheme == .dark{
                     return .white.opacity(0.1)
                 }else{
                     return .black.opacity(0.1)
                     
                 }
+                #endif
         }
 
     }
