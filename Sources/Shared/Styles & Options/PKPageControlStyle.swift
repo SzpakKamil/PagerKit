@@ -90,7 +90,11 @@ struct PKPageControlStyle{
         self.allowsContinuousInteraction = true
         self.preferredIndicatorImage = nil
         self.direction = .natural
+        #if os(watchOS)
+        self.spacing = 8
+        #else
         self.spacing = 12
+        #endif
         
         self.indicatorImage = [:]
         self.currentIndicatorImage = [:]
