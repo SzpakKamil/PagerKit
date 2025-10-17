@@ -7,6 +7,7 @@
     @Available(macOS, introduced: "14.0")
     @Available(tvOS, introduced: "14.0")
     @Available(visionOS, introduced: "1.0")
+    @Available(watchOS, introduced: "10.0")
     @Available(swift, introduced: "5.9")
     @Available(Xcode, introduced: "15.0")
     @DocumentationExtension(mergeBehavior: override)
