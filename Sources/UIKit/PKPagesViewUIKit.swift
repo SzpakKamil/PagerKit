@@ -165,6 +165,7 @@ public struct PKPagesView: View {
     var pageControlStyle: PKPageControlStyle = .init()
     var customPageIndexBinding: Binding<Int>? = nil
     let options: PKPageOptions
+    @_documentation(visibility: internal)
     public var body: some View {
         PKPagesViewUIKit(
             pages: pages,

@@ -8,7 +8,15 @@
 
 ## Topics
 
-### Styling Options
+### Components
+- ``PagerKit/PKPage``
+- ``PagerKit/PKPagesView``
+
+### Options
 - ``PagerKit/PKPageDirection``
 - ``PagerKit/PKPageControlBackgroundStyle``
 - ``PagerKit/PKPageControlDirection``
+
+### Builders
+- ``PagerKit/PKPageBuilder``
+- ``PagerKit/ForEach``
