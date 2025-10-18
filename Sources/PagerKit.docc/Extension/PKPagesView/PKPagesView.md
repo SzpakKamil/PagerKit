@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesViewUIKit``
+# ``PagerKit/PKPagesView``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -18,7 +18,7 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-A SwiftUI view that integrates a UIKit `UIPageViewController` for page-based navigation.
+A SwiftUI view thats build for page-based navigation.
 
 ## Overview
 
@@ -100,7 +100,5 @@ struct ContentView: View {
 
 ## Read Also
 - ``PagerKit/PKPage``
-- ``PagerKit/PKPageOptions``
-- ``PagerKit/PKPageControlStyle``
 - ``PagerKit/PKPageControlDirection``
 - ``PagerKit/PKPageControlBackgroundStyle``
