@@ -42,7 +42,7 @@ struct ContentView: View {
     let items = ["Home", "Profile", "Settings"]
     
     var body: some View {
-        PKPages{
+        PKPagesView{
             ForEach(items, id: \.self) { item in
                 PKPage {
                     Text(item)

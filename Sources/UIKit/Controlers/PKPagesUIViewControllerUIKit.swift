@@ -10,8 +10,8 @@ import SwiftUI
 import UIKit
 
 /// A `UIPageViewController` that displays a collection of SwiftUI pages with a page control.
-public class PKPagesUIViewController: UIPageViewController {
-    public var currentPageIndexBinding: Binding<Int>
+class PKPagesUIViewController: UIPageViewController {
+    var currentPageIndexBinding: Binding<Int>
     var lastValueOfCurrentPageIndex: Int
     let pages: [PKPageViewController]
     let options: PKPageOptions
@@ -30,7 +30,7 @@ public class PKPagesUIViewController: UIPageViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
@@ -49,7 +49,7 @@ public class PKPagesUIViewController: UIPageViewController {
         view.addSubview(pageControl)
     }
     
-    public func navigateToPage(_ index: Int, isManualChange: Bool) {
+    func navigateToPage(_ index: Int, isManualChange: Bool) {
         guard !pages.isEmpty, index >= 0, index < pages.count else { return }
         let targetViewController = pages[index]
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-public class PKPageViewController: UIViewController{
+class PKPageViewController: UIViewController{
     let index: Int
     let page: PKPage
     
@@ -53,7 +53,7 @@ public class PKPageViewController: UIViewController{
     }
     
     
-    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         page.hostingViewController.view.setNeedsLayout()
         page.hostingViewController.view.layoutIfNeeded()

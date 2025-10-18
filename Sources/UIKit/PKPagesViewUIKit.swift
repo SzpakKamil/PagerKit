@@ -9,25 +9,27 @@
 import SwiftUI
 import UIKit
 
-public struct PKPagesView: UIViewControllerRepresentable {
+struct PKPagesViewUIKit: UIViewControllerRepresentable {
     private var pageController: UIPageViewController?
     var customPageIndexBinding: Binding<Int>? = nil
     @State private var defaultPageIndexBinding: Int = 0
-    var pageControlStyle: PKPageControlStyle = .init()
+    var pageControlStyle: PKPageControlStyle
     let options: PKPageOptions
     let pages: [PKPage]
     
-    
-    public init(@PKPageBuilder pages: () -> [PKPage]) {
-        self.pages = pages()
-        self.options = .init(pages: pages())
-    }
-    public init(pages: [PKPage]) {
+    init(
+        pages: [PKPage],
+        pageControlStyle: PKPageControlStyle,
+        options: PKPageOptions,
+        customPageIndexBinding: Binding<Int>?
+    ) {
         self.pages = pages
-        self.options = .init(pages: pages)
+        self.pageControlStyle = pageControlStyle
+        self.options = options
+        self.customPageIndexBinding = customPageIndexBinding
     }
 
-    public func makeUIViewController(context: Context) -> PKPagesUIViewController {
+    func makeUIViewController(context: Context) -> PKPagesUIViewController {
         let uiViewController = PKPagesUIViewController(
             currentPageIndex: customPageIndexBinding ?? $defaultPageIndexBinding,
             options: options
@@ -36,7 +38,7 @@ public struct PKPagesView: UIViewControllerRepresentable {
         return uiViewController
     }
     
-    public func updateUIViewController(_ uiViewController: PKPagesUIViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: PKPagesUIViewController, context: Context) {
         if uiViewController.lastValueOfCurrentPageIndex != customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding {
             print("Index Changed In Update")
             uiViewController.navigateToPage(customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding, isManualChange: true)
@@ -157,4 +159,30 @@ public struct PKPagesView: UIViewControllerRepresentable {
     }
     
 }
+
+public struct PKPagesView: View {
+    let pages: [PKPage]
+    var pageControlStyle: PKPageControlStyle = .init()
+    var customPageIndexBinding: Binding<Int>? = nil
+    let options: PKPageOptions
+    public var body: some View {
+        PKPagesViewUIKit(
+            pages: pages,
+            pageControlStyle: pageControlStyle,
+            options: options,
+            customPageIndexBinding: customPageIndexBinding
+        )
+    }
+    
+    public init(pages: [PKPage]) {
+        self.pages = pages
+        self.options = .init(pages: pages)
+    }
+    
+    public init(@PKPageBuilder pages: () -> [PKPage]) {
+        self.pages = pages()
+        self.options = .init(pages: pages())
+    }
+}
 #endif
+

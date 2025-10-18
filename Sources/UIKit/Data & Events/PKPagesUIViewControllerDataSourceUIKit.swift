@@ -12,7 +12,7 @@ import SwiftUI
 /// A data source for `UIPageViewController` that manages an array of SwiftUI pages.
 extension PKPagesUIViewController: UIPageViewControllerDataSource {
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let pageViewController = viewController as? PKPageViewController,
               let viewControllerIndex = self.pages.firstIndex(of: pageViewController) else {
             return nil
@@ -22,7 +22,7 @@ extension PKPagesUIViewController: UIPageViewControllerDataSource {
         return self.pages[previousIndex]
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let pageViewController = viewController as? PKPageViewController,
               let viewControllerIndex = self.pages.firstIndex(of: pageViewController) else {
             return nil
