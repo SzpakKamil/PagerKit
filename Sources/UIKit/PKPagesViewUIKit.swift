@@ -68,7 +68,7 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
             constraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: constant))
         case .center:
             constraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
-            constraints.append(pageControl.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor, constant: constant))
+            constraints.append(pageControl.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
         case .trailing:
             constraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
             constraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -constant))
