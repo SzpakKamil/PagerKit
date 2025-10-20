@@ -62,7 +62,7 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
             constraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: constant))
         case .topTrailing:
             constraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: constant))
-            constraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: constant))
+            constraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -constant))
         case .leading:
             constraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
             constraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: constant))
@@ -184,6 +184,19 @@ public struct PKPagesView: View {
         self.pages = pages()
         self.options = .init(pages: pages())
     }
+}
+
+#Preview{
+    PKPagesView {
+        PKPage{
+            Text("dd")
+        }
+        PKPage{
+            Text("dd")
+        }
+    }
+    .pkPageControlAlignment(.topTrailing)
+    .pkPageControlBackgroundStyle(.prominent)
 }
 #endif
 
