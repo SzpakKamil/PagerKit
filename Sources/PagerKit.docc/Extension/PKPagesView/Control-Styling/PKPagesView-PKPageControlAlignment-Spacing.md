@@ -12,23 +12,23 @@
     @Available(Xcode, introduced: "15.0")
     @DocumentationExtension(mergeBehavior: override)
 }
-
 @Options {
     @AutomaticSeeAlso(disabled)
     @AutomaticArticleSubheading(disabled)
 }
 
-Hides the page control when there is only one page.
+Sets the alignment and spacing of the page control from the edge of the screen.
 
 ## Overview
 
-The `pkPageControlHidesForSignlePage(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the page control to be hidden when the `PKPagesView` contains only one `PKPage`. When set to `true`, the page control is hidden if there is only one page; when `false`, it remains visible.
+The `pkPageControlAlignment(spacing:alignment:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the alignment and spacing of the `UIPageControl` within the `PKPagesView`. It sets the `alignment` property of `PKPageControlStyle` to one of the supported `Alignment` values: `.topLeading`, `.top`, `.topTrailing`, `.leading`, `.center`, `.trailing`, `.bottomLeading`, `.bottom`, or `.bottomTrailing`, with `.bottom` as the default. The `spacing` parameter specifies the distance from the edge of the screen for non-center alignments, while the `.center` alignment ignores the spacing value. The default spacing is platform-dependent, ranging between 10 and 15 points.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `condition` | `Bool` | Determines whether the page control is hidden when there is only one page. |
+| `spacing` | `CGFloat` | The distance from the edge of the screen for non-center alignments (ignored for `.center`). Defaults to 10–15 points, depending on the platform. |
+| `alignment` | `Alignment = .bottom` | The alignment of the page control. Default is `.bottom`. |
 
 ## Example Usage
 
@@ -39,9 +39,10 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
+            PKPage { Text("Page 1") }
+            PKPage { Text("Page 2") }
         }
-        .pkPageControlHidesForSignlePage(true)
+        .pkPageControlAlignment(spacing: 15, alignment: .topLeading)
     }
 }
 ```
@@ -52,91 +53,517 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlHidesForSignlePage` modifier hides the page control when there is only one page when set to `true`.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iOS-True", alt: "Hidden") {
-                    Hidden
+        On iOS, the `pkPageControlAlignment(spacing:alignment:)` modifier sets the page control alignment and spacing from the screen edge for nine supported styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for larger screens.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iPadOS-True", alt: "Hidden") {
-                    Hidden
+        On iPadOS, the `pkPageControlAlignment(spacing:alignment:)` modifier positions the page control with specified spacing for larger screens across nine alignment styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iPadOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-iPadOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting mouse-based navigation.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-macOS-True", alt: "Hidden") {
-                    Hidden
+        On macOS, the `pkPageControlAlignment(spacing:alignment:)` modifier aligns the page control with specified spacing for mouse-based navigation across nine alignment styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-macOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-macOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting remote-based navigation.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-tvOS-True", alt: "Hidden") {
-                    Hidden
+        On tvOS, the `pkPageControlAlignment(spacing:alignment:)` modifier sets the page control alignment and spacing for remote-based navigation across nine alignment styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-tvOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-tvOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, adapting to focus-based interaction.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-visionOS-True", alt: "Hidden") {
-                    Hidden
+        On visionOS, the `pkPageControlAlignment(spacing:alignment:)` modifier aligns the page control with specified spacing for focus-based interaction across nine alignment styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-visionOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-visionOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for small screens and touch-based interaction.
-        @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-watchOS-True", alt: "Hidden") {
-                    Hidden
+        On watchOS, the `pkPageControlAlignment(spacing:alignment:)` modifier positions the page control with specified spacing for small screens and touch-based interaction across nine alignment styles.
+        @TabNavigator {
+            @Tab("Top-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Top-Leading", alt: "Top-Leading") {
+                            Top-Leading
+                        }
+                    }
                 }
             }
-            @Column(size: 1) {
-                @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-watchOS-False", alt: "Visible") {
-                    Visible
+            @Tab("Top") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Top", alt: "Top") {
+                            Top
+                        }
+                    }
+                }
+            }
+            @Tab("Top-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Top-Trailing", alt: "Top-Trailing") {
+                            Top-Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Leading", alt: "Leading") {
+                            Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Center") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Center", alt: "Center") {
+                            Center
+                        }
+                    }
+                }
+            }
+            @Tab("Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Trailing", alt: "Trailing") {
+                            Trailing
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Leading") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Bottom-Leading", alt: "Bottom-Leading") {
+                            Bottom-Leading
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Bottom", alt: "Bottom") {
+                            Bottom
+                        }
+                    }
+                }
+            }
+            @Tab("Bottom-Trailing") {
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPages-PageControlAlignment-watchOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                            Bottom-Trailing
+                        }
+                    }
                 }
             }
         }
@@ -148,5 +575,7 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
+- ``PagerKit/PKPageOptions``
+- ``PagerKit/PKPageControlStyle``
 - ``PagerKit/PKPageControlDirection``
 - ``PagerKit/PKPageControlBackgroundStyle``
