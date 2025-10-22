@@ -575,7 +575,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageOptions``
-- ``PagerKit/PKPageControlStyle``
 - ``PagerKit/PKPageControlDirection``
 - ``PagerKit/PKPageControlBackgroundStyle``
