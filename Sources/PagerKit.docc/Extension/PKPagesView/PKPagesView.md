@@ -113,7 +113,7 @@ struct ContentView: View {
 - ``PagerKit/PKPagesView/pkPageControlIndicatorTintColor(_:)``
 - ``PagerKit/PKPagesView/pkPageControlCurrentIndicatorTintColor(_:)``
 - ``PagerKit/PKPagesView/pkPageControlAllowsContinuousInteraction(_:)``
-- ``PagerKit/PKPagesView/pkPageControlPreferredIndicatorUIImage(image:)``
+- ``PagerKit/PKPagesView/pkPageControlPreferredIndicatorImage(image:)``
 - ``PagerKit/PKPagesView/pkPageControlIndicator(_:forPage:)``
 - ``PagerKit/PKPagesView/pkPageControlCurrentIndicator(_:forPage:)``
 - ``PagerKit/PKPagesView/pkPageControlPreferredCurrentPageIndicatorImage(image:)``

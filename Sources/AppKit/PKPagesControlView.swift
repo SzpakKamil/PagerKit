@@ -138,6 +138,11 @@ struct PKPagesControlView: View{
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
 
+                        }else if let preferedImage = style.preferredIndicatorImage{
+                            preferedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.indicatorTintColor ?? Color.primary)
                         }else{
                             Capsule()
                                 .fill(style.currentPageIndicatorTintColor ?? Color.primary)
