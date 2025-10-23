@@ -133,7 +133,6 @@ struct PKPagesControlView: View{
                             .foregroundStyle(
                                 style.indicatorTintColor ?? Color.primary.opacity(0.6)
                             )
-                            .background(.green)
                         #else
                         Image(nsImage: preferedImage)
                             .resizable()
