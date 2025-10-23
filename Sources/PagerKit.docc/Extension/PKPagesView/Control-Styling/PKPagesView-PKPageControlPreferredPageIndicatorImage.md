@@ -33,18 +33,17 @@ The `pkPageControlPreferredIndicatorImage(_:)` modifier of the `PKPagesView` str
 ```swift
 import SwiftUI
 import PagerKit
-import UIKit
 
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
+            PKPage { Text("Page 1")}
+            PKPage { Text("Page 2")}
         }
         #if os(macOS) || os(watchOS)
-        .pkPageControlPreferredIndicatorImage(Image(systemName: "car"))
+        .pkPageControlPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
         #else
-        .pkPageControlPreferredIndicatorImage(UIImage(systemName: "car"))
+        .pkPageControlPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
         #endif
     }
 }
@@ -137,11 +136,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageOptions``
-- ``PagerKit/PKPageControlStyle``
-- ``PagerKit/PKPageControlAlignment``
 - ``PagerKit/PKPageControlBackgroundStyle``
 - ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlHidden``
-- ``PagerKit/PKPageControlCurrentIndicatorTintColor``
-- ``PagerKit/PKPageControlAllowsContinuousInteraction``
