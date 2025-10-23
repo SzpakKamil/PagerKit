@@ -58,7 +58,7 @@ public extension PKPagesView{
         copy.pageControlStyle.backgroundStyle = style
         return copy
     }
-    #if os(watchOS)
+
     func pkPageControlPreferredIndicatorImage(image: Image?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
@@ -80,29 +80,7 @@ public extension PKPagesView{
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
-    #else
-    func pkPageControlPreferredIndicatorImage(image: NSImage?) -> Self{
-        var copy = self
-        copy.pageControlStyle.preferredIndicatorImage = image
-        return copy
-    }
-    func pkPageControlIndicator(_ image: NSImage?, forPage: Int) -> Self{
-        var copy = self
-        copy.pageControlStyle.indicatorImage[forPage] = image
-        return copy
-    }
-    func pkPageControlCurrentIndicator(_ image: NSImage?, forPage: Int) -> Self{
-        var copy = self
-        copy.pageControlStyle.currentIndicatorImage[forPage] = image
-        return copy
-    }
-    @available(iOS 16.0, tvOS 16.0, *)
-    func pkPageControlPreferredCurrentPageIndicatorImage(image: NSImage?) -> Self{
-        var copy = self
-        copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
-        return copy
-    }
-    #endif
+    #if os(macOS)
     @available(iOS 16.0, tvOS 16.0, *)
     func pkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
         var copy = self
@@ -114,6 +92,7 @@ public extension PKPagesView{
         copy.customSelectedIndex = index
         return copy
     }
+    #endif
     
     func pkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
