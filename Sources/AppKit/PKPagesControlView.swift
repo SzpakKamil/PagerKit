@@ -113,63 +113,30 @@ struct PKPagesControlView: View{
             }else{
                 ZStack(alignment: isForward ? .leading : .trailing) {
                     if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
-                        #if os(watchOS)
-                        
-                        Image(uiImage: specifiedImage)
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(style.indicatorTintColor ?? Color.primary.opacity(0.6))
-                        #else
-                        Image(nsImage: specifiedImage)
+                        specifiedImage
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
-                        #endif
                     }else if let preferedImage = style.preferredIndicatorImage{
-                        #if os(watchOS)
-                        Image(uiImage: preferedImage)
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(
-                                style.indicatorTintColor ?? Color.primary.opacity(0.6)
-                            )
-                        #else
-                        Image(nsImage: preferedImage)
+                        preferedImage
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
-                        #endif
                     }else{
                         Capsule()
                             .fill(style.indicatorTintColor ?? Color.secondary)
                     }
                     if currentSelectedElement == index{
                         if let specifiedImageValue = style.currentIndicatorImage[index], let specifiedImage = specifiedImageValue{
-                            #if os(watchOS)
-                            Image(uiImage: specifiedImage)
+                            specifiedImage
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
-                            #else
-                            Image(nsImage: specifiedImage)
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
-                            #endif
-
                         }else if let preferedImage = style.preferredCurrentPageIndicatorImage{
-                            #if os(watchOS)
-                            Image(uiImage: preferedImage)
+                            preferedImage
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
-                                .background(.blue)
-                            #else
-                            Image(nsImage: preferedImage)
-                                .resizable()
-                                .scaledToFit()
-                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
-                            #endif
 
                         }else{
                             Capsule()
@@ -186,6 +153,21 @@ struct PKPagesControlView: View{
         }
         .buttonStyle(.plain)
     }
+}
+
+#Preview {
+    PKPagesView{
+        PKPage {
+            Text("Test")
+        }
+        PKPage {
+            Text("Test")
+        }
+        PKPage {
+            Text("Test")
+        }
+    }
+    .pkPageControlPreferredIndicatorImage(image: Image(systemName: "car"))
 }
 #endif
 

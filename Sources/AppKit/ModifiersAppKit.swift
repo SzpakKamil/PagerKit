@@ -59,23 +59,23 @@ public extension PKPagesView{
         return copy
     }
     #if os(watchOS)
-    func pkPageControlPreferredIndicatorImage(image: UIImage?) -> Self{
+    func pkPageControlPreferredIndicatorImage(image: Image?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
         return copy
     }
-    func pkPageControlIndicator(_ image: UIImage?, forPage: Int) -> Self{
+    func pkPageControlIndicator(_ image: Image?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.indicatorImage[forPage] = image
         return copy
     }
-    func pkPageControlCurrentIndicator(_ image: UIImage?, forPage: Int) -> Self{
+    func pkPageControlCurrentIndicator(_ image: Image?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.currentIndicatorImage[forPage] = image
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func pkPageControlPreferredCurrentPageIndicatorImage(image: UIImage?) -> Self{
+    func pkPageControlPreferredCurrentPageIndicatorImage(image: Image?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
