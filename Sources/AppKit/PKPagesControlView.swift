@@ -112,20 +112,7 @@ struct PKPagesControlView: View{
                 }
             }else{
                 ZStack(alignment: isForward ? .leading : .trailing) {
-                    if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
-                        specifiedImage
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
-                    }else if let preferedImage = style.preferredIndicatorImage{
-                        preferedImage
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
-                    }else{
-                        Capsule()
-                            .fill(style.indicatorTintColor ?? Color.secondary)
-                    }
+
                     if currentSelectedElement == index{
                         if let specifiedImageValue = style.currentIndicatorImage[index], let specifiedImage = specifiedImageValue{
                             specifiedImage
@@ -146,6 +133,21 @@ struct PKPagesControlView: View{
                         }else{
                             Capsule()
                                 .fill(style.currentPageIndicatorTintColor ?? Color.primary)
+                        }
+                    }else{
+                        if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
+                            specifiedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        }else if let preferedImage = style.preferredIndicatorImage{
+                            preferedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        }else{
+                            Capsule()
+                                .fill(style.indicatorTintColor ?? Color.secondary)
                         }
                     }
                     
