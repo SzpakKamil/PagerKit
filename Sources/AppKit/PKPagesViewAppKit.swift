@@ -197,39 +197,4 @@ public struct PKPagesView: View {
 
 #endif
 
-#Preview {
-    if #available(iOS 17.0, tvOS 17.0, *) {
-        PKPagesView {
-            PKPage {
-                ZStack {
-                    Color.red
-                    Text("Apple")
-                }
-                .ignoresSafeArea()
-            }
-            .pkPageDuration(3)
-            PKPage {
-                ZStack {
-                    Color.green
-                    Text("Banana")
-                }
-                .ignoresSafeArea()
-            }
-            .pkPageDuration(3)
-            PKPage {
-                ZStack {
-                    Color.orange
-                    Text("Tomato")
-                }
-            }
-            .pkPageDuration(3)
-        }
-        .pkOnManualPageChange { _, new in let n: Int = new;  print("Manual change") }
-        .pkOnAutoPageChange { _, new in let n: Int = new;  print("Auto change") }
-        .pkPageNavigationOrientation(.horizontal)
-        .pkPageControlAlignment(.bottom)
-        .pkPageControlDirection(.natural)
-        .ignoresSafeArea()
-    }
-}
 
