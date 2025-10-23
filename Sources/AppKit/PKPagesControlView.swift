@@ -118,8 +118,7 @@ struct PKPagesControlView: View{
                         Image(uiImage: specifiedImage)
                             .resizable()
                             .scaledToFit()
-                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
-                            .background(.red)
+                            .foregroundStyle(style.indicatorTintColor ?? Color.primary.opacity(0.6))
                         #else
                         Image(nsImage: specifiedImage)
                             .resizable()
@@ -131,7 +130,9 @@ struct PKPagesControlView: View{
                         Image(uiImage: preferedImage)
                             .resizable()
                             .scaledToFit()
-                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                            .foregroundStyle(
+                                style.indicatorTintColor ?? Color.primary.opacity(0.6)
+                            )
                             .background(.green)
                         #else
                         Image(nsImage: preferedImage)
@@ -150,7 +151,6 @@ struct PKPagesControlView: View{
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
-                                .background(.orange)
                             #else
                             Image(nsImage: specifiedImage)
                                 .resizable()
