@@ -134,6 +134,26 @@ struct PKPagesControlView: View{
                             Capsule()
                                 .fill(style.currentPageIndicatorTintColor ?? Color.primary)
                         }
+                        if let specifiedImageValue = style.currentIndicatorImage[index], let specifiedImage = specifiedImageValue{
+                            specifiedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                        }else if let preferedImage = style.preferredCurrentPageIndicatorImage{
+                            preferedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+
+                        }else if let preferedImage = style.preferredIndicatorImage{
+                            preferedImage
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.indicatorTintColor ?? Color.primary)
+                        }else{
+                            Capsule()
+                                .fill(style.currentPageIndicatorTintColor ?? Color.primary)
+                        }
                     }else{
                         if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
                             specifiedImage
