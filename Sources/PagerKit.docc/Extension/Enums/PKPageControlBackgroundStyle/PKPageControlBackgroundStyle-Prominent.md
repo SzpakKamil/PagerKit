@@ -52,12 +52,12 @@ struct ContentView: View {
     @Tab("iOS") {
         On iOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Static", alt: "Prominent Static") {
                     Static
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
                     Pressed
                 }
@@ -67,12 +67,12 @@ struct ContentView: View {
     @Tab("iPadOS") {
         On iPadOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states, optimized for larger touch interfaces.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
                     Static
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
                     Pressed
                 }
@@ -82,7 +82,7 @@ struct ContentView: View {
     @Tab("macOS") {
         On macOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Prominent", alt: "Prominent") {
                     Prominent
                 }
@@ -92,7 +92,7 @@ struct ContentView: View {
     @Tab("tvOS") {
         On tvOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Prominent", alt: "Prominent") {
                     Prominent
                 }
@@ -102,7 +102,7 @@ struct ContentView: View {
     @Tab("visionOS") {
         On visionOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent", alt: "Prominent") {
                     Prominent
                 }
@@ -112,7 +112,7 @@ struct ContentView: View {
     @Tab("watchOS") {
         On watchOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Prominent", alt: "Prominent") {
                     Prominent
                 }

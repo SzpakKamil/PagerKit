@@ -52,12 +52,12 @@ struct ContentView: View {
     @Tab("iOS") {
         On iOS, the `minimal` style displays only the page control dots without a background in both static and pressed states.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Minimal-Static", alt: "Minimal Static") {
                     Static
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Minimal-Pressed", alt: "Minimal Pressed") {
                     Pressed
                 }
@@ -67,12 +67,12 @@ struct ContentView: View {
     @Tab("iPadOS") {
         On iPadOS, the `minimal` style displays only the page control dots without a background in both static and pressed states, optimized for larger touch interfaces.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
                     Static
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Pressed", alt: "Minimal Pressed") {
                     Pressed
                 }
@@ -82,7 +82,7 @@ struct ContentView: View {
     @Tab("macOS") {
         On macOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Minimal", alt: "Minimal") {
                     Minimal
                 }
@@ -92,7 +92,7 @@ struct ContentView: View {
     @Tab("tvOS") {
         On tvOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Minimal", alt: "Minimal") {
                     Minimal
                 }
@@ -102,7 +102,7 @@ struct ContentView: View {
     @Tab("visionOS") {
         On visionOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal", alt: "Minimal") {
                     Minimal
                 }
@@ -112,7 +112,7 @@ struct ContentView: View {
     @Tab("watchOS") {
         On watchOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Minimal", alt: "Minimal") {
                     Minimal
                 }

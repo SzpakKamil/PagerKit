@@ -52,7 +52,7 @@ struct ContentView: View {
     @Tab("iOS") {
         On iOS, the `natural` style adapts to the system layout direction (left-to-right or right-to-left).
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-iOS-Natural", alt: "Natural") {
                     Natural
                 }
@@ -62,7 +62,7 @@ struct ContentView: View {
     @Tab("iPadOS") {
         On iPadOS, the `natural` style adapts to the system layout direction, optimized for larger screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-iPadOS-Natural", alt: "Natural") {
                     Natural
                 }
@@ -72,7 +72,7 @@ struct ContentView: View {
     @Tab("macOS") {
         On macOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-macOS-Natural", alt: "Natural") {
                     Natural
                 }
@@ -82,7 +82,7 @@ struct ContentView: View {
     @Tab("tvOS") {
         On tvOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-tvOS-Natural", alt: "Natural") {
                     Natural
                 }
@@ -92,7 +92,7 @@ struct ContentView: View {
     @Tab("visionOS") {
         On visionOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-visionOS-Natural", alt: "Natural") {
                     Natural
                 }
@@ -102,7 +102,7 @@ struct ContentView: View {
     @Tab("watchOS") {
         On watchOS, the `natural` style adapts to the system layout direction, optimized for small screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-watchOS-Natural", alt: "Natural") {
                     Natural
                 }
