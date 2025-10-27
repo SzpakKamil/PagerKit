@@ -25,8 +25,6 @@ Learn about the customizable SwiftUI `PagerKit` package for enhanced page-based 
 
 The `PagerKit` package extends SwiftUI’s capabilities with a flexible and customizable page-based navigation component. Supporting iOS, iPadOS, macOS, tvOS, visionOS, and watchOS, it integrates native components (`UIPageViewController` for iOS, iPadOS, tvOS, and visionOS, and a SwiftUI-reimplemented equivalent for macOS and watchOS) into a unified SwiftUI API for seamless, platform-specific solutions.
 
-@Image(source: "PagerKitGreeting-Banner.png", alt: "PagerKit app on iPhone and iPad with a sleek page navigation interface.")
-
 ## Why Use PagerKit?
 
 The `PagerKit` package improves upon standard page navigation with:
@@ -114,4 +112,3 @@ The `PagerKit` package is ideal for:
 
 - Learn to integrate the package in <doc:SetUp>.
 - Explore modifier details in <doc:Modifiers>.
-- Build a sample app with <doc:PagesList>.

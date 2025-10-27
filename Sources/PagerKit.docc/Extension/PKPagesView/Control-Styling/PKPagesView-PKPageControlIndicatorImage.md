@@ -134,4 +134,3 @@ struct ContentView: View {
 - ``PagerKit/PKPagesView``
 - ``PagerKit/PKPageControlBackgroundStyle``
 - ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlHidden``

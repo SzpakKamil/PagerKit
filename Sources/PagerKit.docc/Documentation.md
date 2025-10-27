@@ -25,7 +25,7 @@ Native, Highly Customizable Page-Based Navigation Component
 
 The `PagerKit` package offers a SwiftUI-based page navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS, enabling developers to create intuitive, customizable paging experiences. It leverages `UIPageViewController` for native integration on iOS, iPadOS, tvOS, and visionOS, while on macOS and watchOS, it uses a SwiftUI-reimplemented equivalent for enhanced flexibility and consistency. With support for dynamic page control, navigation orientation, and event handling, `PagerKit` empowers you to build modern, user-friendly paging interfaces that adapt to your app’s unique needs.
 
-@Image(source: "PagerKit-Tutorial-Banner.png", alt: "Pager app on iPhone and iPad, mac and tv with a sleek page navigation interface.")
+@Image(source: "PagerKit-Banner.png", alt: "Pager app on iPhone and iPad, mac and tv with a sleek page navigation interface.")
 
 Whether you’re adding custom page control styles, real-time navigation callbacks, or data-driven page generation, `PagerKit` provides a flexible API to enhance your app’s navigation functionality. Its accessibility features, like VoiceOver and Dynamic Type support, ensure an inclusive experience, while its extensive documentation makes integration straightforward. Explore the resources below to start building with `PagerKit` and see how it can transform user interactions in your app.
 

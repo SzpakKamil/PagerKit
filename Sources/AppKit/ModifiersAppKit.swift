@@ -80,7 +80,7 @@ public extension PKPagesView{
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
-    #if os(macOS)
+
     @available(iOS 16.0, tvOS 16.0, *)
     func pkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
         var copy = self
@@ -92,7 +92,6 @@ public extension PKPagesView{
         copy.customSelectedIndex = index
         return copy
     }
-    #endif
     
     func pkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
