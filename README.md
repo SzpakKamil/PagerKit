@@ -3,7 +3,7 @@
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2014.0+%20|%20iPadOS%2014.0+%20|%20macOS%2014.0+%20|%20tvOS%2014.0+%20|%20visionOS%201.0+%20|%20watchOS%2010.0+-15437D.svg)
 ![License](https://img.shields.io/badge/License-MIT-C8ECFE.svg)
 ![Banner](./Resources/PagerKit-Banner.png#gh-light-mode-only)
-![Banner](./Resources/PagerKit-BannerDark.png#gh-dark-mode-only)
+![Banner](./Resources/PagerKit-Banner~dark.png#gh-dark-mode-only)
 
 **PagerKit** is a SwiftUI package that provides a highly customizable, native page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. It leverages `UIPageViewController` for iOS, iPadOS, tvOS, and visionOS, ensuring a seamless, platform-specific experience, with a SwiftUI-reimplemented equivalent for macOS and watchOS. With extensive modifiers for styling, navigation, and interaction, `PagerKit` is ideal for creating modern, user-focused paging interfaces.
 
