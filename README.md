@@ -86,7 +86,6 @@ struct ContentView: View {
             .pkPageControlCurrentIndicatorTintColor(.blue)
             .pkPageControlIndicatorTintColor(.gray)
             .pkPageNavigationOrientation(.vertical)
-            .pkCurrentPageIndex($currentPage)
             .pkOnManualPageChange { index, direction in
                 print("Page changed to \(index) in \(direction) direction")
             }
