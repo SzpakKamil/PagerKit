@@ -71,8 +71,6 @@ struct ContentView: View {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Static", alt: "Automatic Static") {
                     Static
                 }
-            }
-            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Pressed", alt: "Automatic Pressed") {
                     Pressed
                 }
@@ -103,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical", alt: "Automatic") {
+                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical.jpg", alt: "Automatic") {
                     Automatic
                 }
             }

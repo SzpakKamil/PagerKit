@@ -71,8 +71,6 @@ struct ContentView: View {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
                     Static
                 }
-            }
-            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
                     Pressed
                 }
@@ -103,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent", alt: "Prominent") {
+                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent.jpg", alt: "Prominent") {
                     Prominent
                 }
             }

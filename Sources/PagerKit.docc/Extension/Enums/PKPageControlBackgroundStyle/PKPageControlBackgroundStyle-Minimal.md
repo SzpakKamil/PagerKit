@@ -71,8 +71,6 @@ struct ContentView: View {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
                     Static
                 }
-            }
-            @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Pressed", alt: "Minimal Pressed") {
                     Pressed
                 }
@@ -103,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal", alt: "Minimal") {
+                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal.jpg", alt: "Minimal") {
                     Minimal
                 }
             }
