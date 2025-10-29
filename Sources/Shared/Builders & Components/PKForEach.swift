@@ -28,7 +28,6 @@ public struct ForEach<Data, ID>: View where Data: RandomAccessCollection, ID: Ha
     }
     
     // Prefer pages init over content init when both match by disfavoring this overloads
-    @_disfavoredOverload
     public init(_ data: Data, id: KeyPath<Data.Element, ID>, @PKPageBuilder content: @escaping (Data.Element) -> [PKPage]) {
         self.data = data
         self.keyPath = id
@@ -36,7 +35,6 @@ public struct ForEach<Data, ID>: View where Data: RandomAccessCollection, ID: Ha
     }
     
     // Prefer pages init over content init when both match by disfavoring this overloads
-    @_disfavoredOverload
     public init<T>(_ data: Data, @PKPageBuilder content: @escaping (Data.Element) -> [PKPage])
     where Data.Element == T, T: Identifiable, ID == T.ID {
         self.data = data
