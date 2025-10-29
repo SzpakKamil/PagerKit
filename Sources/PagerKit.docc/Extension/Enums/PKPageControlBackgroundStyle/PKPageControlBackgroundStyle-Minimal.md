@@ -66,7 +66,7 @@ struct ContentView: View {
     }
     @Tab("iPadOS") {
         On iPadOS, the `minimal` style displays only the page control dots without a background in both static and pressed states, optimized for larger touch interfaces.
-        @Row(numberOfColumns: 2) {
+        @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
                     Static

@@ -66,7 +66,7 @@ struct ContentView: View {
     }
     @Tab("iPadOS") {
         On iPadOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states, optimized for larger touch interfaces.
-        @Row(numberOfColumns: 2) {
+        @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
                     Static

@@ -66,7 +66,7 @@ struct ContentView: View {
     }
     @Tab("iPadOS") {
         On iPadOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static, optimized for larger touch interfaces.
-        @Row(numberOfColumns: 2) {
+        @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Static", alt: "Automatic Static") {
                     Static

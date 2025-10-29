@@ -116,7 +116,7 @@ struct ContentView: View {
         @TabNavigator {
             @Tab("Automatic") {
                 The `automatic` style shows no background when static and a background during drag interactions.
-                @Row(numberOfColumns: 2) {
+                @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Static", alt: "Automatic Static") {
                             Static
@@ -129,7 +129,7 @@ struct ContentView: View {
             }
             @Tab("Minimal") {
                 No background is shown, displaying only the dots, in both static and pressed states.
-                @Row(numberOfColumns: 2) {
+                @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
                             Static
@@ -142,7 +142,7 @@ struct ContentView: View {
             }
             @Tab("Prominent") {
                 A light grey background is shown behind the dots in both static and pressed states.
-                @Row(numberOfColumns: 2) {
+                @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
                             Static
@@ -232,7 +232,7 @@ struct ContentView: View {
                 No background is shown, equivalent to the `minimal` style.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical.jpg", alt: "Automatic") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical", alt: "Automatic") {
                             Automatic
                         }
                     }
@@ -242,7 +242,7 @@ struct ContentView: View {
                 No background is shown, displaying only the dots.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal.jpg", alt: "Minimal") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal", alt: "Minimal") {
                             Minimal
                         }
                     }
@@ -252,7 +252,7 @@ struct ContentView: View {
                 A light grey background is shown behind the dots.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent.jpg", alt: "Prominent") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent", alt: "Prominent") {
                             Prominent
                         }
                     }
