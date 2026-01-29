@@ -118,11 +118,11 @@ The `PagerKit` package offers a variety of modifiers to customize the appearance
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
 - **`pkPageControlIndicatorTintColor(_:)`**: Sets the tint color for non-current page indicators.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlIndicatorPreferredIndicatorImage(_:)`**: Sets a custom image for non-current page indicators.
+- **`pkPageControlIndicatorPreferredIndicatorImage(image:)`**: Sets a custom image for non-current page indicators.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)`**: Sets a custom image for the current page indicator.
+- **`pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)`**: Sets a custom image for the current page indicator.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlIndicatorCurrentIndicatorImage(_:for:)`**: Sets a custom image for the current page indicator at a specific page index.
+- **`pkPageControlIndicatorCurrentIndicatorImage(image:for:)`**: Sets a custom image for the current page indicator at a specific page index.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
 - **`pkPageControlIndicatorAllowsContinuousInteraction(_:)`**: Enables/disables dragging across page control dots.
   *Available on iOS, iPadOS.*

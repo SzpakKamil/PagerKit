@@ -1,4 +1,4 @@
-# ``PagerKit/PKPage/pkPageCurrentIndicatorImage(_:)``
+# ``PagerKit/PKPage/pkPageCurrentIndicatorImage(image:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Sets a custom image for the **current page indicator** of a specific page in the
 
 ## Overview
 
-The `pkPageCurrentIndicatorImage(_:)` modifier, applied to a ``PKPage`` within a ``PKPagesView``, allows you to customize the **active (current) page indicator** for a specific page. This is distinct from the regular (inactive) indicator and only affects the appearance **when the associated page is currently selected**.
+The `pkPageCurrentIndicatorImage(image:)` modifier, applied to a ``PKPage`` within a ``PKPagesView``, allows you to customize the **active (current) page indicator** for a specific page. This is distinct from the regular (inactive) indicator and only affects the appearance **when the associated page is currently selected**.
 
 - On **iOS, iPadOS, tvOS, and visionOS**, use `UIImage?`.
 - On **macOS and watchOS**, use `Image?`.
@@ -159,7 +159,7 @@ struct ContentView: View {
 ## Read Also
 
 ### Related Modifiers & Types
-- ``PagerKit/PKPage/pkPageIndicatorImage(_:)``
+- ``PagerKit/PKPage/pkPageIndicatorImage(image:)``
 - ``PagerKit/PKPagesView``
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPageControlIndicatorBackgroundStyle``

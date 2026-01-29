@@ -52,7 +52,7 @@ The `PagerKit` package offers modifiers for tailoring appearance, navigation, an
   - `.pkPageControlIndicatorBackgroundStyle(_:)`: Applies background style (`.automatic`, `.minimal`, `.prominent`).
   - `.pkPageControlIndicatorDirection(_:)`: Configures dot layout direction (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
   - `.pkPageControlIndicatorCurrentIndicatorTintColor(_:)`: Sets tint color for the current page indicator.
-  - `.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)`: Sets a custom image for the current page indicator.
+  - `.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)`: Sets a custom image for the current page indicator.
 
 - **Logic and Triggers**:
   - `.pkCurrentPageIndex(index:)`: Binds the current page index to a `Binding<Int>`.

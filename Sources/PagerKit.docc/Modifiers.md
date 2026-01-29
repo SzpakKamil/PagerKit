@@ -111,11 +111,11 @@ Modifiers use SwiftUI-style chaining (`.pk…(…)`) and support platform differ
 
 ### Page-Level Indicators (per `PKPage`)
 
-- ``PagerKit/PKPage/pkPageIndicatorImage(_:)``  
+- ``PagerKit/PKPage/pkPageIndicatorImage(image:)``  
   Default (inactive) indicator image for this page.  
   **Type:** `UIImage?` (UIKit) / `Image` (SwiftUI)
 
-- ``PagerKit/PKPage/pkPageCurrentIndicatorImage(_:)``  
+- ``PagerKit/PKPage/pkPageCurrentIndicatorImage(image:)``  
   Active/current indicator image when this page is selected.  
   **Type:** `UIImage?` (UIKit) / `Image` (SwiftUI)
 

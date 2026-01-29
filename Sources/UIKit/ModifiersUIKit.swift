@@ -183,13 +183,13 @@ public extension PKPage{
     }
     
     
-    func pkPageCurrentIndicatorImage(_ image: UIImage?) -> Self{
+    func pkPageCurrentIndicatorImage(image: UIImage?) -> Self{
         var copy = self
         copy.currentIndicatorImage = image
         return copy
     }
     
-    func pkPageIndicatorImage(_ image: UIImage?) -> Self{
+    func pkPageIndicatorImage(image: UIImage?) -> Self{
         var copy = self
         copy.indicatorImage = image
         return copy

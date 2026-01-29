@@ -158,7 +158,7 @@ public extension PKPage{
         return copy
     }
     
-    func pkPageCurrentIndicatorImage(_ image: Image) -> Self{
+    func pkPageCurrentIndicatorImage(image: Image) -> Self{
         var copy = self
         copy.currentIndicatorImage = image
         return copy
@@ -170,7 +170,7 @@ public extension PKPage{
         return copy
     }
     
-    func pkPageIndicatorImage(_ image: Image) -> Self{
+    func pkPageIndicatorImage(image: Image) -> Self{
         var copy = self
         copy.indicatorImage = image
         return copy

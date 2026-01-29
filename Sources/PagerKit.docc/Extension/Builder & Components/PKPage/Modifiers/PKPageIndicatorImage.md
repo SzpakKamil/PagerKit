@@ -1,4 +1,4 @@
-# ``PagerKit/PKPage/pkPageIndicatorImage(_:)``
+# ``PagerKit/PKPage/pkPageIndicatorImage(image:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,15 +21,15 @@ Sets a custom image for the **inactive (non-current) page indicator** of a speci
 
 ## Overview
 
-The `pkPageIndicatorImage(_:)` modifier, applied to a ``PKPage`` inside a ``PKPagesView``, lets you define a **custom image for the page indicator when the page is not currently selected**.
+The `pkPageIndicatorImage(image:)` modifier, applied to a ``PKPage`` inside a ``PKPagesView``, lets you define a **custom image for the page indicator when the page is not currently selected**.
 
 - Use `UIImage?` on **iOS, iPadOS, tvOS, and visionOS**
 - Use `Image?` on **macOS and watchOS**
 - Pass `nil` to fall back to the default system dot
 
-This modifier is ideal for creating thematic or branded page indicators—such as using icons like stars, circles, or custom assets—while keeping the **current page indicator** distinct via `.pkPageCurrentIndicatorImage(_:)`.
+This modifier is ideal for creating thematic or branded page indicators—such as using icons like stars, circles, or custom assets—while keeping the **current page indicator** distinct via `.pkPageCurrentIndicatorImage(image:)`.
 
-> This affects **only the inactive state**. Use ``pkPageCurrentIndicatorImage(_:)`` for the active/selected appearance.
+> This affects **only the inactive state**. Use ``pkPageCurrentIndicatorImage(image:)`` for the active/selected appearance.
 
 ## Parameters
 

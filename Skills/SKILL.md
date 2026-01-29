@@ -120,9 +120,9 @@ PKPagesView {
 .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
 // Custom images
 #if os(iOS)
-.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(UIImage(systemName: "star.fill"))
+.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image: UIImage(systemName: "star.fill"))
 #else
-.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(Image(systemName: "star.fill"))
+.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image: Image(systemName: "star.fill"))
 #endif
 ```
 

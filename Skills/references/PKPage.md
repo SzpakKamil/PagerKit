@@ -54,15 +54,15 @@ PKPage {
 
 You can set custom images for the page indicator dot for a specific page.
 
-- `.pkPageIndicatorImage(_:)`: Sets the image for the indicator when the page is *not* active.
-- `.pkPageCurrentIndicatorImage(_:)`: Sets the image for the indicator when the page is *active*.
+- `.pkPageIndicatorImage(image:)`: Sets the image for the indicator when the page is *not* active.
+- `.pkPageCurrentIndicatorImage(image:)`: Sets the image for the indicator when the page is *active*.
 
 The image type is `UIImage` on UIKit platforms and `Image` on macOS and watchOS.
 
 ```swift
 PKPage { Text("Favorites") }
-    .pkPageIndicatorImage(Image(systemName: "star"))
-    .pkPageCurrentIndicatorImage(Image(systemName: "star.fill"))
+    .pkPageIndicatorImage(image: Image(systemName: "star"))
+    .pkPageCurrentIndicatorImage(image: Image(systemName: "star.fill"))
 ```
 
 ### Custom Footer
