@@ -21,7 +21,7 @@ Builds a block from an array of ``PKPage`` components.
 
 ## Overview
 
-The `buildBlock(_:)-6jnbz` method in the ``PKPageBuilder`` result builder accepts a single array of ``PKPage`` instances and returns it unchanged. This method supports the `PagerKit` framework's declarative syntax by allowing developers to pass an array of pages directly, which is useful for constructing tab-based navigation structures from pre-existing collections of ``PKPage`` components.
+The `buildBlock(_:)` method in the ``PKPageBuilder`` result builder accepts a single array of ``PKPage`` instances and returns it unchanged. This method supports the `PagerKit` framework's declarative syntax by allowing developers to pass an array of pages directly, which is useful for constructing tab-based navigation structures from pre-existing collections of ``PKPage`` components.
 
 ### Parameters
 | Parameter Name | Type | Description |
