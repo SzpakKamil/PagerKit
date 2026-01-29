@@ -88,9 +88,9 @@ struct PKPagesControlView: View{
                             topTrailingRadius: isForward ? 5 : 0
                         )
                         .fill(style.currentPageIndicatorTintColor ?? Color.primary)
-                        .frame(width: 30 * progress, height: 7, alignment: .leading)
+                        .frame(width: 20 * progress, height: 7, alignment: .leading)
                     }
-                    .frame(width: currentSelectedElement == index && duration != nil ? 30: 7, height: 7)
+                    .frame(width: currentSelectedElement == index && duration != nil ? 20: 7, height: 7)
                     .clipShape(.capsule)
                     .animation(.smooth, value: currentSelectedElement)
                 }else{
@@ -104,9 +104,9 @@ struct PKPagesControlView: View{
                             topTrailingRadius: isForward ? 0 : 5
                         )
                         .fill(style.currentPageIndicatorTintColor ?? Color.primary)
-                        .frame(width: 7, height: 30 * progress, alignment: .leading)
+                        .frame(width: 7, height: 20 * progress, alignment: .leading)
                     }
-                    .frame(width: 7, height: currentSelectedElement == index && duration != nil ? 30 : 7)
+                    .frame(width: 7, height: currentSelectedElement == index && duration != nil ? 20 : 7)
                     .clipShape(.capsule)
                     .animation(.smooth, value: currentSelectedElement)
                 }
