@@ -49,8 +49,8 @@ public struct PKPagesView: View {
                     ZStack(alignment: pageControlStyle.footerAlignment){
                         footerView
                             .padding(
-                                pageControlStyle.paddingEdges,
-                                pageControlStyle.paddingLeght
+                                pageControlStyle.paddingEdges ?? .all,
+                                pageControlStyle.paddingLeght ?? 0
                             )
                     }
                     .frame(
