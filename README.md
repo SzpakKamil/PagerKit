@@ -159,6 +159,19 @@ dependencies: [
 2. Enter the URL: `https://github.com/SzpakKamil/PagerKit.git`.
 3. Select version **1.0.0** or later.
 
+### Agent Skill
+You can install the PagerKit skill for your CLI agent to get expert guidance on PagerKit directly in your terminal.
+
+#### Using skills.sh:
+```bash
+npx skills add kamilszpak/pagerkit
+```
+
+#### Using ClawdHub:
+```bash
+npx dlx clawdhub@latest install pagerkit
+```
+
 ## Requirements
 - **iOS**: 14.0+
 - **iPadOS**: 14.0+

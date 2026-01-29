@@ -24,6 +24,19 @@ Learn how to integrate the `PagerKit` package into your SwiftUI project.
 
 The `PagerKit` package provides a customizable SwiftUI page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. This guide explains how to add the package using Swift Package Manager (SPM).
 
+## Installing Agent Skill
+You can install the PagerKit skill for your CLI agent to get expert guidance on PagerKit directly in your terminal.
+
+### Using skills.sh:
+```bash
+npx skills add kamilszpak/pagerkit
+```
+
+### Using ClawdHub:
+```bash
+npx dlx clawdhub@latest install pagerkit
+```
+
 ## Adding PagerKit to Your Project
 
 Add the `PagerKit` package to your project via Swift Package Manager:
