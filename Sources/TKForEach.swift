@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct TKForEach<Data, ID>: View where Data: RandomAccessCollection, ID: Hashable {
+public struct ForEach<Data, ID>: View where Data: RandomAccessCollection, ID: Hashable {
     let data: Data
     let keyPath: KeyPath<Data.Element, ID>
     let content: ((Data.Element) -> [TKPage])?
@@ -17,7 +17,7 @@ public struct TKForEach<Data, ID>: View where Data: RandomAccessCollection, ID: 
     }
     public var body: some View{
         if !components.isEmpty{
-            ForEach(components.indices, id: \.self){index in
+            SwiftUI.ForEach(components.indices, id: \.self){index in
                 AnyView(components[index].content)
             }
         }else{
