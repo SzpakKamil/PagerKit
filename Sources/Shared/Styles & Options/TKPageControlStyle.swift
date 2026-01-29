@@ -38,16 +38,16 @@ public struct TKPageControlStyle{
     }
     var indicatorTintUIColor: UIColor?{
         if let indicatorTintColor{
-            UIColor(indicatorTintColor)
+            return UIColor(indicatorTintColor)
         }else{
-            nil
+            return UIColor(Color.secondary)
         }
     }
     var currentPageIndicatorTintUIColor: UIColor?{
         if let currentPageIndicatorTintColor{
-            UIColor(currentPageIndicatorTintColor)
+            return UIColor(currentPageIndicatorTintColor)
         }else{
-            nil
+            return UIColor(Color.primary)
         }
     }
     #else
