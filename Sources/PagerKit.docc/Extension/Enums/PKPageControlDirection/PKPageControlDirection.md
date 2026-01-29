@@ -70,7 +70,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -80,7 +80,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -90,7 +90,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -100,7 +100,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -110,7 +110,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }
@@ -125,7 +125,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -135,7 +135,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -145,7 +145,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -155,7 +155,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -165,7 +165,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }
@@ -180,7 +180,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -190,7 +190,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -200,7 +200,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -210,7 +210,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -220,7 +220,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }
@@ -235,7 +235,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -245,7 +245,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -255,7 +255,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -265,7 +265,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -275,7 +275,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }
@@ -290,7 +290,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -300,7 +300,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -310,7 +310,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -320,7 +320,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -330,7 +330,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }
@@ -345,7 +345,7 @@ struct ContentView: View {
                 Adapts to system layout direction (left-to-right or right-to-left).
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Natural", alt: "Natural") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Natural", alt: "Natural") {
                             Natural
                         }
                     }
@@ -355,7 +355,7 @@ struct ContentView: View {
                 Dots laid out horizontally from left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Left-To-Right", alt: "Left to Right") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Left-To-Right", alt: "Left to Right") {
                             Left to Right
                         }
                     }
@@ -365,7 +365,7 @@ struct ContentView: View {
                 Dots laid out horizontally from right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Right-To-Left", alt: "Right to Left") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Right-To-Left", alt: "Right to Left") {
                             Right to Left
                         }
                     }
@@ -375,7 +375,7 @@ struct ContentView: View {
                 Dots laid out vertically from top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Top-To-Bottom", alt: "Top to Bottom") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Top-To-Bottom", alt: "Top to Bottom") {
                             Top to Bottom
                         }
                     }
@@ -385,7 +385,7 @@ struct ContentView: View {
                 Dots laid out vertically from bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Bottom-To-Top", alt: "Bottom to Top") {
+                        @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Bottom-To-Top", alt: "Bottom to Top") {
                             Bottom to Top
                         }
                     }

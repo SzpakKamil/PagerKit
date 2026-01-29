@@ -53,7 +53,7 @@ struct ContentView: View {
         On iOS, the `natural` style adapts to the system layout direction (left-to-right or right-to-left).
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -63,7 +63,7 @@ struct ContentView: View {
         On iPadOS, the `natural` style adapts to the system layout direction, optimized for larger screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-iPadOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -73,7 +73,7 @@ struct ContentView: View {
         On macOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-macOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -83,7 +83,7 @@ struct ContentView: View {
         On tvOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-tvOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -93,7 +93,7 @@ struct ContentView: View {
         On visionOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-visionOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -103,7 +103,7 @@ struct ContentView: View {
         On watchOS, the `natural` style adapts to the system layout direction, optimized for small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-watchOS-Natural", alt: "Natural") {
                     Natural
                 }
             }

@@ -53,12 +53,12 @@ struct ContentView: View {
         On iOS, the `minimal` style displays only the page control dots without a background in both static and pressed states.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Minimal-Static", alt: "Minimal Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Minimal-Static", alt: "Minimal Static") {
                     Static
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Minimal-Pressed", alt: "Minimal Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Minimal-Pressed", alt: "Minimal Pressed") {
                     Pressed
                 }
             }
@@ -68,10 +68,10 @@ struct ContentView: View {
         On iPadOS, the `minimal` style displays only the page control dots without a background in both static and pressed states, optimized for larger touch interfaces.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
                     Static
                 }
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Minimal-Pressed", alt: "Minimal Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Minimal-Pressed", alt: "Minimal Pressed") {
                     Pressed
                 }
             }
@@ -81,7 +81,7 @@ struct ContentView: View {
         On macOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-macOS-Minimal-Static", alt: "Minimal") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-macOS-Minimal-Static", alt: "Minimal") {
                     Minimal
                 }
             }
@@ -91,7 +91,7 @@ struct ContentView: View {
         On tvOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-tvOS-Minimal-Static", alt: "Minimal") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-tvOS-Minimal-Static", alt: "Minimal") {
                     Minimal
                 }
             }
@@ -101,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-visionOS-Minimal-Static", alt: "Minimal") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-visionOS-Minimal-Static", alt: "Minimal") {
                     Minimal
                 }
             }
@@ -111,7 +111,7 @@ struct ContentView: View {
         On watchOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-watchOS-Minimal-Static", alt: "Minimal") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-watchOS-Minimal-Static", alt: "Minimal") {
                     Minimal
                 }
             }
