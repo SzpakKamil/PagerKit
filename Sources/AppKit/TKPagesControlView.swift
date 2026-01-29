@@ -24,7 +24,12 @@ struct TKPagesControlView: View{
             case .minimal:
                 return .clear
             case .prominent:
-                return .black
+                if colorScheme == .dark{
+                    return .white
+                }else{
+                    return .black
+                    
+                }
         }
 
     }
@@ -40,22 +45,22 @@ struct TKPagesControlView: View{
     var body: some View{
         switch style.direction{
             case .natural, .leftToRight, .rightToLeft:
-                HStack{
+                HStack(spacing: 5){
                     SwiftUI.ForEach(indicies, id: \.self){ index in
                         button(index: index, isHorizontal: true, isForward: style.direction != .rightToLeft)
                     }
                 }
-                .padding(7)
+                .padding(5)
                 .background(invertedPrimary.opacity(0.1))
                 .clipShape(.capsule)
                 .padding(.all, style.spacing)
             case .topToBottom, .bottomToTop:
-                VStack{
+                VStack(spacing: 5){
                     SwiftUI.ForEach(indicies, id: \.self){ index in
                         button(index: index, isHorizontal: false, isForward: style.direction == .topToBottom)
                     }
                 }
-                .padding(7)
+                .padding(5)
                 .background(invertedPrimary.opacity(0.1))
                 .clipShape(.capsule)
                 .padding(.all, style.spacing)
@@ -67,7 +72,7 @@ struct TKPagesControlView: View{
         Button{
             currentSelectedElement = index
         }label: {
-            if let progress, currentSelectedElement == index{
+            if let progress, duration != nil, currentSelectedElement == index{
                 if isHorizontal{
                     ZStack(alignment: isForward ? .leading : .trailing) {
                         Capsule()
@@ -79,9 +84,9 @@ struct TKPagesControlView: View{
                             topTrailingRadius: isForward ? 5 : 0
                         )
                         .fill(style.currentPageIndicatorTintColor ?? Color.primary)
-                        .frame(width: 30 * progress, height: 10, alignment: .leading)
+                        .frame(width: 30 * progress, height: 7, alignment: .leading)
                     }
-                    .frame(width: currentSelectedElement == index && duration != nil ? 30: 10, height: 10)
+                    .frame(width: currentSelectedElement == index && duration != nil ? 30: 7, height: 7)
                     .clipShape(.capsule)
                     .animation(.smooth, value: currentSelectedElement)
                 }else{
@@ -95,9 +100,9 @@ struct TKPagesControlView: View{
                             topTrailingRadius: isForward ? 0 : 5
                         )
                         .fill(style.currentPageIndicatorTintColor ?? Color.primary)
-                        .frame(width: 10, height: 30 * progress, alignment: .leading)
+                        .frame(width: 7, height: 30 * progress, alignment: .leading)
                     }
-                    .frame(width: 10, height: currentSelectedElement == index && duration != nil ? 30: 10)
+                    .frame(width: 7, height: currentSelectedElement == index && duration != nil ? 30 : 7)
                     .clipShape(.capsule)
                     .animation(.smooth, value: currentSelectedElement)
                 }
@@ -135,7 +140,7 @@ struct TKPagesControlView: View{
                     }
                     
                 }
-                .frame(width: 10, height: 10)
+                .frame(width: 7, height: 7)
                 .clipShape(.capsule)
                 .animation(.smooth, value: currentSelectedElement)
             }
@@ -180,3 +185,18 @@ struct TKPagesControlView: View{
 }
 
 #endif
+
+#Preview{
+    TKPagesView {
+        TKPage {
+            Text("Page1")
+        }
+        TKPage {
+            Text("Page2")
+        }
+        TKPage {
+            Text("Page3")
+        }
+    }
+    .tkPageControlBackgroundStyle(.prominent)
+}
