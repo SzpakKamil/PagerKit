@@ -46,7 +46,7 @@ struct ContentView: View {
 }
 ```
 
-## Topics
+## Read Also
 
 ### Related Types
 - ``TabKit/TKPage``

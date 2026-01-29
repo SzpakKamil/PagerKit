@@ -21,6 +21,7 @@ public struct TKPageBuilder {
         components
     }
     
+    @_documentation(visibility: internal)
     public static func buildBlock(_ components: [TKPage]...) -> [TKPage] {
         components.flatMap { $0 }
     }
