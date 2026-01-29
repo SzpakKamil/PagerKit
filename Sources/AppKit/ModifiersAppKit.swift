@@ -53,7 +53,7 @@ public extension TKPagesView{
         copy.pageControlStyle.hidden = condition
         return copy
     }
-    func tkPageControlBackgroundStyle(_ style: TKPageControlStyle.BackgroundStyle = .automatic) -> Self{
+    func tkPageControlBackgroundStyle(_ style: TKPageControlBackgroundStyle = .automatic) -> Self{
         var copy = self
         copy.pageControlStyle.backgroundStyle = style
         return copy
