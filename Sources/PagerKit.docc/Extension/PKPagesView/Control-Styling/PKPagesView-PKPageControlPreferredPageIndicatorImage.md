@@ -58,12 +58,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-iOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-iOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -73,10 +73,10 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-iPadOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-iPadOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -86,10 +86,10 @@ struct ContentView: View {
         On macOS, the `pkPageControlPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-macOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-macOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -99,10 +99,10 @@ struct ContentView: View {
         On visionOS, the `pkPageControlPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-visionOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-visionOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -112,12 +112,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-watchOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPageControlPreferredIndicatorImage-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlPreferredIndicatorImage-watchOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
