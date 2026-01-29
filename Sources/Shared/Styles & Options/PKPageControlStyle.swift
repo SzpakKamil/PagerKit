@@ -15,16 +15,16 @@ struct PKPageControlStyle{
     var currentPageIndicatorTintColor: Color?
     var backgroundStyle: PKPageControlBackgroundStyle
     var direction: PKPageControlDirection = .natural
-    #if !(os(macOS))
+    #if !(os(macOS) || os(watchOS))
     var indicatorImage: [Int: UIImage?]
     var currentIndicatorImage: [Int: UIImage?]
     var preferredIndicatorImage: UIImage?
     var preferredCurrentPageIndicatorImage: UIImage?
     #else
-    var indicatorImage: [Int: NSImage?]
-    var currentIndicatorImage: [Int: NSImage?]
-    var preferredIndicatorImage: NSImage?
-    var preferredCurrentPageIndicatorImage: NSImage?
+    var indicatorImage: [Int: Image?]
+    var currentIndicatorImage: [Int: Image?]
+    var preferredIndicatorImage: Image?
+    var preferredCurrentPageIndicatorImage: Image?
     #endif
 
     var allowsContinuousInteraction: Bool
