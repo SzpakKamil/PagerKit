@@ -33,6 +33,7 @@ public class TKPagesUIViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         configuratePageControl()
+        print("View Dit load")
         navigateToPage(0, isManualChange: false)
     }
 
@@ -80,6 +81,7 @@ public class TKPagesUIViewController: UIPageViewController {
     }
     
     @objc private func pageControlHandle(sender: UIPageControl){
+        print("Page Control")
         navigateToPage(sender.currentPage, isManualChange: true)
     }
 }
