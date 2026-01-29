@@ -9,141 +9,141 @@
 import SwiftUI
 
 public extension PKPagesView{
-    func tkPageControlHidesForSignlePage(_ condition: Bool) -> Self{
+    func pkPageControlHidesForSignlePage(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.hidesForSinglePage = condition
         return copy
     }
-    func tkPageNavigationOrientation(_ orientation: Axis) -> Self{
+    func pkPageNavigationOrientation(_ orientation: Axis) -> Self{
         let copy = self
         copy.options.orientationRaw = orientation
         return copy
     }
     
 
-    func tkPageControlAlignment(_ alignment: Alignment = .bottom) -> Self{
+    func pkPageControlAlignment(_ alignment: Alignment = .bottom) -> Self{
         var copy = self
         copy.pageControlStyle.alignment = alignment
         return copy
     }
-    func tkPageControlAlignment(spacing: CGFloat, alignment: Alignment = .bottom) -> Self{
+    func pkPageControlAlignment(spacing: CGFloat, alignment: Alignment = .bottom) -> Self{
         var copy = self
         copy.pageControlStyle.alignment = alignment
         copy.pageControlStyle.spacing = spacing
         return copy
     }
     
-    func tkPageControlIndicatorTintColor(_ color: Color?) -> Self{
+    func pkPageControlIndicatorTintColor(_ color: Color?) -> Self{
         var copy = self
         copy.pageControlStyle.indicatorTintColor = color
         return copy
     }
-    func tkPageControlAllowsContinuousInteraction(_ condition: Bool) -> Self{
+    func pkPageControlAllowsContinuousInteraction(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.allowsContinuousInteraction = condition
         return copy
     }
-    func tkPageControlCurrentIndicatorTintColor(_ color: Color?) -> Self{
+    func pkPageControlCurrentIndicatorTintColor(_ color: Color?) -> Self{
         var copy = self
         copy.pageControlStyle.currentPageIndicatorTintColor = color
         return copy
     }
-    func tkPageControlHidden(_ condition: Bool) -> Self{
+    func pkPageControlHidden(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.hidden = condition
         return copy
     }
-    func tkPageControlBackgroundStyle(_ style: PKPageControlBackgroundStyle = .automatic) -> Self{
+    func pkPageControlBackgroundStyle(_ style: PKPageControlBackgroundStyle = .automatic) -> Self{
         var copy = self
         copy.pageControlStyle.backgroundStyle = style
         return copy
     }
     #if os(watchOS)
-    func tkPageControlPreferredIndicatorImage(image: UIImage?) -> Self{
+    func pkPageControlPreferredIndicatorImage(image: UIImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
         return copy
     }
-    func tkPageControlIndicator(_ image: UIImage?, forPage: Int) -> Self{
+    func pkPageControlIndicator(_ image: UIImage?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.indicatorImage[forPage] = image
         return copy
     }
-    func tkPageControlCurrentIndicator(_ image: UIImage?, forPage: Int) -> Self{
+    func pkPageControlCurrentIndicator(_ image: UIImage?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.currentIndicatorImage[forPage] = image
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlPreferredCurrentPageIndicatorImage(image: UIImage?) -> Self{
+    func pkPageControlPreferredCurrentPageIndicatorImage(image: UIImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
     #else
-    func tkPageControlPreferredIndicatorImage(image: NSImage?) -> Self{
+    func pkPageControlPreferredIndicatorImage(image: NSImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
         return copy
     }
-    func tkPageControlIndicator(_ image: NSImage?, forPage: Int) -> Self{
+    func pkPageControlIndicator(_ image: NSImage?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.indicatorImage[forPage] = image
         return copy
     }
-    func tkPageControlCurrentIndicator(_ image: NSImage?, forPage: Int) -> Self{
+    func pkPageControlCurrentIndicator(_ image: NSImage?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.currentIndicatorImage[forPage] = image
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlPreferredCurrentPageIndicatorImage(image: NSImage?) -> Self{
+    func pkPageControlPreferredCurrentPageIndicatorImage(image: NSImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
     #endif
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
+    func pkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
         var copy = self
         copy.pageControlStyle.direction = direction
         return copy
     }
-    func tkCurrentPageIndex(index: Binding<Int>) -> Self{
+    func pkCurrentPageIndex(index: Binding<Int>) -> Self{
         var copy = self
         copy.customSelectedIndex = index
         return copy
     }
     
-    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
+    func pkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageManualChangeDirectionFunction = action
         return copy
     }
     
-    func tkOnManualPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+    func pkOnManualPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
         let copy = self
         copy.options.pageManualChangeIndexFunction = action
         return copy
     }
     
-    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
+    func pkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageAutoChangeDirectionFunction = action
         return copy
     }
     
-    func tkOnAutoPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+    func pkOnAutoPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
         let copy = self
         copy.options.pageAutoChangeIndexFunction = action
         return copy
     }
-    func tkOnTransitionStart(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+    func pkOnTransitionStart(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
         let copy = self
         copy.options.transitionStartFunction = action
         return copy
     }
-    func tkOnTransitionEnd(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+    func pkOnTransitionEnd(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
         let copy = self
         copy.options.transitionEndFunction = action
         return copy
@@ -152,7 +152,7 @@ public extension PKPagesView{
 
 public extension PKPage{
     @available(iOS 17.0, tvOS 17.0, *)
-    func tkPageDuration(_ duration: Double?) -> Self {
+    func pkPageDuration(_ duration: Double?) -> Self {
         var copy = self
         if let duration{
             copy.progress = {
@@ -162,7 +162,7 @@ public extension PKPage{
         return copy
     }
     @available(iOS 17.0, tvOS 17.0, *)
-    func tkPageProgress(_ progress: @escaping () -> Double?) -> Self {
+    func pkPageProgress(_ progress: @escaping () -> Double?) -> Self {
         var copy = self
         copy.progress = progress
         return copy

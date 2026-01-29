@@ -7,6 +7,7 @@
     @Available(macOS, introduced: "14.0")
     @Available(tvOS, introduced: "14.0")
     @Available(visionOS, introduced: "1.0")
+    @Available(watchOS, introduced: "10.0")
     @Available(swift, introduced: "5.9")
     @Available(Xcode, introduced: "15.0")
     @DocumentationExtension(mergeBehavior: override)
@@ -20,24 +21,24 @@ Defines the background appearance for page control dots.
 
 ## Overview
 
-The `PKPageControlBackgroundStyle` enum in the `PagerKit` framework specifies the background style for page control dots in a `PKPagesView`. It provides three cases: `automatic`, `minimal`, and `prominent`. The `prominent` style displays a light grey background behind the control dots, while the `minimal` style shows only the dots without a background. The `automatic` style adapts to the platform: on iOS and iPadOS, a background appears when dragging over the dots (pressed state) and is hidden otherwise (normal state); on macOS, it behaves like `minimal` (no background); on tvOS, it behaves like `prominent` (always showing a background); and on visionOS, it shows a `prominent` background during drag interactions and `minimal` when not dragging. When UIKit is available (on iOS, iPadOS, tvOS, and visionOS), the enum maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property, with `caseFor(uiKitValue:)` enabling conversion from UIKit styles, defaulting to `automatic` for unknown cases. This enum is essential for customizing the visual presentation of page control indicators in tab-based navigation.
+The PKPageControlBackgroundStyle enum in the PagerKit framework customizes the background style for page control dots in a PKPagesView. It includes three cases: prominent (light grey background), minimal (dots only, no background), and automatic (platform-adaptive: background on drag for iOS/iPadOS, minimal on macOS/watchOS/visionOS, prominent on tvOS). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to UIPageControl.BackgroundStyle via uiKitValue, with caseFor(uiKitValue:) converting UIKit styles, defaulting to automatic.
 
 ### Cases
 | Case | Description |
 |------|-------------|
-| `automatic` | Adapts background behavior to the platform: shows a background on drag for iOS/iPadOS, acts as `minimal` on macOS, acts as `prominent` on tvOS, and toggles between `prominent` (drag) and `minimal` (no drag) on visionOS. |
+| `automatic` | Adapts background behavior to the platform: shows a background on drag for iOS/iPadOS, acts as `minimal` on macOS, watchOS, and visionOS, and acts as `prominent` on tvOS. |
 | `minimal` | Displays only the page control dots without a background. |
 | `prominent` | Displays a light grey background behind the page control dots. |
 
-### Properties
+### Private Properties
 | Property Name | Type | Description |
 |---------------|------|-------------|
-| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps the `PKPageControlBackgroundStyle` case to a UIKit background style (available when UIKit is imported, not on macOS). |
+| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps the `PKPageControlBackgroundStyle` case to a UIKit background style (available when UIKit is imported, not on macOS or watchOS). |
 
-### Static Methods
+### Private Static Methods
 | Method Name | Return Type | Description |
 |-------------|-------------|-------------|
-| `caseFor(uiKitValue:)` | `PKPageControlBackgroundStyle` | Converts a `UIPageControl.BackgroundStyle` to a `PKPageControlBackgroundStyle`, defaulting to `automatic` for unknown values (available when UIKit is imported, not on macOS). |
+| `caseFor(uiKitValue:)` | `PKPageControlBackgroundStyle` | Converts a `UIPageControl.BackgroundStyle` to a `PKPageControlBackgroundStyle`, defaulting to `automatic` for unknown values (available when UIKit is imported, not on macOS or watchOS). |
 
 ## Preview
 
@@ -52,7 +53,7 @@ struct ContentView: View {
             PKPage { Text("Page 1").font(.title) }
             PKPage { Text("Page 2").font(.title) }
         }
-        .pageControlBackgroundStyle(.prominent) // Always show light grey background
+        .pkPageControlBackgroundStyle(.prominent) // Always show light grey background
     }
 }
 ```
@@ -61,74 +62,49 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `PKPageControlBackgroundStyle` defines the appearance of page control dots, with the `automatic` style showing a background during drag interactions (pressed state) and no background otherwise (normal state). The `minimal` style displays only the dots, and the `prominent` style includes a light grey background.
+        On iOS, the `PKPageControlBackgroundStyle` defines the appearance of page control dots, with the `automatic` style showing a background during drag interactions (pressed state) and no background when static. The `minimal` style displays only the dots, and the `prominent` style includes a light grey background.
         @TabNavigator {
-            @Tab("Normal") {
-                The normal state applies when the page control dots are not being interacted with.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        No background is shown in the normal state.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatical-Normal", alt: "Automatic Normal") {
-                                    Automatic Normal
-                                }
-                            }
+            @Tab("Automatic") {
+                The `automatic` style shows no background when static and a background during drag interactions.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatical-Static", alt: "Automatic Static") {
+                            Static
                         }
                     }
-                    @Tab("Minimal") {
-                        No background is shown, displaying only the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Manual-Normal", alt: "Minimal Normal") {
-                                    Minimal Normal
-                                }
-                            }
-                        }
-                    }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Normal", alt: "Prominent Normal") {
-                                    Prominent Normal
-                                }
-                            }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatical-Pressed", alt: "Automatic Pressed") {
+                            Pressed
                         }
                     }
                 }
             }
-            @Tab("Pressed") {
-                The pressed state applies during drag interactions.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        A background is shown during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatical-Pressed", alt: "Automatic Pressed") {
-                                    Automatic Pressed
-                                }
-                            }
+            @Tab("Minimal") {
+                No background is shown, displaying only the dots, in both static and pressed states.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Minimal-Static", alt: "Minimal Static") {
+                            Static
                         }
                     }
-                    @Tab("Minimal") {
-                        No background is shown, even during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Manual-Pressed", alt: "Minimal Pressed") {
-                                    Minimal Pressed
-                                }
-                            }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Minimal-Pressed", alt: "Minimal Pressed") {
+                            Pressed
                         }
                     }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
-                                    Prominent Pressed
-                                }
-                            }
+                }
+            }
+            @Tab("Prominent") {
+                A light grey background is shown behind the dots in both static and pressed states.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Static", alt: "Prominent Static") {
+                            Static
+                        }
+                    }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                            Pressed
                         }
                     }
                 }
@@ -136,74 +112,49 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `PKPageControlBackgroundStyle` behaves similarly to iOS, with the `automatic` style showing a background during drag interactions (pressed state) and no background otherwise (normal state). The `minimal` style displays only the dots, and the `prominent` style includes a light grey background, optimized for larger touch interfaces.
+        On iPadOS, the `PKPageControlBackgroundStyle` behaves similarly to iOS, with the `automatic` style showing a background during drag interactions (pressed state) and no background when static. The `minimal` style displays only the dots, and the `prominent` style includes a light grey background, optimized for larger touch interfaces.
         @TabNavigator {
-            @Tab("Normal") {
-                The normal state applies when the page control dots are not being interacted with.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        No background is shown in the normal state.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Normal", alt: "Automatic Normal") {
-                                    Automatic Normal
-                                }
-                            }
+            @Tab("Automatic") {
+                The `automatic` style shows no background when static and a background during drag interactions.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Static", alt: "Automatic Static") {
+                            Static
                         }
                     }
-                    @Tab("Minimal") {
-                        No background is shown, displaying only the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Manual-Normal", alt: "Minimal Normal") {
-                                    Minimal Normal
-                                }
-                            }
-                        }
-                    }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Normal", alt: "Prominent Normal") {
-                                    Prominent Normal
-                                }
-                            }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Pressed", alt: "Automatic Pressed") {
+                            Pressed
                         }
                     }
                 }
             }
-            @Tab("Pressed") {
-                The pressed state applies during drag interactions.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        A background is shown during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatical-Pressed", alt: "Automatic Pressed") {
-                                    Automatic Pressed
-                                }
-                            }
+            @Tab("Minimal") {
+                No background is shown, displaying only the dots, in both static and pressed states.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Static", alt: "Minimal Static") {
+                            Static
                         }
                     }
-                    @Tab("Minimal") {
-                        No background is shown, even during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Manual-Pressed", alt: "Minimal Pressed") {
-                                    Minimal Pressed
-                                }
-                            }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Minimal-Pressed", alt: "Minimal Pressed") {
+                            Pressed
                         }
                     }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
-                                    Prominent Pressed
-                                }
-                            }
+                }
+            }
+            @Tab("Prominent") {
+                A light grey background is shown behind the dots in both static and pressed states.
+                @Row(numberOfColumns: 2) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
+                            Static
+                        }
+                    }
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                            Pressed
                         }
                     }
                 }
@@ -211,13 +162,13 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `PKPageControlBackgroundStyle` uses the `minimal` style for `automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. There is no pressed state distinction due to the mouse-based interaction model.
+        On macOS, the `PKPageControlBackgroundStyle` uses the `minimal` style for `automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the mouse-based interaction model.
         @TabNavigator {
             @Tab("Automatic") {
                 No background is shown, equivalent to the `minimal` style.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Automatical-Normal", alt: "Automatic") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Automatical", alt: "Automatic") {
                             Automatic
                         }
                     }
@@ -227,7 +178,7 @@ struct ContentView: View {
                 No background is shown, displaying only the dots.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Manual-Normal", alt: "Minimal") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Minimal", alt: "Minimal") {
                             Minimal
                         }
                     }
@@ -237,7 +188,7 @@ struct ContentView: View {
                 A light grey background is shown behind the dots.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Prominent-Normal", alt: "Prominent") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Prominent", alt: "Prominent") {
                             Prominent
                         }
                     }
@@ -246,13 +197,13 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `PKPageControlBackgroundStyle` uses the `prominent` style for `automatic`, always displaying a light grey background behind the page control dots, with `minimal` showing only the dots. The design is optimized for remote-based navigation, with no pressed state distinction.
+        On tvOS, the `PKPageControlBackgroundStyle` uses the `prominent` style for `automatic`, always displaying a light grey background behind the page control dots, with `minimal` showing only the dots. Only the static state is applicable due to the remote-based navigation model.
         @TabNavigator {
             @Tab("Automatic") {
                 A light grey background is shown, equivalent to the `prominent` style.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Automatical-Normal", alt: "Automatic") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Automatical", alt: "Automatic") {
                             Automatic
                         }
                     }
@@ -262,7 +213,7 @@ struct ContentView: View {
                 No background is shown, displaying only the dots.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Manual-Normal", alt: "Minimal") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Minimal", alt: "Minimal") {
                             Minimal
                         }
                     }
@@ -272,7 +223,7 @@ struct ContentView: View {
                 A light grey background is shown behind the dots.
                 @Row(numberOfColumns: 1) {
                     @Column(size: 1) {
-                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Prominent-Normal", alt: "Prominent") {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Prominent", alt: "Prominent") {
                             Prominent
                         }
                     }
@@ -281,74 +232,69 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `PKPageControlBackgroundStyle` uses the `automatic` style to toggle between a `prominent` background during drag interactions and `minimal` when not dragging. The `minimal` style shows only the dots, and `prominent` includes a light grey background, optimized for spatial interfaces.
+        On visionOS, the `PKPageControlBackgroundStyle` uses the `minimal` style for `automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the focus-based interaction model.
         @TabNavigator {
-            @Tab("Normal") {
-                The normal state applies when the page control dots are not being interacted with.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        No background is shown in the normal state.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical-Normal", alt: "Automatic Normal") {
-                                    Automatic Normal
-                                }
-                            }
-                        }
-                    }
-                    @Tab("Minimal") {
-                        No background is shown, displaying only the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Manual-Normal", alt: "Minimal Normal") {
-                                    Minimal Normal
-                                }
-                            }
-                        }
-                    }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent-Normal", alt: "Prominent Normal") {
-                                    Prominent Normal
-                                }
-                            }
+            @Tab("Automatic") {
+                No background is shown, equivalent to the `minimal` style.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical", alt: "Automatic") {
+                            Automatic
                         }
                     }
                 }
             }
-            @Tab("Pressed") {
-                The pressed state applies during drag interactions.
-                @TabNavigator {
-                    @Tab("Automatic") {
-                        A background is shown during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatical-Pressed", alt: "Automatic Pressed") {
-                                    Automatic Pressed
-                                }
-                            }
+            @Tab("Minimal") {
+                No background is shown, displaying only the dots.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Minimal", alt: "Minimal") {
+                            Minimal
                         }
                     }
-                    @Tab("Minimal") {
-                        No background is shown, even during drag interactions.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Manual-Pressed", alt: "Minimal Pressed") {
-                                    Minimal Pressed
-                                }
-                            }
+                }
+            }
+            @Tab("Prominent") {
+                A light grey background is shown behind the dots.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent", alt: "Prominent") {
+                            Prominent
                         }
                     }
-                    @Tab("Prominent") {
-                        A light grey background is shown behind the dots.
-                        @Row(numberOfColumns: 1) {
-                            @Column(size: 1) {
-                                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent-Pressed", alt: "Prominent Pressed") {
-                                    Prominent Pressed
-                                }
-                            }
+                }
+            }
+        }
+    }
+    @Tab("watchOS") {
+        On watchOS, the `PKPageControlBackgroundStyle` uses the `minimal` style for `automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the touch-based interaction model on small screens.
+        @TabNavigator {
+            @Tab("Automatic") {
+                No background is shown, equivalent to the `minimal` style.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Automatical", alt: "Automatic") {
+                            Automatic
+                        }
+                    }
+                }
+            }
+            @Tab("Minimal") {
+                No background is shown, displaying only the dots.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Minimal", alt: "Minimal") {
+                            Minimal
+                        }
+                    }
+                }
+            }
+            @Tab("Prominent") {
+                A light grey background is shown behind the dots.
+                @Row(numberOfColumns: 1) {
+                    @Column(size: 1) {
+                        @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Prominent", alt: "Prominent") {
+                            Prominent
                         }
                     }
                 }
@@ -360,4 +306,6 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/SKNavigationButtonStyle``
+- ``PagerKit/PKPageControlBackgroundStyle/automatic``
+- ``PagerKit/PKPageControlBackgroundStyle/minimal``
+- ``PagerKit/PKPageControlBackgroundStyle/prominent``

@@ -201,7 +201,7 @@ public struct PKPagesView: View {
                 }
                 .ignoresSafeArea()
             }
-            .tkPageDuration(3)
+            .pkPageDuration(3)
             PKPage {
                 ZStack {
                     Color.green
@@ -209,20 +209,20 @@ public struct PKPagesView: View {
                 }
                 .ignoresSafeArea()
             }
-            .tkPageDuration(3)
+            .pkPageDuration(3)
             PKPage {
                 ZStack {
                     Color.orange
                     Text("Tomato")
                 }
             }
-            .tkPageDuration(3)
+            .pkPageDuration(3)
         }
-        .tkOnManualPageChange { _, new in let n: Int = new;  print("Manual change") }
-        .tkOnAutoPageChange { _, new in let n: Int = new;  print("Auto change") }
-        .tkPageNavigationOrientation(.horizontal)
-        .tkPageControlAlignment(.bottom)
-        .tkPageControlDirection(.natural)
+        .pkOnManualPageChange { _, new in let n: Int = new;  print("Manual change") }
+        .pkOnAutoPageChange { _, new in let n: Int = new;  print("Auto change") }
+        .pkPageNavigationOrientation(.horizontal)
+        .pkPageControlAlignment(.bottom)
+        .pkPageControlDirection(.natural)
         .ignoresSafeArea()
     }
 }

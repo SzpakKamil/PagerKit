@@ -198,7 +198,7 @@ struct PKPagesControlView: View{
             Text("Page3")
         }
     }
-    .tkPageControlBackgroundStyle(.prominent)
+    .pkPageControlBackgroundStyle(.prominent)
 }
 
 
