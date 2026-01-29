@@ -26,7 +26,7 @@ public extension PKPagesView{
         return copy
     }
     
-    func pkPageFooterViewAlignment(spacing: CGFloat, _ alignment: Alignment = .bottomLeading) -> Self{
+    func pkPageFooterViewAlignment(spacing: CGFloat, alignment: Alignment = .bottomLeading) -> Self{
         var copy = self
         copy.pageControlStyle.footerAlignment = alignment
         copy.pageControlStyle.footerSpacing = spacing
