@@ -14,14 +14,14 @@ public extension TKPagesView{
         return copy
     }
     func tkPageNavigationOrientation(_ orientation: UIPageViewController.NavigationOrientation) -> Self{
-        let copy = self
+        var copy = self
         copy.options.orientation = orientation
         return copy
     }
     
     
     func tkPageOptions(_ options: [UIPageViewController.OptionsKey : Any]?) -> Self{
-        let copy = self
+        var copy = self
         copy.options.options = options
         return copy
     }
@@ -135,7 +135,28 @@ public extension TKPage{
     @available(iOS 17.0, *)
     func tkPageDuration(_ duration: Double?) -> Self {
         var copy = self
-        copy.duration = duration
+        if let duration{
+            copy.progress = {
+                let timerProgress = UIPageControlTimerProgress(preferredDuration: duration)
+                timerProgress.resumeTimer()
+                timerProgress.resetsToInitialPageAfterEnd = true
+                return timerProgress
+            }
+        }
+        return copy
+    }
+    @available(iOS 17.0, *)
+    func tkPageProgress(_ progress: UIPageControlProgress) -> Self {
+        var copy = self
+        copy.progress = {
+            return progress
+        }
+        return copy
+    }
+    @available(iOS 17.0, *)
+    func tkPageProgress(_ progress: @escaping () -> UIPageControlProgress) -> Self {
+        var copy = self
+        copy.progress = progress
         return copy
     }
 }

@@ -10,14 +10,12 @@ import SwiftUI
 public struct TKPage {
     let content: AnyView
     let hostingViewController: UIHostingController<AnyView>
-    var duration: Double?
+    var progress: (() -> Any)?
     
     
     public init(@ViewBuilder content: () -> some View) {
         self.content = AnyView(content())
         self.hostingViewController = UIHostingController(rootView: AnyView(content()))
-        self.duration = nil
+        self.progress = nil
     }
 }
-
-
