@@ -51,12 +51,10 @@ public class TKPagesUIViewController: UIPageViewController {
         setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
         DispatchQueue.main.async{
             self.currentPageIndexBinding.wrappedValue = index
+            self.options.pageChangeFunction?(index)
         }
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
-        DispatchQueue.main.async{
-            self.options.pageChangeFunction?(index)
-        }
 
         
         if #available(iOS 17.0, *){
