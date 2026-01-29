@@ -12,7 +12,7 @@ public enum TKPageControlBackgroundStyle{
     case minimal
     case prominent
     
-    #if canImport(UIKit)
+    #if !(os(macOS) || os(watchOS))
     var uiKitValue: UIPageControl.BackgroundStyle{
         switch self{
             case .minimal:

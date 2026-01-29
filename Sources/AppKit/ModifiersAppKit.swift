@@ -5,7 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
-#if canImport(AppKit)
+#if os(macOS) || os(watchOS)
 import SwiftUI
 
 public extension TKPagesView{
@@ -58,6 +58,29 @@ public extension TKPagesView{
         copy.pageControlStyle.backgroundStyle = style
         return copy
     }
+    #if os(watchOS)
+    func tkPageControlPreferredIndicatorImage(image: UIImage?) -> Self{
+        var copy = self
+        copy.pageControlStyle.preferredIndicatorImage = image
+        return copy
+    }
+    func tkPageControlIndicator(_ image: UIImage?, forPage: Int) -> Self{
+        var copy = self
+        copy.pageControlStyle.indicatorImage[forPage] = image
+        return copy
+    }
+    func tkPageControlCurrentIndicator(_ image: UIImage?, forPage: Int) -> Self{
+        var copy = self
+        copy.pageControlStyle.currentIndicatorImage[forPage] = image
+        return copy
+    }
+    @available(iOS 16.0, tvOS 16.0, *)
+    func tkPageControlPreferredCurrentPageIndicatorImage(image: UIImage?) -> Self{
+        var copy = self
+        copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
+        return copy
+    }
+    #else
     func tkPageControlPreferredIndicatorImage(image: NSImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
@@ -79,6 +102,7 @@ public extension TKPagesView{
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
+    #endif
     @available(iOS 16.0, tvOS 16.0, *)
     func tkPageControlDirection(_ direction: TKPageControlDirection) -> Self{
         var copy = self

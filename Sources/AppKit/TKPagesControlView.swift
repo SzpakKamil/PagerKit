@@ -5,7 +5,7 @@
 //  Created by Kamil Szpak on 06/10/2025.
 //
 
-#if canImport(AppKit)
+#if os(macOS) || os(watchOS)
 
 import SwiftUI
 
@@ -25,9 +25,9 @@ struct TKPagesControlView: View{
                 return .clear
             case .prominent:
                 if colorScheme == .dark{
-                    return .white
+                    return .white.opacity(0.1)
                 }else{
-                    return .black
+                    return .black.opacity(0.1)
                     
                 }
         }
@@ -51,7 +51,7 @@ struct TKPagesControlView: View{
                     }
                 }
                 .padding(5)
-                .background(invertedPrimary.opacity(0.1))
+                .background(invertedPrimary)
                 .clipShape(.capsule)
                 .padding(.all, style.spacing)
             case .topToBottom, .bottomToTop:
@@ -61,7 +61,7 @@ struct TKPagesControlView: View{
                     }
                 }
                 .padding(5)
-                .background(invertedPrimary.opacity(0.1))
+                .background(invertedPrimary)
                 .clipShape(.capsule)
                 .padding(.all, style.spacing)
         }
@@ -109,30 +109,62 @@ struct TKPagesControlView: View{
             }else{
                 ZStack(alignment: isForward ? .leading : .trailing) {
                     if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
+                        #if os(watchOS)
+                        Image(uiImage: specifiedImage)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        #else
                         Image(nsImage: specifiedImage)
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        #endif
+
+
                     }else if let preferedImage = style.preferredIndicatorImage{
+                        #if os(watchOS)
+                        Image(uiImage: preferedImage)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        #else
                         Image(nsImage: preferedImage)
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                        #endif
                     }else{
                         Capsule()
                             .fill(style.indicatorTintColor ?? Color.secondary)
                     }
                     if currentSelectedElement == index{
                         if let specifiedImageValue = style.currentIndicatorImage[index], let specifiedImage = specifiedImageValue{
+                            #if os(watchOS)
+                            Image(uiImage: specifiedImage)
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                            #else
                             Image(nsImage: specifiedImage)
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                            #endif
+
                         }else if let preferedImage = style.preferredCurrentPageIndicatorImage{
+                            #if os(watchOS)
+                            Image(uiImage: preferedImage)
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                            #else
                             Image(nsImage: preferedImage)
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                            #endif
+
                         }else{
                             Capsule()
                                 .fill(style.currentPageIndicatorTintColor ?? Color.primary)
@@ -150,42 +182,6 @@ struct TKPagesControlView: View{
     }
 }
 
-#Preview {
-    TKPagesView{
-        TKPage{
-            ZStack{
-                Color.white
-                Text("Apple")
-            }
-            .ignoresSafeArea()
-        }
-        .tkPageDuration(1)
-        TKPage{
-            ZStack{
-                Color.green
-                Text("Banana")
-            }
-            .ignoresSafeArea()
-        }
-        .tkPageDuration(1)
-        TKPage{
-            ZStack{
-                Color.orange
-                Text("Tomato")
-            }
-            .ignoresSafeArea()
-        }
-        .tkPageDuration(1)
-    }
-    .tkPageControlAlignment(spacing: 5, alignment: .leading)
-    .tkPageControlBackgroundStyle(.prominent)
-    .tkPageControlDirection(.topToBottom)
-    .tkPageControlPreferredCurrentPageIndicatorImage(image: NSImage(systemSymbolName: "bus", accessibilityDescription: ""))
-    .tkPageControlPreferredIndicatorImage(image: NSImage(systemSymbolName: "car", accessibilityDescription: ""))
-}
-
-#endif
-
 #Preview{
     TKPagesView {
         TKPage {
@@ -200,3 +196,7 @@ struct TKPagesControlView: View{
     }
     .tkPageControlBackgroundStyle(.prominent)
 }
+
+
+#endif
+

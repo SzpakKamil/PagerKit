@@ -14,7 +14,7 @@ public enum TKPageControlDirection{
     case topToBottom
     case bottomToTop
     
-#if canImport(UIKit)
+#if !(os(macOS) || os(watchOS))
     @available(iOS 16.0, tvOS 16.0, *)
     var uiKitValue: UIPageControl.Direction{
         switch self {

@@ -7,7 +7,7 @@ let package = Package(
     name: "TabKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v14), .tvOS(.v14), .visionOS(.v1), .macOS(.v14)
+        .iOS(.v14), .tvOS(.v14), .visionOS(.v1), .macOS(.v14), .watchOS(.v10)
     ],
     products: [
         .library(name: "TabKit", targets: ["TabKit"])
