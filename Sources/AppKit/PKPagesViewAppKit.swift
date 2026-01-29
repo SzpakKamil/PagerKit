@@ -201,7 +201,8 @@ public struct PKPagesView: View {
         for (index, page) in self.pages.enumerated() {
             if let currentIndicatorImage = page.currentIndicatorImage{
                 pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
-            }else if let indicatorImage = page.indicatorImage{
+            }
+            if let indicatorImage = page.indicatorImage{
                 pageControlStyle.indicatorImage[index] = indicatorImage
             }
         }
@@ -215,7 +216,8 @@ public struct PKPagesView: View {
         for (index, page) in self.pages.enumerated() {
             if let currentIndicatorImage = page.currentIndicatorImage{
                 pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
-            }else if let indicatorImage = page.indicatorImage{
+            }
+            if let indicatorImage = page.indicatorImage{
                 pageControlStyle.indicatorImage[index] = indicatorImage
             }
         }
