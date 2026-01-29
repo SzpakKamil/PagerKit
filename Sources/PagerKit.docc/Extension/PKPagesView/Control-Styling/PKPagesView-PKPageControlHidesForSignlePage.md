@@ -39,7 +39,7 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
+            PKPage { Text("Page 1") }
         }
         .pkPageControlHidesForSignlePage(true)
     }
