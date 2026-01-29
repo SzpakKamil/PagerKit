@@ -32,6 +32,8 @@ public class TKPageViewController: UIViewController{
         
         view.backgroundColor = .clear
         
+        view.insetsLayoutMarginsFromSafeArea = false
+        
         NSLayoutConstraint.activate([
             hostingView.topAnchor.constraint(equalTo: view.topAnchor),
             hostingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -57,5 +59,4 @@ public class TKPageViewController: UIViewController{
         page.hostingViewController.view.layoutIfNeeded()
     }
 }
-
 
