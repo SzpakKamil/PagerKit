@@ -27,11 +27,25 @@ public extension PKPagesView{
         return copy
     }
 
+    func pkPageFooterViewAlignment(_ alignment: Alignment = .bottomLeading) -> Self{
+        var copy = self
+        copy.pageControlStyle.alignment = alignment
+        return copy
+    }
+    
+    func pkPageFooterViewAlignment(spacing: CGFloat, _ alignment: Alignment = .bottomLeading) -> Self{
+        var copy = self
+        copy.pageControlStyle.footerAlignment = alignment
+        copy.pageControlStyle.footerSpacing = spacing
+        return copy
+    }
+    
     func pkPageControlAlignment(_ alignment: Alignment = .bottom) -> Self{
         var copy = self
         copy.pageControlStyle.alignment = alignment
         return copy
     }
+
     func pkPageControlAlignment(spacing: CGFloat, alignment: Alignment = .bottom) -> Self{
         var copy = self
         copy.pageControlStyle.alignment = alignment
@@ -171,6 +185,13 @@ public extension PKPage{
     func pkPageIndicatorImage(_ image: UIImage?) -> Self{
         var copy = self
         copy.indicatorImage = image
+        return copy
+    }
+    
+    func pkPageFooter(@ViewBuilder _ view: () -> some View ) -> Self{
+        var copy = self
+        copy.footerView = AnyView(view())
+        copy.footerViewController = UIHostingController(rootView: AnyView(view()))
         return copy
     }
     

@@ -12,20 +12,23 @@ public struct PKPage {
     let content: AnyView
     #if !(os(macOS) || os(watchOS))
     let hostingViewController: UIHostingController<AnyView>
+    var footerViewController: UIHostingController<AnyView>?
     var indicatorImage: UIImage?
     var currentIndicatorImage: UIImage?
     #else
     var indicatorImage: Image?
     var currentIndicatorImage: Image?
     #endif
-
+    var footerView: AnyView?
     var progress: (() -> Any)?
     
     
     public init(@ViewBuilder content: () -> some View) {
         self.content = AnyView(content())
+        self.footerView = nil
         #if !(os(macOS) || os(watchOS))
         self.hostingViewController = UIHostingController(rootView: AnyView(content()))
+        self.footerViewController = nil
         #endif
         self.indicatorImage = nil
         self.currentIndicatorImage = nil

@@ -36,7 +36,6 @@ class PKPagesUIViewController: UIPageViewController {
         self.delegate = self
         self.view.backgroundColor = .clear
         configuratePageControl()
-        print("View Dit load")
         navigateToPage(0, isManualChange: false)
     }
 
@@ -55,16 +54,15 @@ class PKPagesUIViewController: UIPageViewController {
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse
         setViewControllers([targetViewController], direction: direction, animated: true, completion: nil)
         let lastIndex = lastValueOfCurrentPageIndex
-        DispatchQueue.main.async{
+        DispatchQueue.main.async {
             self.currentPageIndexBinding.wrappedValue = index
-            if isManualChange{
+            if isManualChange {
                 self.options.pageManualChangeIndexFunction?(lastIndex, index)
                 self.options.pageManualChangeDirectionFunction?(index, .caseFor(uiKitValue: direction))
-            }else{
+            } else {
                 self.options.pageAutoChangeIndexFunction?(lastIndex, index)
                 self.options.pageAutoChangeDirectionFunction?(index, .caseFor(uiKitValue: direction))
             }
-
         }
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
@@ -74,7 +72,6 @@ class PKPagesUIViewController: UIPageViewController {
         isHandlingManualChange = true
     }
     @objc private func pageControlHandle(sender: UIPageControl){
-        print("Page Control")
         navigateToPage(sender.currentPage, isManualChange: isHandlingManualChange)
         isHandlingManualChange = false
     }

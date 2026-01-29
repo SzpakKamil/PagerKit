@@ -32,7 +32,6 @@ extension PKPagesUIViewController: UIPageViewControllerDelegate {
             let currentViewController = (pageViewController.viewControllers?.first as? PKPageViewController),
             let destinationViewController = pendingViewControllers.first as? PKPageViewController
         else { return }
-        print(currentViewController.isMovingToParent)
         if #available(iOS 17.0, tvOS 17.0, *) {
             if let progress = self.pageControl.progress as? UIPageControlTimerProgress{
                 progress.pauseTimer()

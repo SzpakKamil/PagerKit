@@ -30,6 +30,9 @@ struct PKPageControlStyle{
     var allowsContinuousInteraction: Bool
     var alignment: Alignment
     
+    var footerAlignment: Alignment
+    var footerSpacing: CGFloat
+    
     #if !(os(macOS) || os(watchOS))
     @available(iOS 16.0, tvOS 16.0, *)
     func getDirection() -> UIPageControl.Direction{
@@ -92,13 +95,16 @@ struct PKPageControlStyle{
         self.direction = .natural
         #if os(watchOS)
         self.spacing = 8
+        self.footerSpacing = 8
         #else
         self.spacing = 12
+        self.footerSpacing = 15
         #endif
         
         self.indicatorImage = [:]
         self.currentIndicatorImage = [:]
         self.alignment = .bottom
+        self.footerAlignment = .bottomLeading
     }
 
 }

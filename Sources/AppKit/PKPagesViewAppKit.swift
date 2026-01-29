@@ -45,7 +45,12 @@ public struct PKPagesView: View {
                         style: pageControlStyle
                     )
                 }
-
+                if let footerView = pages[selectedIndex.wrappedValue].footerView{
+                    ZStack(alignment: pageControlStyle.footerAlignment){
+                        footerView
+                    }
+                    .padding(.all, pageControlStyle.footerSpacing)
+                }
             }
         }
         #if os(watchOS)
