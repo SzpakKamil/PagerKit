@@ -19,7 +19,7 @@ struct ContentView: View {
             PKPage { Text("Page 2") }
             PKPage { Text("Page 3") }
         }
-        .pkCurrentPageIndex($currentPage)
+        .pkCurrentPageIndex(index: $currentPage)
     }
 }
 ```

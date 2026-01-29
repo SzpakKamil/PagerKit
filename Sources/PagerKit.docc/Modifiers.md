@@ -183,7 +183,7 @@ struct ContentView: View {
                 }
             }
         }
-        .pkCurrentPageIndex($currentPage)
+        .pkCurrentPageIndex(index: $currentPage)
         .pkPageNavigationOrientation(.vertical)
         .pkPageControlIndicatorAlignment(spacing: 12, alignment: .bottom)
         .pkPageControlFooterAlignment(spacing: 8, alignment: .bottomTrailing)

@@ -26,7 +26,7 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkCurrentPageIndex($currentPage)
+        .pkCurrentPageIndex(index: $currentPage)
     }
 }
 ```

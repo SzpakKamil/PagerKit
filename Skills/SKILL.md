@@ -87,7 +87,7 @@ PKPagesView {
     PKPage { Text("Page B").font(.title) }
     PKPage { Text("Page C").font(.title) }
 }
-.pkCurrentPageIndex($currentPage) // Bind to @State
+.pkCurrentPageIndex(index: $currentPage) // Bind to @State
 .pkPageNavigationOrientation(.horizontal)
 ```
 
