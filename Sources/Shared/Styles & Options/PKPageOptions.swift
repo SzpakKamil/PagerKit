@@ -33,9 +33,7 @@ class PKPageOptions{
     }
     #endif
 
-    init(
-        pages: [PKPage],
-    ) {
+    init(pages: [PKPage]) {
         self.orientationRaw = .horizontal
         self.pages = pages
         #if !(os(macOS) || os(watchOS))

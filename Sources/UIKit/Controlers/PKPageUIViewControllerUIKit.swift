@@ -45,7 +45,6 @@ class PKPageViewController: UIViewController{
 
     }
     
-    @MainActor
     deinit {
         page.hostingViewController.willMove(toParent: nil)
         page.hostingViewController.view.removeFromSuperview()
