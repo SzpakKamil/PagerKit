@@ -48,13 +48,13 @@ public struct PKPagesView: View {
                 if let footerView = pages[selectedIndex.wrappedValue].footerView{
                     ZStack(alignment: pageControlStyle.footerAlignment){
                         footerView
+                            .padding(.all, pageControlStyle.footerSpacing)
                     }
                     .frame(
                         maxWidth: .infinity,
                         maxHeight: .infinity,
                         alignment: pageControlStyle.footerAlignment
                     )
-                    .padding(.all, pageControlStyle.footerSpacing)
                 }
             }
         }
