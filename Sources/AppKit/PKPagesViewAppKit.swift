@@ -36,7 +36,7 @@ public struct PKPagesView: View {
         GeometryReader { geo in
             ZStack(alignment: pageControlStyle.alignment) {
                 scrollContent(geo: geo)
-                if (pageControlStyle.hidesForSinglePage && pages.count >= 1) || !pageControlStyle.hidden {
+                if !pageControlStyle.hidden && (!pageControlStyle.hidesForSinglePage || pages.count > 1) {
                     PKPagesControlView(
                         currentSelectedElement: selectedIndex,
                         progress: timerProgress,
