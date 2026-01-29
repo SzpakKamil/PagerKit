@@ -14,11 +14,12 @@ struct ContentView: View {
     @State private var currentPage = 0
     
     var body: some View {
-        PKPagesView(selection: $currentPage) {
+        PKPagesView {
             PKPage { Text("Page 1") }
             PKPage { Text("Page 2") }
             PKPage { Text("Page 3") }
         }
+        .pkCurrentPageIndex(index: $currentPage)
         .pkOnManualPageChange { index, direction in
             print("User navigated to page \(index) by going \(direction).")
         }
