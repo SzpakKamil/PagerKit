@@ -159,20 +159,5 @@ struct PKPagesControlView: View{
         .buttonStyle(.plain)
     }
 }
-
-#Preview {
-    PKPagesView{
-        PKPage {
-            Text("Test")
-        }
-        PKPage {
-            Text("Test")
-        }
-        PKPage {
-            Text("Test")
-        }
-    }
-    .pkPageControlPreferredIndicatorImage(image: Image(systemName: "car"))
-}
 #endif
 
