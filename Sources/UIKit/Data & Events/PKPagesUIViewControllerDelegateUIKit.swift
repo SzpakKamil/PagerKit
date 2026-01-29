@@ -11,7 +11,7 @@ import SwiftUI
 
 /// A delegate for `UIPageViewController` that updates the current page index and page control.
 extension PKPagesUIViewController: UIPageViewControllerDelegate {
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let visibleViewController = pageViewController.viewControllers?.first as? PKPageViewController else { return }
         guard let previousVoiewController = previousViewControllers.first as? PKPageViewController else { return }
         
@@ -27,7 +27,7 @@ extension PKPagesUIViewController: UIPageViewControllerDelegate {
 
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard
             let currentViewController = (pageViewController.viewControllers?.first as? PKPageViewController),
             let destinationViewController = pendingViewControllers.first as? PKPageViewController

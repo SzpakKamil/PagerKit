@@ -46,9 +46,11 @@ struct ContentView: View {
     let items = [Item(name: "Home", uniqueId: 1), Item(name: "Profile", uniqueId: 2), Item(name: "Settings", uniqueId: 3)]
     
     var body: some View {
-        ForEach(items, id: \.uniqueId) { item in
-            PKPage {
-                Text(item.name)
+        PKPagesView{
+            ForEach(items, id: \.uniqueId) { item in
+                PKPage {
+                    Text(item.name)
+                }
             }
         }
     }
