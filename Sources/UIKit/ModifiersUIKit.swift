@@ -66,7 +66,7 @@ public extension TKPagesView{
     }
     func tkPageControlPreferredIndicatorUIImage(image: UIImage?) -> Self{
         var copy = self
-        copy.pageControlStyle.preferredIndicatorUIImage = image
+        copy.pageControlStyle.preferredIndicatorImage = image
         return copy
     }
     func tkPageControlIndicator(_ image: UIImage?, forPage: Int) -> Self{
