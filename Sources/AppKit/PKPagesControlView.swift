@@ -5,10 +5,9 @@
 //  Created by Kamil Szpak on 06/10/2025.
 //
 
-#if os(macOS) || os(watchOS)
-
 import SwiftUI
 
+#if os(macOS) || os(watchOS)
 struct PKPagesControlView: View{
     @Environment(\.colorScheme) var colorScheme
     @Binding var currentSelectedElement: Int
@@ -46,12 +45,150 @@ struct PKPagesControlView: View{
             return (0..<numberOfElements).reversed()
         }
     }
+    
+    // Represents a visible page dot with its index and scale
+    struct VisibleItem: Identifiable {
+        let id: Int
+        let index: Int
+        let scale: CGFloat
+        init(index: Int, scale: CGFloat) {
+            self.id = index
+            self.index = index
+            self.scale = scale
+        }
+    }
+
+    // Computes the list of visible indices and their scales based on current index
+    // Rules:
+    // - Show up to 6 full-size dots centered around current (3 on each side) when possible.
+    // - If near edges and there aren't 3 on one side, shift the remainder to the other side.
+    // - After those, show up to 2 more neighbors (one further each side) with scales 0.75 and 0.5 respectively when available.
+    // - Hide the rest.
+    func visibleItems() -> [VisibleItem] {
+        guard numberOfElements > 0 else { return [] }
+
+        // Build the canonical index order according to direction
+        let ordered = indicies
+
+        // In RTL or bottom-to-top, visual left/right are swapped
+        let isReversedDirection: Bool = {
+            switch style.direction {
+            case .rightToLeft, .bottomToTop:
+                return true
+            default:
+                return false
+            }
+        }()
+
+        // Map from visual order to logical index
+        // Find the position of currentSelectedElement in ordered array
+        guard let currentPos = ordered.firstIndex(of: currentSelectedElement) else {
+            // Fallback: show current only
+            return [VisibleItem(index: currentSelectedElement, scale: 1.0)]
+        }
+
+        // Determine how many full-size neighbors we can show to the left and right
+        let desiredLeft = 5
+        let desiredRight = 1
+
+        let availableLeft = max(0, currentPos - ordered.startIndex)
+        let availableRight = max(0, (ordered.endIndex - 1) - currentPos)
+
+        // Allocate left/right counts, shifting remainder to the other side if needed
+        var leftCount = min(desiredLeft, availableLeft)
+        var rightCount = min(desiredRight, availableRight)
+
+        // If one side lacks, try to shift to the other side
+        if leftCount < desiredLeft {
+            let deficit = desiredLeft - leftCount
+            let extra = min(deficit, availableRight - rightCount)
+            rightCount += max(0, extra)
+        }
+        if rightCount < desiredRight {
+            let deficit = desiredRight - rightCount
+            let extra = min(deficit, availableLeft - leftCount)
+            leftCount += max(0, extra)
+        }
+
+        // Collect indices for full-size window honoring visual direction
+        var items: [VisibleItem] = []
+
+        // Helper to append a logical position as full-size on the correct visual side
+        func addFullSize(pos: Int) {
+            let item = VisibleItem(index: ordered[pos], scale: 1.0)
+            if isReversedDirection {
+                // In reversed visual direction, increasing positions are visually left-to-right reversed
+                items.append(item)
+            } else {
+                items.append(item)
+            }
+        }
+
+        // Left logical side (positions less than currentPos)
+        if leftCount > 0 {
+            let start = currentPos - leftCount
+            for pos in start..<currentPos { addFullSize(pos: pos) }
+        }
+        // Current
+        addFullSize(pos: currentPos)
+        // Right logical side
+        if rightCount > 0 {
+            let end = currentPos + rightCount
+            if currentPos + 1 <= end {
+                for pos in (currentPos + 1)...end { addFullSize(pos: pos) }
+            }
+        }
+
+        // Helper to get the next position visually to the left/right of the current items window
+        func nextVisualPosition(onLeft: Bool) -> Int? {
+            // Determine current window bounds in `ordered` positions
+            let firstPos = items.first.flatMap { ordered.firstIndex(of: $0.index) } ?? currentPos
+            let lastPos = items.last.flatMap { ordered.firstIndex(of: $0.index) } ?? currentPos
+            if (onLeft != isReversedDirection) {
+                // Visual left corresponds to logical left when not reversed
+                let pos = firstPos - 1
+                return pos >= ordered.startIndex ? pos : nil
+            } else {
+                // Visual left corresponds to logical right when reversed
+                let pos = lastPos + 1
+                return pos < ordered.endIndex ? pos : nil
+            }
+        }
+
+        func appendScaledNeighborVisually(onLeft: Bool, scale: CGFloat) {
+            if let pos = nextVisualPosition(onLeft: onLeft) {
+                if !items.contains(where: { $0.index == ordered[pos] }) {
+                    if (onLeft != isReversedDirection) {
+                        // Insert at the beginning for visual left in normal direction
+                        items.insert(VisibleItem(index: ordered[pos], scale: scale), at: 0)
+                    } else {
+                        // Append at the end for visual left in reversed direction
+                        items.append(VisibleItem(index: ordered[pos], scale: scale))
+                    }
+                }
+            }
+        }
+
+        // Now add scaled neighbors beyond the full-size window in visual terms
+        // First outer neighbor (0.75) on each available side
+        appendScaledNeighborVisually(onLeft: true, scale: 0.75)
+        appendScaledNeighborVisually(onLeft: false, scale: 0.75)
+        // Second outer neighbor (0.5) on each available side
+        appendScaledNeighborVisually(onLeft: true, scale: 0.5)
+        appendScaledNeighborVisually(onLeft: false, scale: 0.5)
+
+        return items
+    }
+    
     var body: some View{
         switch style.direction{
             case .natural, .leftToRight, .rightToLeft:
                 HStack(spacing: 5){
-                    SwiftUI.ForEach(indicies, id: \.self){ index in
-                        button(index: index, isHorizontal: true, isForward: style.direction != .rightToLeft)
+                    SwiftUI.ForEach(visibleItems()) { item in
+                        button(index: item.index, isHorizontal: true, isForward: style.direction != .rightToLeft)
+                            .scaleEffect(item.scale)
+                            .opacity(item.scale < 1.0 ? (item.scale <= 0.5 ? 0.8 : 0.9) : 1.0)
+                            .animation(.smooth, value: currentSelectedElement)
                     }
                 }
                 .padding(5)
@@ -61,8 +198,11 @@ struct PKPagesControlView: View{
                 .padding(style.paddingEdges ?? .all, style.paddingLeght ?? 0)
             case .topToBottom, .bottomToTop:
                 VStack(spacing: 5){
-                    SwiftUI.ForEach(indicies, id: \.self){ index in
-                        button(index: index, isHorizontal: false, isForward: style.direction == .topToBottom)
+                    SwiftUI.ForEach(visibleItems()) { item in
+                        button(index: item.index, isHorizontal: false, isForward: style.direction == .topToBottom)
+                            .scaleEffect(item.scale)
+                            .opacity(item.scale < 1.0 ? (item.scale <= 0.5 ? 0.8 : 0.9) : 1.0)
+                            .animation(.smooth, value: currentSelectedElement)
                     }
                 }
                 .padding(5)
