@@ -7,7 +7,7 @@
 
 **PagerKit** is a SwiftUI package that provides a highly customizable, native page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. It leverages `UIPageViewController` for iOS, iPadOS, tvOS, and visionOS, ensuring a seamless, platform-specific experience, with a SwiftUI-reimplemented equivalent for macOS and watchOS. With extensive modifiers for styling, navigation, and interaction, `PagerKit` is ideal for creating modern, user-focused paging interfaces.
 
-For detailed documentation, visit the [PagerKit Documentation](https://kamilszpak.com/documentation/pagerkit).
+For detailed documentation, visit the [PagerKit Documentation](https://documentation.kamilszpak.com/documentation/pagerkit).
 
 ## Table of Contents
 - [Features](#features)
@@ -33,12 +33,12 @@ For detailed documentation, visit the [PagerKit Documentation](https://kamilszpa
 ## Resources
 Explore additional PagerKit resources to deepen your understanding:
 - **Documentation**: Dive into detailed PagerKit documentation.
-  - [Modifiers](https://kamilszpak.com/documentation/pagerkit/modifiers)
-  - [PKPage Model](https://kamilszpak.com/documentation/pagerkit/pkpage)
-  - [PKPageBuilder](https://kamilszpak.com/documentation/pagerkit/pkpagebuilder)
-  - [PKPageControlIndicatorDirection](https://kamilszpak.com/documentation/pagerkit/pkpagecontroldirection)
-  - [PKPageControlIndicatorBackgroundStyle](https://kamilszpak.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
-  - [PKPageDirection](https://kamilszpak.com/documentation/pagerkit/pkpagedirection)
+  - [Modifiers](https://documentation.kamilszpak.com/documentation/pagerkit/modifiers)
+  - [PKPage Model](https://documentation.kamilszpak.com/documentation/pagerkit/pkpage)
+  - [PKPageBuilder](https://documentation.kamilszpak.com/documentation/pagerkit/pkpagebuilder)
+  - [PKPageControlIndicatorDirection](https://documentation.kamilszpak.com/documentation/pagerkit/pkpagecontroldirection)
+  - [PKPageControlIndicatorBackgroundStyle](https://documentation.kamilszpak.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
+  - [PKPageDirection](https://documentation.kamilszpak.com/documentation/pagerkit/pkpagedirection)
 
 ## Usage
 The `PKPagesView` component is a SwiftUI `View` that adapts to each platform, offering a simple yet powerful API for page-based navigation and customization.
@@ -95,7 +95,7 @@ struct ContentView: View {
 ```
 
 ## Modifiers
-The `PagerKit` package offers a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView`. Below are examples from each category. For a complete list, refer to the [PagerKit Documentation](https://kamilszpak.com/documentation/pagerkit/modifiers).
+The `PagerKit` package offers a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView`. Below are examples from each category. For a complete list, refer to the [PagerKit Documentation](https://documentation.kamilszpak.com/documentation/pagerkit/modifiers).
 
 ### Pager Styling Modifiers
 - **`pkPageNavigationOrientation(_:)`**: Sets the navigation orientation (`.horizontal` or `.vertical`) for page transitions.
