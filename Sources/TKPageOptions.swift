@@ -11,7 +11,7 @@ class TKPageOptions{
     var orientation: UIPageViewController.NavigationOrientation
     var options: [UIPageViewController.OptionsKey : Any]?
     var pages: [TKPage]
-    var pageChangeFunction: ((Int) -> Void)?
+    var pageChangeFunction: ((Int, UIPageViewController.NavigationDirection) -> Void)?
     var transitionStartFunction: ((Int, Int) -> Void)?
     var transitionEndFunction: ((Int, Int) -> Void)?
 
@@ -19,7 +19,7 @@ class TKPageOptions{
         orientation: UIPageViewController.NavigationOrientation = .horizontal,
         pages: [TKPage],
         options: [UIPageViewController.OptionsKey : Any]? = nil,
-        pageChangeFunction: ((Int) -> Void)? = nil,
+        pageChangeFunction: ((Int, UIPageViewController.NavigationDirection) -> Void)? = nil,
         transitionStartFunction: ((Int, Int) -> Void)? = nil,
         transitionEndFunction: ((Int, Int) -> Void)? = nil
     ) {
