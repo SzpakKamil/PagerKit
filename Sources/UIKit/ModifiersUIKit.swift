@@ -64,7 +64,7 @@ public extension PKPagesView{
         copy.pageControlStyle.backgroundStyle = style
         return copy
     }
-    func pkPageControlPreferredIndicatorUIImage(image: UIImage?) -> Self{
+    func pkPageControlPreferredIndicatorImage(image: UIImage?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
         return copy
