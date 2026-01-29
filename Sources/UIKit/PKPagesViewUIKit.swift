@@ -98,7 +98,11 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
         uiViewController.addChild(footerVC)
         let footerView = footerVC.view!
         footerView.translatesAutoresizingMaskIntoConstraints = false
+        footerView.backgroundColor = .clear
         uiViewController.view.addSubview(footerView)
+        if uiViewController.view.backgroundColor == nil || uiViewController.view.backgroundColor == .systemBackground {
+            uiViewController.view.backgroundColor = .clear
+        }
         footerVC.didMove(toParent: uiViewController)
         coordinator.currentFooterVC = footerVC
         
@@ -113,6 +117,7 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
         
         // Remove VC/view
         if let footerVC = coordinator.currentFooterVC {
+            footerVC.view?.backgroundColor = .clear
             footerVC.willMove(toParent: nil)
             footerVC.view.removeFromSuperview()
             footerVC.removeFromParent()
@@ -371,3 +376,4 @@ public struct PKPagesView: View {
     .pkPageControlIndicatorBackgroundStyle(.prominent)
 }
 #endif
+
