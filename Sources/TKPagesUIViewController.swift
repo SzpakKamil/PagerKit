@@ -33,7 +33,7 @@ public class TKPagesUIViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         configuratePageControl()
-        navigateToPage(0)
+        navigateToPage(0, isManualChange: false)
     }
 
     private func configuratePageControl() {
@@ -44,7 +44,7 @@ public class TKPagesUIViewController: UIPageViewController {
         view.addSubview(pageControl)
     }
     
-    public func navigateToPage(_ index: Int) {
+    public func navigateToPage(_ index: Int, isManualChange: Bool) {
         guard !pages.isEmpty, index >= 0, index < pages.count else { return }
         let targetViewController = pages[index]
         let direction = index > lastValueOfCurrentPageIndex ? UIPageViewController.NavigationDirection.forward : .reverse
@@ -52,8 +52,14 @@ public class TKPagesUIViewController: UIPageViewController {
         let lastIndex = lastValueOfCurrentPageIndex
         DispatchQueue.main.async{
             self.currentPageIndexBinding.wrappedValue = index
-            self.options.pageChangeIndexFunction?(lastIndex, index)
-            self.options.pageChangeDirectionFunction?(index, direction)
+            if isManualChange{
+                self.options.pageManualChangeIndexFunction?(lastIndex, index)
+                self.options.pageManualChangeDirectionFunction?(index, direction)
+            }else{
+                self.options.pageAutoChangeIndexFunction?(lastIndex, index)
+                self.options.pageAutoChangeDirectionFunction?(index, direction)
+            }
+
         }
         lastValueOfCurrentPageIndex = index
         pageControl.currentPage = index
@@ -74,7 +80,7 @@ public class TKPagesUIViewController: UIPageViewController {
     }
     
     @objc private func pageControlHandle(sender: UIPageControl){
-        navigateToPage(sender.currentPage)
+        navigateToPage(sender.currentPage, isManualChange: true)
     }
 }
 

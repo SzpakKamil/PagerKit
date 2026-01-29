@@ -24,7 +24,7 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
         DispatchQueue.main.async{
             self.options.transitionEndFunction?(previousVoiewController.index, visibleViewController.index)
         }
-        self.navigateToPage(visibleViewController.index)
+        self.navigateToPage(visibleViewController.index, isManualChange: false)
 
     }
     

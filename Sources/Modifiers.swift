@@ -96,15 +96,27 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnPageChange(action: @escaping (_ currentIndex: Int,_ direction: UIPageViewController.NavigationDirection) -> Void) -> Self{
+    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: UIPageViewController.NavigationDirection) -> Void) -> Self{
         let copy = self
-        copy.options.pageChangeDirectionFunction = action
+        copy.options.pageManualChangeDirectionFunction = action
         return copy
     }
     
-    func tkOnPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+    func tkOnManualPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
         let copy = self
-        copy.options.pageChangeIndexFunction = action
+        copy.options.pageManualChangeIndexFunction = action
+        return copy
+    }
+    
+    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: UIPageViewController.NavigationDirection) -> Void) -> Self{
+        let copy = self
+        copy.options.pageAutoChangeDirectionFunction = action
+        return copy
+    }
+    
+    func tkOnAutoPageChange(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
+        let copy = self
+        copy.options.pageAutoChangeIndexFunction = action
         return copy
     }
     func tkOnTransitionStart(action: @escaping (_ previousIndex: Int,_ currentIndex: Int) -> Void) -> Self{
