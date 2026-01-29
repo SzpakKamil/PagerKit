@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkPageControlIndicator(_:forPage:)``
+# ``PagerKit/PKPage/pkPageIndicatorImage(_:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -6,8 +6,8 @@
     @Available(iPadOS, introduced: "14.0")
     @Available(macOS, introduced: "14.0")
     @Available(visionOS, introduced: "1.0")
-    @Available(tvOS, introduced: "14.0")
     @Available(watchOS, introduced: "10.0")
+    @Available(tvOS, introduced: "14.0")
     @Available(swift, introduced: "5.9")
     @Available(Xcode, introduced: "15.0")
     @DocumentationExtension(mergeBehavior: override)
@@ -17,20 +17,28 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Sets a custom image for a specific page indicator in the page control.
+Sets a custom image for the **inactive (non-current) page indicator** of a specific page in the page control.
 
 ## Overview
 
-The `pkPageControlIndicator(_:forPage:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures a custom image for a specific page indicator within the `PageControl` of the `PKPagesView`. It sets the `pageIndicatorImage` for a specified page index to the provided `UIImage` on iOS, iPadOS, and visionOS, or `Image` on macOS and watchOS, allowing customization of the indicator dot for a specific page. If `nil`, the default system dot is used for that page.
+The `pkPageIndicatorImage(_:)` modifier, applied to a ``PKPage`` inside a ``PKPagesView``, lets you define a **custom image for the page indicator when the page is not currently selected**.
+
+- Use `UIImage?` on **iOS, iPadOS, tvOS, and visionOS**
+- Use `Image?` on **macOS and watchOS**
+- Pass `nil` to fall back to the default system dot
+
+This modifier is ideal for creating thematic or branded page indicators—such as using icons like stars, circles, or custom assets—while keeping the **current page indicator** distinct via `.pkPageCurrentIndicatorImage(_:)`.
+
+> This affects **only the inactive state**. Use ``.pkPageCurrentIndicatorImage(_:)`` for the active/selected appearance.
 
 ## Parameters
 
-| Name | Type | Description |
-|------|------|-------------|
-| `image` | `UIImage?` or `Image?` | The custom image for the page indicator at the specified page index. Use `UIImage` on iOS, iPadOS, and visionOS; use `Image` on macOS and watchOS. If `nil`, the default system dot is used for the page. |
-| `page` | `Int` | The index of the page for which to set the custom indicator image. |
+| Name   | Type                   | Description |
+|--------|------------------------|-------------|
+| `image`| `UIImage?` or `Image?` | The image to display when this page is **not** the current page. `nil` restores the default system indicator. |
 
 ## Example Usage
+
 
 ```swift
 import SwiftUI
@@ -39,22 +47,32 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page1").font(.title) }
-            PKPage { Text("Page2").font(.title) }
-            PKPage { Text("Page3").font(.title) }
+            PKPage {
+                Text("Page 1")
+                    .font(.title)
+            }
+
+            PKPage {
+                Text("Page 2")
+                    .font(.title)
+            }
+
+            PKPage {
+                Text("Page 3")
+                    .font(.title)
+            }
+            #if os(macOS) || os(watchOS)
+            .pkPageIndicatorImage(Image(systemName: "car"))
+            #else
+            .pkPageIndicatorImage(UIImage(systemName: "car"))
+            #endif
         }
-        #if os(macOS) || os(watchOS)
-        .pkPageControlIndicator(Image(systemName: "car"), forPage: 2)
-        #else
-        .pkPageControlIndicator(UIImage(systemName: "car"), forPage: 2)
-        #endif
     }
 }
 ```
 
-## Preview
 
-### Images
+## Preview
 
 @TabNavigator {
     @Tab("iOS") {
@@ -143,8 +161,9 @@ struct ContentView: View {
 
 ## Read Also
 
-### Related Types
-- ``PagerKit/PKPage``
+### Related Modifiers & Types
+- ``PagerKit/PKPage/pkPageCurrentIndicatorImage(_:)`` – Customizes the **current** page indicator
 - ``PagerKit/PKPagesView``
+- ``PagerKit/PKPage``
 - ``PagerKit/PKPageControlBackgroundStyle``
 - ``PagerKit/PKPageControlDirection``

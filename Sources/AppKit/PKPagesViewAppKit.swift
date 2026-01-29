@@ -185,6 +185,13 @@ public struct PKPagesView: View {
         self.customSelectedIndex = nil
         self.options = .init(pages: pages())
         self.pageControlStyle = .init()
+        for (index, page) in self.pages.enumerated() {
+            if let currentIndicatorImage = page.currentIndicatorImage{
+                pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
+            }else if let indicatorImage = page.indicatorImage{
+                pageControlStyle.indicatorImage[index] = indicatorImage
+            }
+        }
     }
 
     public init(pages: [PKPage]) {
@@ -192,6 +199,13 @@ public struct PKPagesView: View {
         self.customSelectedIndex = nil
         self.options = .init(pages: pages)
         self.pageControlStyle = .init()
+        for (index, page) in self.pages.enumerated() {
+            if let currentIndicatorImage = page.currentIndicatorImage{
+                pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
+            }else if let indicatorImage = page.indicatorImage{
+                pageControlStyle.indicatorImage[index] = indicatorImage
+            }
+        }
     }
 }
 

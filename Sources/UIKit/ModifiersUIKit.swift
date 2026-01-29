@@ -161,6 +161,20 @@ public extension PKPage{
         return copy
     }
     
+    
+    func pkPageCurrentIndicatorImage(_ image: UIImage?) -> Self{
+        var copy = self
+        copy.currentIndicatorImage = image
+        return copy
+    }
+    
+    func pkPageIndicatorImage(_ image: UIImage?) -> Self{
+        var copy = self
+        copy.indicatorImage = image
+        return copy
+    }
+    
+    
     @available(iOS 17.0, tvOS 17.0, *)
     func pkPageProgress(_ progress: @escaping () -> Double?) -> Self {
         guard let progress = progress() else { return self }

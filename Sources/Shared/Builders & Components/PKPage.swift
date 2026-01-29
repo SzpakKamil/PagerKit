@@ -12,7 +12,13 @@ public struct PKPage {
     let content: AnyView
     #if !(os(macOS) || os(watchOS))
     let hostingViewController: UIHostingController<AnyView>
+    var indicatorImage: UIImage?
+    var currentIndicatorImage: UIImage?
+    #else
+    var indicatorImage: Image?
+    var currentIndicatorImage: Image?
     #endif
+
     var progress: (() -> Any)?
     
     
@@ -21,6 +27,8 @@ public struct PKPage {
         #if !(os(macOS) || os(watchOS))
         self.hostingViewController = UIHostingController(rootView: AnyView(content()))
         #endif
+        self.indicatorImage = nil
+        self.currentIndicatorImage = nil
         self.progress = nil
     }
 }

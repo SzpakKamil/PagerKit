@@ -124,7 +124,6 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
                 }
             }
         }
-        
         if #available(iOS 16.0, tvOS 16.0, *) {
             if pageControl.direction != pageControlStyle.getDirection() {
                 pageControl.direction = pageControlStyle.getDirection()
@@ -162,7 +161,7 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
 
 public struct PKPagesView: View {
     let pages: [PKPage]
-    var pageControlStyle: PKPageControlStyle = .init()
+    var pageControlStyle: PKPageControlStyle
     var customPageIndexBinding: Binding<Int>? = nil
     let options: PKPageOptions
     @_documentation(visibility: internal)
@@ -178,11 +177,30 @@ public struct PKPagesView: View {
     public init(pages: [PKPage]) {
         self.pages = pages
         self.options = .init(pages: pages)
+        self.pageControlStyle = .init()
+        for (index, page) in self.pages.enumerated() {
+            if let currentIndicatorImage = page.currentIndicatorImage{
+                pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
+            }
+            if let indicatorImage = page.indicatorImage{
+                pageControlStyle.indicatorImage[index] = indicatorImage
+            }
+        }
+        
     }
     
     public init(@PKPageBuilder pages: () -> [PKPage]) {
         self.pages = pages()
         self.options = .init(pages: pages())
+        self.pageControlStyle = .init()
+        for (index, page) in self.pages.enumerated() {
+            if let currentIndicatorImage = page.currentIndicatorImage{
+                pageControlStyle.currentIndicatorImage[index] = currentIndicatorImage
+            }
+            if let indicatorImage = page.indicatorImage{
+                pageControlStyle.indicatorImage[index] = indicatorImage
+            }
+        }
     }
 }
 

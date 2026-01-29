@@ -39,7 +39,7 @@ struct ContentView: View {
     
     var body: some View {
         PKPagesView{
-            PKPage { Text("Page1") }
+            PKPage { Text("Page1").font(.title) }
         }
     }
 }
