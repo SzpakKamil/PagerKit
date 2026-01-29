@@ -7,11 +7,10 @@
 
 **PagerKit** is a SwiftUI package that provides a highly customizable, native page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. It leverages `UIPageViewController` for iOS, iPadOS, tvOS, and visionOS, ensuring a seamless, platform-specific experience, with a SwiftUI-reimplemented equivalent for macOS and watchOS. With extensive modifiers for styling, navigation, and interaction, `PagerKit` is ideal for creating modern, user-focused paging interfaces.
 
-For detailed documentation, visit the [PagerKit Documentation](https://example.com/documentation/pagerkit).
+For detailed documentation, visit the [PagerKit Documentation](https://kamilszpak.com/documentation/pagerkit).
 
 ## Table of Contents
 - [Features](#features)
-- [Tutorial](#tutorial)
 - [Resources](#resources)
 - [Usage](#usage)
   - [Basic Usage](#basic-usage)
@@ -31,18 +30,15 @@ For detailed documentation, visit the [PagerKit Documentation](https://example.c
 - **Platform Consistency**: Unified SwiftUI API with tailored behaviors (e.g., optimized dot layout for watchOS small screens).
 - **Flexible Layout**: Embed in custom layouts with customizable page control placement and navigation orientation.
 
-## Tutorial
-Check out the comprehensive tutorial at [PagerKit Tutorial](https://example.com/tutorials/pagerkittutorial). The tutorial guides you through building a dynamic **Pager App**, focusing on intuitive page navigation and customization.
-
 ## Resources
 Explore additional PagerKit resources to deepen your understanding:
 - **Documentation**: Dive into detailed PagerKit documentation.
-  - [Modifiers](https://example.com/documentation/pagerkit/modifiers)
-  - [PKPage Model](https://example.com/documentation/pagerkit/pkpage)
-  - [PKPageBuilder](https://example.com/documentation/pagerkit/pkpagebuilder)
-  - [PKPageControlDirection](https://example.com/documentation/pagerkit/pkpagecontroldirection)
-  - [PKPageControlBackgroundStyle](https://example.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
-  - [PKPageDirection](https://example.com/documentation/pagerkit/pkpagedirection)
+  - [Modifiers](https://kamilszpak.com/documentation/pagerkit/modifiers)
+  - [PKPage Model](https://kamilszpak.com/documentation/pagerkit/pkpage)
+  - [PKPageBuilder](https://kamilszpak.com/documentation/pagerkit/pkpagebuilder)
+  - [PKPageControlDirection](https://kamilszpak.com/documentation/pagerkit/pkpagecontroldirection)
+  - [PKPageControlBackgroundStyle](https://kamilszpak.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
+  - [PKPageDirection](https://kamilszpak.com/documentation/pagerkit/pkpagedirection)
 
 ## Usage
 The `PKPagesView` component is a SwiftUI `View` that adapts to each platform, offering a simple yet powerful API for page-based navigation and customization.
@@ -102,7 +98,7 @@ struct ContentView: View {
 ```
 
 ## Modifiers
-The `PagerKit` package offers a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView`. Below are examples from each category. For a complete list, refer to the [PagerKit Documentation](https://example.com/documentation/pagerkit/modifiers).
+The `PagerKit` package offers a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView`. Below are examples from each category. For a complete list, refer to the [PagerKit Documentation](https://kamilszpak.com/documentation/pagerkit/modifiers).
 
 ### Pager Styling Modifiers
 - **`pkPageNavigationOrientation(_:)`**: Sets the navigation orientation (`.horizontal` or `.vertical`) for page transitions.
@@ -157,13 +153,13 @@ Add `PagerKit` to your project via Swift Package Manager. The minimum version re
 #### In `Package.swift`:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/example/PagerKit.git", from: "1.0.0")
+    .package(url: "https://github.com/SzpakKamil/PagerKit.git", from: "1.0.0")
 ]
 ```
 
 #### In Xcode:
 1. Go to **File > Swift Packages > Add Package Dependency**.
-2. Enter the URL: `https://github.com/example/PagerKit.git`.
+2. Enter the URL: `https://github.com/SzpakKamil/PagerKit.git`.
 3. Select version **1.0.0** or later.
 
 ## Requirements
