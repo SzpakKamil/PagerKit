@@ -115,12 +115,12 @@ struct ContentView: View {
         On tvOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-tvOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-tvOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
