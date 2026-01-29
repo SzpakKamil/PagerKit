@@ -67,8 +67,6 @@ import SwiftUI
 import PagerKit
 
 struct ContentView: View {
-    @State private var currentPage = 0
-    
     var body: some View {
         VStack {
             PKPagesView {
