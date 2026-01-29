@@ -35,6 +35,8 @@ public struct TKPagesView: UIViewControllerRepresentable {
         if uiViewController.lastValueOfCurrentPageIndex != customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding {
             uiViewController.navigateToPage(customPageIndexBinding?.wrappedValue ?? defaultPageIndexBinding)
         }
+        customPageIndexBinding?.wrappedValue = uiViewController.lastValueOfCurrentPageIndex
+        defaultPageIndexBinding = uiViewController.lastValueOfCurrentPageIndex
         updatePageIndicatorStyle(for: uiViewController)
     }
     
