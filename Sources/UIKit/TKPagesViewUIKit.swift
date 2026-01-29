@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 30/09/2025.
 //
 
+#if canImport(UIKit)
 import SwiftUI
 import UIKit
 
@@ -101,16 +102,16 @@ public struct TKPagesView: UIViewControllerRepresentable {
             pageControl.currentPageIndicatorTintColor = pageControlStyle.currentPageIndicatorTintUIColor
         }
         
-        if pageControl.backgroundStyle != pageControlStyle.backgroundStyle {
-            pageControl.backgroundStyle = pageControlStyle.backgroundStyle
+        if pageControl.backgroundStyle != pageControlStyle.backgroundStyle.uiKitValue {
+            pageControl.backgroundStyle = pageControlStyle.backgroundStyle.uiKitValue
         }
         
         if pageControl.allowsContinuousInteraction != pageControlStyle.allowsContinuousInteraction {
             pageControl.allowsContinuousInteraction = pageControlStyle.allowsContinuousInteraction
         }
         
-        if pageControl.preferredIndicatorImage != pageControlStyle.preferredIndicatorUIImage {
-            pageControl.preferredIndicatorImage = pageControlStyle.preferredIndicatorUIImage
+        if pageControl.preferredIndicatorImage != pageControlStyle.preferredIndicatorImage {
+            pageControl.preferredIndicatorImage = pageControlStyle.preferredIndicatorImage
         }
         
         for (page, image) in pageControlStyle.indicatorImage {
@@ -156,3 +157,4 @@ public struct TKPagesView: UIViewControllerRepresentable {
     }
     
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Kamil Szpak on 01/10/2025.
 //
 
+#if canImport(UIKit)
 import UIKit
 import SwiftUI
 
@@ -46,4 +47,4 @@ extension TKPagesUIViewController: UIPageViewControllerDelegate {
     }
     
 }
-
+#endif
