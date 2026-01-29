@@ -48,7 +48,7 @@ public struct TKPageControlStyle{
         case bottomToTop
         
         #if canImport(UIKit)
-        @available(iOS 16.0, *)
+        @available(iOS 16.0, tvOS 16.0, *)
         var uiKitValue: UIPageControl.Direction{
             switch self {
             case .natural:
@@ -63,7 +63,7 @@ public struct TKPageControlStyle{
                 return .bottomToTop
             }
         }
-        @available(iOS 16.0, *)
+        @available(iOS 16.0, tvOS 16.0, *)
         static func caseFor(uiKitValue: UIPageControl.Direction) -> Self{
             switch uiKitValue {
             case .natural:
