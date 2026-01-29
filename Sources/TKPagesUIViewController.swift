@@ -42,6 +42,7 @@ public class TKPagesUIViewController: UIPageViewController {
         pageControl.numberOfPages = pages.count
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.addTarget(self, action: #selector(pageControlHandle), for: .touchDown)
+        pageControl.addTarget(self, action: #selector(pageChangeHandle), for: .valueChanged)
         view.addSubview(pageControl)
     }
     
@@ -83,6 +84,10 @@ public class TKPagesUIViewController: UIPageViewController {
     @objc private func pageControlHandle(sender: UIPageControl){
         print("Page Control")
         navigateToPage(sender.currentPage, isManualChange: true)
+    }
+    @objc private func pageChangeHandle(sender: UIPageControl){
+        print("Page Control")
+        navigateToPage(sender.currentPage, isManualChange: false)
     }
 }
 
