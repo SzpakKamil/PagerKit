@@ -22,7 +22,7 @@ public extension PKPagesView{
     
     func pkPageControlFooterAlignment(_ alignment: Alignment = .bottomLeading) -> Self{
         var copy = self
-        copy.pageControlStyle.indicatorAlignment = alignment
+        copy.pageControlStyle.footerAlignment = alignment
         return copy
     }
     

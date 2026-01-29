@@ -49,6 +49,11 @@ public struct PKPagesView: View {
                     ZStack(alignment: pageControlStyle.footerAlignment){
                         footerView
                     }
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: pageControlStyle.footerAlignment
+                    )
                     .padding(.all, pageControlStyle.footerSpacing)
                 }
             }
