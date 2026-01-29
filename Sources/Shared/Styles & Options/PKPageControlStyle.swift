@@ -96,8 +96,8 @@ struct PKPageControlStyle{
         self.preferredIndicatorImage = nil
         self.direction = .natural
         #if os(watchOS)
-        self.indicatorSpacing = 8
-        self.footerSpacing = 8
+        self.indicatorSpacing = 20
+        self.footerSpacing = 20
         #else
         self.indicatorSpacing = 12
         self.footerSpacing = 15
