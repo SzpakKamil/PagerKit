@@ -76,12 +76,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-iOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-iOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -91,10 +91,10 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-iPadOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-iPadOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -104,10 +104,10 @@ struct ContentView: View {
         On macOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-macOSTahoe", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-macOSTahoe", alt: "Custom") {
                     Custom
                 }
             }
@@ -117,10 +117,10 @@ struct ContentView: View {
         On tvOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-tvOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-tvOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-tvOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-tvOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -130,10 +130,10 @@ struct ContentView: View {
         On visionOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-visionOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-visionOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -143,12 +143,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for the page 2 indicator dot, changing it from a car to a star for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Default-watchOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageCurrentIndicatorImage-Custom-watchOS", alt: "Custom") {
                     Custom
                 }
             }

@@ -55,12 +55,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control when there is only one page when set to `true`.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-iOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-iOS", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-iOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-iOS", alt: "Visible") {
                     Visible
                 }
             }
@@ -70,12 +70,12 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-iPadOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-iPadOS", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-iPadOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-iPadOS", alt: "Visible") {
                     Visible
                 }
             }
@@ -85,12 +85,12 @@ struct ContentView: View {
         On macOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-macOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-macOSTahoe", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-macOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-macOSTahoe", alt: "Visible") {
                     Visible
                 }
             }
@@ -100,12 +100,12 @@ struct ContentView: View {
         On tvOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting remote-based navigation.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-tvOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-tvOS", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-tvOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-tvOS", alt: "Visible") {
                     Visible
                 }
             }
@@ -115,12 +115,12 @@ struct ContentView: View {
         On visionOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control for a single page when set to `true`, adapting to focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-visionOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-visionOS", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-visionOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-visionOS", alt: "Visible") {
                     Visible
                 }
             }
@@ -130,12 +130,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlIndicatorHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for small screens and touch-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-watchOS-Custom", alt: "Hidden") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Custom-watchOS", alt: "Hidden") {
                     Hidden
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-watchOS-Default", alt: "Visible") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorHidesForSignlePage-Default-watchOS", alt: "Visible") {
                     Visible
                 }
             }

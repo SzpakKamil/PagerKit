@@ -12,7 +12,6 @@
     @Available(swift, introduced: "5.9")
     @Available(Xcode, introduced: "15.0")
     @PageColor(green)
-    @PageImage(purpose: card, source: "PagerKitGreeting")
 }
 
 @Options {

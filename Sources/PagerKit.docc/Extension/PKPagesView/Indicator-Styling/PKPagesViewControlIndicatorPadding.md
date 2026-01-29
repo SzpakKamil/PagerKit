@@ -26,7 +26,7 @@ The `pkPageControlPadding(_:_:)` modifier adds **custom spacing** to specific ed
 - `edges`: `Edge.Set` — `.horizontal`, `.vertical`, `.leading`, `.trailing`, `.top`, `.bottom`, or combinations
 - `length`: `CGFloat` — padding amount in points
 
-> Combines with ``pkPageControlFooterAlignment`` and ``pkPageControlIndicatorAlignment`` for full layout control.
+> Combines with ``pkPageControlFooterAlignment(_:)`` and ``pkPageControlIndicatorAlignment(_:)`` for full layout control.
 
 ## Parameters
 
@@ -73,12 +73,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlPadding(_:_:)` modifier applies 20pt horizontal padding to the page control, spacing footer and indicator from screen edges.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-iOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-iOS", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-iOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-iOS", alt: "No Padding") {
                     No Padding
                 }
             }
@@ -88,12 +88,12 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlPadding(_:_:)` modifier adds 20pt horizontal spacing, ideal for split-view or multitasking layouts.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-iPadOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-iPadOS", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-iPadOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-iPadOS", alt: "No Padding") {
                     No Padding
                 }
             }
@@ -103,12 +103,12 @@ struct ContentView: View {
         On macOS, the `pkPageControlPadding(_:_:)` modifier ensures 20pt clearance from window edges during mouse interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-macOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-macOSTahoe", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-macOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-macOSTahoe", alt: "No Padding") {
                     No Padding
                 }
             }
@@ -118,12 +118,12 @@ struct ContentView: View {
         On tvOS, the `pkPageControlPadding(_:_:)` modifier provides 20pt horizontal breathing room for focus navigation and remote control.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-tvOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-tvOS", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-tvOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-tvOS", alt: "No Padding") {
                     No Padding
                 }
             }
@@ -133,12 +133,12 @@ struct ContentView: View {
         On visionOS, the `pkPageControlPadding(_:_:)` modifier adds 20pt spatial clearance, enhancing depth-aware interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-visionOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-visionOS", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-visionOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-visionOS", alt: "No Padding") {
                     No Padding
                 }
             }
@@ -148,12 +148,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlPadding(_:_:)` modifier applies compact 20pt horizontal padding on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-watchOS-Custom", alt: "With Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Custom-watchOS", alt: "With Padding") {
                     With Padding
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-watchOS-Default", alt: "No Padding") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlPadding-Default-watchOS", alt: "No Padding") {
                     No Padding
                 }
             }

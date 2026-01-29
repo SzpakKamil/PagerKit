@@ -54,12 +54,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-iOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-iOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -69,12 +69,12 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-iPadOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-iPadOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -84,12 +84,12 @@ struct ContentView: View {
         On macOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-macOSTahoe", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-macOSTahoe", alt: "Custom") {
                     Custom
                 }
             }
@@ -99,12 +99,12 @@ struct ContentView: View {
         On visionOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-visionOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-visionOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -114,12 +114,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-watchOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-watchOS", alt: "Custom") {
                     Custom
                 }
             }

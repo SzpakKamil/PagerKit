@@ -72,12 +72,12 @@ struct ContentView: View {
         On iOS, the `pkPageFooter(_:)` modifier adds a text footer ("This is Page 1") to the first page, visible only when active.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageFooter-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-iOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageFooter-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-iOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -87,10 +87,10 @@ struct ContentView: View {
         On iPadOS, the `pkPageFooter(_:)` modifier displays the per-page footer text, optimized for larger screens and dynamic type.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageFooter-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-iPadOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageFooter-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-iPadOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -100,10 +100,10 @@ struct ContentView: View {
         On macOS, the `pkPageFooter(_:)` modifier shows the footer text only on the active page, supporting mouse hover and selection.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageFooter-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-macOSTahoe", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageFooter-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-macOSTahoe", alt: "Custom") {
                     Custom
                 }
             }
@@ -113,10 +113,10 @@ struct ContentView: View {
         On tvOS, the `pkPageFooter(_:)` modifier presents the footer text with focus-based visibility and high contrast.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageFooter-tvOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-tvOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageFooter-tvOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-tvOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -126,10 +126,10 @@ struct ContentView: View {
         On visionOS, the `pkPageFooter(_:)` modifier renders the footer text with spatial awareness and focus-driven interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPage-PKPageFooter-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-visionOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPage-PKPageFooter-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-visionOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -139,12 +139,12 @@ struct ContentView: View {
         On watchOS, the `pkPageFooter(_:)` modifier adds a text footer ("This is Page 1") to the first page, visible only when active.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageFooter-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Default-watchOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPage-PKPageFooter-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPage-PKPageFooter-Custom-watchOS", alt: "Custom") {
                     Custom
                 }
             }

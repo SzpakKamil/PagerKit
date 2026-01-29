@@ -53,12 +53,12 @@ struct ContentView: View {
         On iOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Prominent-Static", alt: "Prominent Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iOS", alt: "Prominent Static") {
                     Static
                 }
             }
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Pressed-iOS", alt: "Prominent Pressed") {
                     Pressed
                 }
             }
@@ -68,10 +68,10 @@ struct ContentView: View {
         On iPadOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states, optimized for larger touch interfaces.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iPadOS", alt: "Prominent Static") {
                     Static
                 }
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Pressed-iPadOS", alt: "Prominent Pressed") {
                     Pressed
                 }
             }
@@ -81,7 +81,7 @@ struct ContentView: View {
         On macOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-macOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-macOSTahoe", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -91,7 +91,7 @@ struct ContentView: View {
         On tvOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-tvOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-tvOS", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -101,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-visionOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-visionOS", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -111,7 +111,7 @@ struct ContentView: View {
         On watchOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-watchOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-watchOS", alt: "Prominent") {
                     Prominent
                 }
             }

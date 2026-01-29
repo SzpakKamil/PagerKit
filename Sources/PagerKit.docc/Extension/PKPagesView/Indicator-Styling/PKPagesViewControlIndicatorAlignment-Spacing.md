@@ -58,7 +58,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-iOS", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -67,7 +67,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-iOS", alt: "Top") {
                             Top
                         }
                     }
@@ -76,7 +76,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-iOS", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -85,7 +85,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-iOS", alt: "Leading") {
                             Leading
                         }
                     }
@@ -94,7 +94,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-iOS", alt: "Center") {
                             Center
                         }
                     }
@@ -103,7 +103,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-iOS", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -112,7 +112,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-iOS", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -121,7 +121,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-iOS", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -130,7 +130,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-iOS", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }
@@ -144,7 +144,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-iPadOS", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -153,7 +153,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-iPadOS", alt: "Top") {
                             Top
                         }
                     }
@@ -162,7 +162,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-iPadOS", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -171,7 +171,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-iPadOS", alt: "Leading") {
                             Leading
                         }
                     }
@@ -180,7 +180,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-iPadOS", alt: "Center") {
                             Center
                         }
                     }
@@ -189,7 +189,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-iPadOS", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -198,7 +198,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-iPadOS", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -207,7 +207,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-iPadOS", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -216,7 +216,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-iPadOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-iPadOS", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }
@@ -230,7 +230,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-macOSTahoe", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -239,7 +239,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-macOSTahoe", alt: "Top") {
                             Top
                         }
                     }
@@ -248,7 +248,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-macOSTahoe", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -257,7 +257,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-macOSTahoe", alt: "Leading") {
                             Leading
                         }
                     }
@@ -266,7 +266,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-macOSTahoe", alt: "Center") {
                             Center
                         }
                     }
@@ -275,7 +275,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-macOSTahoe", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -284,7 +284,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-macOSTahoe", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -293,7 +293,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-macOSTahoe", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -302,7 +302,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-macOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-macOSTahoe", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }
@@ -316,7 +316,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-tvOS", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -325,7 +325,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-tvOS", alt: "Top") {
                             Top
                         }
                     }
@@ -334,7 +334,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-tvOS", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -343,7 +343,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-tvOS", alt: "Leading") {
                             Leading
                         }
                     }
@@ -352,7 +352,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-tvOS", alt: "Center") {
                             Center
                         }
                     }
@@ -361,7 +361,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-tvOS", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -370,7 +370,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-tvOS", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -379,7 +379,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-tvOS", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -388,7 +388,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-tvOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-tvOS", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }
@@ -402,7 +402,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-visionOS", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -411,7 +411,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-visionOS", alt: "Top") {
                             Top
                         }
                     }
@@ -420,7 +420,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-visionOS", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -429,7 +429,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-visionOS", alt: "Leading") {
                             Leading
                         }
                     }
@@ -438,7 +438,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-visionOS", alt: "Center") {
                             Center
                         }
                     }
@@ -447,7 +447,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-visionOS", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -456,7 +456,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-visionOS", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -465,7 +465,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-visionOS", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -474,7 +474,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-visionOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-visionOS", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }
@@ -488,7 +488,7 @@ struct ContentView: View {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Top-Leading", alt: "Top-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Leading-watchOS", alt: "Top-Leading") {
                             Top-Leading
                         }
                     }
@@ -497,7 +497,7 @@ struct ContentView: View {
             @Tab("Top") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Top", alt: "Top") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-watchOS", alt: "Top") {
                             Top
                         }
                     }
@@ -506,7 +506,7 @@ struct ContentView: View {
             @Tab("Top-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Top-Trailing", alt: "Top-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Top-Trailing-watchOS", alt: "Top-Trailing") {
                             Top-Trailing
                         }
                     }
@@ -515,7 +515,7 @@ struct ContentView: View {
             @Tab("Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Leading", alt: "Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Leading-watchOS", alt: "Leading") {
                             Leading
                         }
                     }
@@ -524,7 +524,7 @@ struct ContentView: View {
             @Tab("Center") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Center", alt: "Center") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Center-watchOS", alt: "Center") {
                             Center
                         }
                     }
@@ -533,7 +533,7 @@ struct ContentView: View {
             @Tab("Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Trailing", alt: "Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Trailing-watchOS", alt: "Trailing") {
                             Trailing
                         }
                     }
@@ -542,7 +542,7 @@ struct ContentView: View {
             @Tab("Bottom-Leading") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Bottom-Leading", alt: "Bottom-Leading") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Leading-watchOS", alt: "Bottom-Leading") {
                             Bottom-Leading
                         }
                     }
@@ -551,7 +551,7 @@ struct ContentView: View {
             @Tab("Bottom") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Bottom", alt: "Bottom") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-watchOS", alt: "Bottom") {
                             Bottom
                         }
                     }
@@ -560,7 +560,7 @@ struct ContentView: View {
             @Tab("Bottom-Trailing") {
                 @Row(numberOfColumns: 1) {
                     @Column {
-                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-watchOS-Bottom-Trailing", alt: "Bottom-Trailing") {
+                        @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorAlignment-Bottom-Trailing-watchOS", alt: "Bottom-Trailing") {
                             Bottom-Trailing
                         }
                     }

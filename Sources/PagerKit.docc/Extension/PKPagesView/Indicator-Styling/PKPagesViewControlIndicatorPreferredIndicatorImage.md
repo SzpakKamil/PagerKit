@@ -58,12 +58,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlIndicatorPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-iOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Custom-iOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -73,10 +73,10 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlIndicatorPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-iPadOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Custom-iPadOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -86,10 +86,10 @@ struct ContentView: View {
         On macOS, the `pkPageControlIndicatorPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-macOSTahoe", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Custom-macOSTahoe", alt: "Custom") {
                     Custom
                 }
             }
@@ -99,10 +99,10 @@ struct ContentView: View {
         On visionOS, the `pkPageControlIndicatorPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-visionOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Custom-visionOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -112,12 +112,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlIndicatorPreferredIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-watchOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Custom-watchOS", alt: "Custom") {
                     Custom
                 }
             }

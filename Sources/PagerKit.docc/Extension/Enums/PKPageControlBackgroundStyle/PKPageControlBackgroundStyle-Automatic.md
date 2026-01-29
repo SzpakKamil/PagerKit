@@ -53,12 +53,12 @@ struct ContentView: View {
         On iOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Automatic-Static", alt: "Automatic Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iOS", alt: "Automatic Static") {
                     Static
                 }
             }
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iOS-Automatic-Pressed", alt: "Automatic Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Pressed-iOS", alt: "Automatic Pressed") {
                     Pressed
                 }
             }
@@ -68,10 +68,10 @@ struct ContentView: View {
         On iPadOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static, optimized for larger touch interfaces.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Automatic-Static", alt: "Automatic Static") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iPadOS", alt: "Automatic Static") {
                     Static
                 }
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-iPadOS-Automatic-Pressed", alt: "Automatic Pressed") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Pressed-iPadOS", alt: "Automatic Pressed") {
                     Pressed
                 }
             }
@@ -81,7 +81,7 @@ struct ContentView: View {
         On macOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-macOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-macOSTahoe", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -91,7 +91,7 @@ struct ContentView: View {
         On tvOS, the `automatic` style always shows a light grey background, equivalent to the `prominent` style, due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-tvOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-tvOS", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -101,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-visionOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-visionOS", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -111,7 +111,7 @@ struct ContentView: View {
         On watchOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-watchOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-watchOS", alt: "Automatic") {
                     Automatic
                 }
             }

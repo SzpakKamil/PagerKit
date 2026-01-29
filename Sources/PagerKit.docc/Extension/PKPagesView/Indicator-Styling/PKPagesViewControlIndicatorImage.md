@@ -61,12 +61,12 @@ struct ContentView: View {
         On iOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-iOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-iOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -76,10 +76,10 @@ struct ContentView: View {
         On iPadOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-iPadOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-iPadOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -89,10 +89,10 @@ struct ContentView: View {
         On macOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-macOSTahoe", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-macOSTahoe", alt: "Custom") {
                     Custom
                 }
             }
@@ -102,10 +102,10 @@ struct ContentView: View {
         On visionOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-visionOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-visionOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -115,10 +115,10 @@ struct ContentView: View {
         On tvOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-tvOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-tvOS", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-tvOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-tvOS", alt: "Custom") {
                     Custom
                 }
             }
@@ -128,12 +128,12 @@ struct ContentView: View {
         On watchOS, the `pkPageControlIndicator(_:forPage:)` modifier sets a custom image for a specific page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Default-watchOS", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorImage-Custom-watchOS", alt: "Custom") {
                     Custom
                 }
             }
