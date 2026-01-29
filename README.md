@@ -164,7 +164,7 @@ You can install the PagerKit skill for your CLI agent to get expert guidance on 
 
 #### Using skills.sh:
 ```bash
-npx skills add kamilszpak/pagerkit
+npx skills add szpakkamil/pagerkit
 ```
 
 #### Using ClawdHub:
