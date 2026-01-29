@@ -30,7 +30,7 @@ public class TKPageViewController: UIViewController{
         view.addSubview(hostingView)
         hostingView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
             hostingView.topAnchor.constraint(equalTo: view.topAnchor),
