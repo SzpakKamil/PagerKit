@@ -52,7 +52,7 @@ struct ContentView: View {
     @Tab("iOS") {
         On iOS, the `bottomToTop` style arranges dots vertically from bottom to top.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-iOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }
@@ -62,7 +62,7 @@ struct ContentView: View {
     @Tab("iPadOS") {
         On iPadOS, the `bottomToTop` style arranges dots vertically from bottom to top, optimized for larger screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-iPadOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }
@@ -72,7 +72,7 @@ struct ContentView: View {
     @Tab("macOS") {
         On macOS, the `bottomToTop` style arranges dots vertically from bottom to top.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-macOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }
@@ -82,7 +82,7 @@ struct ContentView: View {
     @Tab("tvOS") {
         On tvOS, the `bottomToTop` style arranges dots vertically from bottom to top.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-tvOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }
@@ -92,7 +92,7 @@ struct ContentView: View {
     @Tab("visionOS") {
         On visionOS, the `bottomToTop` style arranges dots vertically from bottom to top.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-visionOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }
@@ -102,7 +102,7 @@ struct ContentView: View {
     @Tab("watchOS") {
         On watchOS, the `bottomToTop` style arranges dots vertically from bottom to top, optimized for small screens.
         @Row(numberOfColumns: 1) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPageControlDirection-watchOS-Bottom-To-Top", alt: "Bottom to Top") {
                     Bottom to Top
                 }

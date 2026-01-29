@@ -54,12 +54,12 @@ struct ContentView: View {
     @Tab("iOS") {
         On iOS, the `pkPageControlHidesForSignlePage` modifier hides the page control when there is only one page when set to `true`.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iOS-False", alt: "Visible") {
                     Visible
                 }
@@ -69,12 +69,12 @@ struct ContentView: View {
     @Tab("iPadOS") {
         On iPadOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for larger screens.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iPadOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-iPadOS-False", alt: "Visible") {
                     Visible
                 }
@@ -84,12 +84,12 @@ struct ContentView: View {
     @Tab("macOS") {
         On macOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting mouse-based navigation.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-macOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-macOS-False", alt: "Visible") {
                     Visible
                 }
@@ -99,12 +99,12 @@ struct ContentView: View {
     @Tab("tvOS") {
         On tvOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, supporting remote-based navigation.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-tvOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-tvOS-False", alt: "Visible") {
                     Visible
                 }
@@ -114,12 +114,12 @@ struct ContentView: View {
     @Tab("visionOS") {
         On visionOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, adapting to focus-based interaction.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-visionOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-visionOS-False", alt: "Visible") {
                     Visible
                 }
@@ -129,12 +129,12 @@ struct ContentView: View {
     @Tab("watchOS") {
         On watchOS, the `pkPageControlHidesForSignlePage` modifier hides the page control for a single page when set to `true`, optimized for small screens and touch-based interaction.
         @Row(numberOfColumns: 2) {
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-watchOS-True", alt: "Hidden") {
                     Hidden
                 }
             }
-            @Column(size: 1) {
+            @Column {
                 @Image(source: "Documentation-PKPages-PageControlHidesForSignlePage-watchOS-False", alt: "Visible") {
                     Visible
                 }
