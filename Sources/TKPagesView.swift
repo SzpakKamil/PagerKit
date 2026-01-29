@@ -21,6 +21,10 @@ public struct TKPagesView: UIViewControllerRepresentable {
         self.pages = pages()
         self.options = .init(pages: pages())
     }
+    public init(pages: [TKPage]) {
+        self.pages = pages
+        self.options = .init(pages: pages)
+    }
 
     public func makeUIViewController(context: Context) -> TKPagesUIViewController {
         let uiViewController = TKPagesUIViewController(
