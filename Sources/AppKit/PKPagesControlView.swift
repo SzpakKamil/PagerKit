@@ -114,24 +114,25 @@ struct PKPagesControlView: View{
                 ZStack(alignment: isForward ? .leading : .trailing) {
                     if let specifiedImageValue = style.indicatorImage[index], let specifiedImage = specifiedImageValue{
                         #if os(watchOS)
+                        
                         Image(uiImage: specifiedImage)
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                            .background(.red)
                         #else
                         Image(nsImage: specifiedImage)
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
                         #endif
-
-
                     }else if let preferedImage = style.preferredIndicatorImage{
                         #if os(watchOS)
                         Image(uiImage: preferedImage)
                             .resizable()
                             .scaledToFit()
                             .foregroundStyle(style.indicatorTintColor ?? Color.secondary)
+                            .background(.green)
                         #else
                         Image(nsImage: preferedImage)
                             .resizable()
@@ -149,6 +150,7 @@ struct PKPagesControlView: View{
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                                .background(.orange)
                             #else
                             Image(nsImage: specifiedImage)
                                 .resizable()
@@ -162,6 +164,7 @@ struct PKPagesControlView: View{
                                 .resizable()
                                 .scaledToFit()
                                 .foregroundStyle(style.currentPageIndicatorTintColor ?? Color.primary)
+                                .background(.blue)
                             #else
                             Image(nsImage: preferedImage)
                                 .resizable()
