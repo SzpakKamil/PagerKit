@@ -54,14 +54,14 @@ struct PKPageControlStyle{
         if let indicatorTintColor{
             return UIColor(indicatorTintColor)
         }else{
-            return UIColor(Color.secondary)
+            return nil
         }
     }
     var currentPageIndicatorTintUIColor: UIColor?{
         if let currentPageIndicatorTintColor{
             return UIColor(currentPageIndicatorTintColor)
         }else{
-            return UIColor(Color.primary)
+            return nil
         }
     }
     #else
