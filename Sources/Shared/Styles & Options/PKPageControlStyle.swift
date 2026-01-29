@@ -11,10 +11,12 @@ struct PKPageControlStyle{
     var hidden: Bool
     var hidesForSinglePage: Bool
     var indicatorTintColor: Color?
-    var spacing: CGFloat
+    var indicatorSpacing: CGFloat
     var currentPageIndicatorTintColor: Color?
-    var backgroundStyle: PKPageControlBackgroundStyle
-    var direction: PKPageControlDirection = .natural
+    var backgroundStyle: PKPageControlIndicatorBackgroundStyle
+    var direction: PKPageControlIndicatorDirection = .natural
+    var paddingEdges: Edge.Set?
+    var paddingLeght: CGFloat?
     #if !(os(macOS) || os(watchOS))
     var indicatorImage: [Int: UIImage?]
     var currentIndicatorImage: [Int: UIImage?]
@@ -28,7 +30,7 @@ struct PKPageControlStyle{
     #endif
 
     var allowsContinuousInteraction: Bool
-    var alignment: Alignment
+    var indicatorAlignment: Alignment
     
     var footerAlignment: Alignment
     var footerSpacing: CGFloat
@@ -94,17 +96,19 @@ struct PKPageControlStyle{
         self.preferredIndicatorImage = nil
         self.direction = .natural
         #if os(watchOS)
-        self.spacing = 8
+        self.indicatorSpacing = 8
         self.footerSpacing = 8
         #else
-        self.spacing = 12
+        self.indicatorSpacing = 12
         self.footerSpacing = 15
         #endif
         
         self.indicatorImage = [:]
         self.currentIndicatorImage = [:]
-        self.alignment = .bottom
+        self.indicatorAlignment = .bottom
         self.footerAlignment = .bottomLeading
+        self.paddingEdges = nil
+        self.paddingLeght = nil
     }
 
 }

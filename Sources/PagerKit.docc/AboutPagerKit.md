@@ -49,11 +49,11 @@ The `PagerKit` package offers modifiers for tailoring appearance, navigation, an
   - `.pkPageOptions(_:)`: Configures `UIPageViewController` options (e.g., inter-page spacing, transition style) for iOS, iPadOS, tvOS, and visionOS.
 
 - **Control Styling**:
-  - `.pkPageControlAlignment(_:)`: Sets page control alignment (e.g., `.topLeading`, `.bottom`).
-  - `.pkPageControlBackgroundStyle(_:)`: Applies background style (`.automatic`, `.minimal`, `.prominent`).
-  - `.pkPageControlDirection(_:)`: Configures dot layout direction (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
-  - `.pkPageControlCurrentIndicatorTintColor(_:)`: Sets tint color for the current page indicator.
-  - `.pkPageControlPreferredCurrentPageIndicatorImage(_:)`: Sets a custom image for the current page indicator.
+  - `.pkPageControlIndicatorAlignment(_:)`: Sets page control alignment (e.g., `.topLeading`, `.bottom`).
+  - `.pkPageControlIndicatorBackgroundStyle(_:)`: Applies background style (`.automatic`, `.minimal`, `.prominent`).
+  - `.pkPageControlIndicatorDirection(_:)`: Configures dot layout direction (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
+  - `.pkPageControlIndicatorCurrentIndicatorTintColor(_:)`: Sets tint color for the current page indicator.
+  - `.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)`: Sets a custom image for the current page indicator.
 
 - **Logic and Triggers**:
   - `.pkCurrentPageIndex(index:)`: Binds the current page index to a `Binding<Int>`.
@@ -82,17 +82,17 @@ struct ContentView: View {
                 PKPage { Text("Page 3").font(.title) }
             }
         }
-        .pkPageControlAlignment(spacing: 15, alignment: .leading)
-        .pkPageControlBackgroundStyle(.prominent)
-        .pkPageControlDirection(.topToBottom)
-        .pkPageControlCurrentIndicatorTintColor(.blue)
+        .pkPageControlIndicatorAlignment(spacing: 15, alignment: .leading)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
+        .pkPageControlIndicatorDirection(.topToBottom)
+        .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
         .pkPageControlIndicatorTintColor(.gray)
         .pkPageNavigationOrientation(.vertical)
         .pkOnManualPageChange { index, direction in
             print("Page changed to \(index) in \(direction) direction")
         }
         #if os(iOS) || os(iPadOS)
-        .pkPageControlAllowsContinuousInteraction(true)
+        .pkPageControlIndicatorAllowsContinuousInteraction(true)
         .pkPageOptions([.interPageSpacing: 20])
         #endif
     }

@@ -42,8 +42,8 @@ Whether you’re adding custom page control styles, real-time navigation callbac
     - <doc:Modifiers>
     - <doc:PKPage>
     - <doc:PKPageBuilder>
-    - <doc:PKPageControlDirection>
-    - <doc:PKPageControlBackgroundStyle>
+    - <doc:PKPageControlIndicatorDirection>
+    - <doc:PKPageControlIndicatorBackgroundStyle>
     - <doc:PKPageDirection>
 }
 
@@ -62,8 +62,8 @@ Whether you’re adding custom page control styles, real-time navigation callbac
 
 ### Options
 - ``PagerKit/PKPageDirection``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``
 
 ### Builders
 - ``PagerKit/PKPageBuilder``

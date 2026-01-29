@@ -1,4 +1,4 @@
-# ``PagerKit/PKPageControlBackgroundStyle/prominent``
+# ``PagerKit/PKPageControlIndicatorBackgroundStyle/prominent``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Displays a light grey background behind page control dots.
 
 ## Overview
 
-The `prominent` case of the `PKPageControlBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It consistently displays a light grey background behind the dots across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS), regardless of interaction state (static or pressed). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
+The `prominent` case of the `PKPageControlIndicatorBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It consistently displays a light grey background behind the dots across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS), regardless of interaction state (static or pressed). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
 
 ### Properties
 | Name | Type | Description |
@@ -41,7 +41,7 @@ struct ContentView: View {
             PKPage { Text("Page 1").font(.title) }
             PKPage { Text("Page 2").font(.title) }
         }
-        .pkPageControlBackgroundStyle(.prominent)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
     }
 }
 ```
@@ -53,12 +53,12 @@ struct ContentView: View {
         On iOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Static", alt: "Prominent Static") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Prominent-Static", alt: "Prominent Static") {
                     Static
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Prominent-Pressed", alt: "Prominent Pressed") {
                     Pressed
                 }
             }
@@ -68,10 +68,10 @@ struct ContentView: View {
         On iPadOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states, optimized for larger touch interfaces.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Prominent-Static", alt: "Prominent Static") {
                     Static
                 }
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Prominent-Pressed", alt: "Prominent Pressed") {
                     Pressed
                 }
             }
@@ -81,7 +81,7 @@ struct ContentView: View {
         On macOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-macOS-Prominent-Static", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -91,7 +91,7 @@ struct ContentView: View {
         On tvOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-tvOS-Prominent-Static", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -101,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-visionOS-Prominent-Static", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -111,7 +111,7 @@ struct ContentView: View {
         On watchOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Prominent-Static", alt: "Prominent") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-watchOS-Prominent-Static", alt: "Prominent") {
                     Prominent
                 }
             }
@@ -122,6 +122,6 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlBackgroundStyle/automatic``
-- ``PagerKit/PKPageControlBackgroundStyle/minimal``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle/automatic``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle/minimal``

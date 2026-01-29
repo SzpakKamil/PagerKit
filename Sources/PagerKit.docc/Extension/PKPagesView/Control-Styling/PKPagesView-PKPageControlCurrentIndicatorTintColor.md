@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkPageControlCurrentIndicatorTintColor(_:)``
+# ``PagerKit/PKPagesView/pkPageControlIndicatorCurrentIndicatorTintColor(_:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Sets the tint color of the page control's current page indicator.
 
 ## Overview
 
-The `pkPageControlCurrentIndicatorTintColor(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the tint color of the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `currentPageIndicatorTintColor` property of `PKPageControlStyle` to the specified `UIColor` (or `NSColor` on macOS), allowing customization of the dot representing the active page. 
+The `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the tint color of the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `currentPageIndicatorTintColor` property of `PKPageControlStyle` to the specified `UIColor` (or `NSColor` on macOS), allowing customization of the dot representing the active page. 
 
 ## Parameters
 
@@ -41,7 +41,7 @@ struct ContentView: View {
             PKPage { Text("Page 1") }
             PKPage { Text("Page 2") }
         }
-        .pkPageControlCurrentIndicatorTintColor(.red)
+        .pkPageControlIndicatorCurrentIndicatorTintColor(.red)
     }
 }
 ```
@@ -52,90 +52,90 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot.
+        On iOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-iOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-iOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot, optimized for larger screens.
+        On iPadOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-iPadOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-iPadOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for mouse-based navigation.
+        On macOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-macOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-macOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
+        On visionOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-visionOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-visionOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
+        On tvOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-tvOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-tvOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-tvOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-tvOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for touch-based interaction on small screens.
+        On watchOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-watchOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlCurrentPageTintColor-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorCurrentPageTintColor-watchOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -148,5 +148,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``

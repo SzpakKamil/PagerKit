@@ -36,8 +36,8 @@ Explore additional PagerKit resources to deepen your understanding:
   - [Modifiers](https://kamilszpak.com/documentation/pagerkit/modifiers)
   - [PKPage Model](https://kamilszpak.com/documentation/pagerkit/pkpage)
   - [PKPageBuilder](https://kamilszpak.com/documentation/pagerkit/pkpagebuilder)
-  - [PKPageControlDirection](https://kamilszpak.com/documentation/pagerkit/pkpagecontroldirection)
-  - [PKPageControlBackgroundStyle](https://kamilszpak.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
+  - [PKPageControlIndicatorDirection](https://kamilszpak.com/documentation/pagerkit/pkpagecontroldirection)
+  - [PKPageControlIndicatorBackgroundStyle](https://kamilszpak.com/documentation/pagerkit/pkpagecontrolbackgroundstyle)
   - [PKPageDirection](https://kamilszpak.com/documentation/pagerkit/pkpagedirection)
 
 ## Usage
@@ -78,10 +78,10 @@ struct ContentView: View {
                     PKPage { Text("Page 3").font(.title) }
                 }
             }
-            .pkPageControlAlignment(.center)
-            .pkPageControlBackgroundStyle(.prominent)
-            .pkPageControlDirection(.leftToRight)
-            .pkPageControlCurrentIndicatorTintColor(.blue)
+            .pkPageControlIndicatorAlignment(.center)
+            .pkPageControlIndicatorBackgroundStyle(.prominent)
+            .pkPageControlIndicatorDirection(.leftToRight)
+            .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
             .pkPageControlIndicatorTintColor(.gray)
             .pkPageNavigationOrientation(.vertical)
             .pkOnManualPageChange { index, direction in
@@ -104,27 +104,27 @@ The `PagerKit` package offers a variety of modifiers to customize the appearance
   *Available on iOS, iPadOS, tvOS, visionOS.*
 
 ### Control Styling Modifiers
-- **`pkPageControlAlignment(_:)`**: Sets the alignment of the page control (e.g., `.topLeading`, `.bottom`).
+- **`pkPageControlIndicatorAlignment(_:)`**: Sets the alignment of the page control (e.g., `.topLeading`, `.bottom`).
   *Available on iOS, iPadOS, tvOS, visionOS, macOS, watchOS.*
-- **`pkPageControlAlignment(spacing:alignment:)`**: Configures alignment with custom spacing from the screen edge.
+- **`pkPageControlIndicatorAlignment(spacing:alignment:)`**: Configures alignment with custom spacing from the screen edge.
   *Available on iOS, iPadOS, tvOS, visionOS, macOS, watchOS.*
-- **`pkPageControlBackgroundStyle(_:)`**: Applies a background style (`.automatic`, `.minimal`, `.prominent`).
+- **`pkPageControlIndicatorBackgroundStyle(_:)`**: Applies a background style (`.automatic`, `.minimal`, `.prominent`).
   *Available on iOS, iPadOS, tvOS, visionOS, macOS, watchOS.*
-- **`pkPageControlDirection(_:)`**: Sets the layout direction of page control dots (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
+- **`pkPageControlIndicatorDirection(_:)`**: Sets the layout direction of page control dots (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
   *Available on iOS, iPadOS, tvOS, visionOS, macOS, watchOS.*
-- **`pkPageControlHidesForSinglePage(_:)`**: Hides the page control for a single page.
+- **`pkPageControlIndicatorHidesForSinglePage(_:)`**: Hides the page control for a single page.
   *Available on iOS, iPadOS, tvOS, visionOS, macOS, watchOS.*
-- **`pkPageControlCurrentIndicatorTintColor(_:)`**: Sets the tint color for the current page indicator.
+- **`pkPageControlIndicatorCurrentIndicatorTintColor(_:)`**: Sets the tint color for the current page indicator.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
 - **`pkPageControlIndicatorTintColor(_:)`**: Sets the tint color for non-current page indicators.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlPreferredIndicatorImage(_:)`**: Sets a custom image for non-current page indicators.
+- **`pkPageControlIndicatorPreferredIndicatorImage(_:)`**: Sets a custom image for non-current page indicators.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlPreferredCurrentPageIndicatorImage(_:)`**: Sets a custom image for the current page indicator.
+- **`pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)`**: Sets a custom image for the current page indicator.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlCurrentIndicatorImage(_:for:)`**: Sets a custom image for the current page indicator at a specific page index.
+- **`pkPageControlIndicatorCurrentIndicatorImage(_:for:)`**: Sets a custom image for the current page indicator at a specific page index.
   *Available on iOS, iPadOS, visionOS, macOS, watchOS.*
-- **`pkPageControlAllowsContinuousInteraction(_:)`**: Enables/disables dragging across page control dots.
+- **`pkPageControlIndicatorAllowsContinuousInteraction(_:)`**: Enables/disables dragging across page control dots.
   *Available on iOS, iPadOS.*
 
 ### Logic and Trigger Modifiers

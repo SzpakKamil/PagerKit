@@ -57,7 +57,8 @@ struct PKPagesControlView: View{
                 .padding(5)
                 .background(invertedPrimary)
                 .clipShape(.capsule)
-                .padding(.all, style.spacing)
+                .padding(.all, style.indicatorSpacing)
+                .padding(style.paddingEdges ?? .all, style.paddingLeght ?? 0)
             case .topToBottom, .bottomToTop:
                 VStack(spacing: 5){
                     SwiftUI.ForEach(indicies, id: \.self){ index in
@@ -67,7 +68,8 @@ struct PKPagesControlView: View{
                 .padding(5)
                 .background(invertedPrimary)
                 .clipShape(.capsule)
-                .padding(.all, style.spacing)
+                .padding(.all, style.indicatorSpacing)
+                .padding(style.paddingEdges ?? .all, style.paddingLeght ?? 0)
         }
     }
     

@@ -1,4 +1,4 @@
-# ``PagerKit/PKPageControlDirection/leftToRight``
+# ``PagerKit/PKPageControlIndicatorDirection/leftToRight``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Arranges page control dots horizontally from left to right.
 
 ## Overview
 
-The `leftToRight` case of the `PKPageControlDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` horizontally from left to right across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.leftToRight` via the `uiKitValue` property.
+The `leftToRight` case of the `PKPageControlIndicatorDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` horizontally from left to right across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.leftToRight` via the `uiKitValue` property.
 
 ### Properties
 | Name | Type | Description |
@@ -41,7 +41,7 @@ struct ContentView: View {
             PKPage { Text("Page 1").font(.title) }
             PKPage { Text("Page 2").font(.title) }
         }
-        .pkPageControlDirection(.leftToRight)
+        .pkPageControlIndicatorDirection(.leftToRight)
     }
 }
 ```
@@ -53,7 +53,7 @@ struct ContentView: View {
         On iOS, the `leftToRight` style arranges dots horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-iOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -63,7 +63,7 @@ struct ContentView: View {
         On iPadOS, the `leftToRight` style arranges dots horizontally from left to right, optimized for larger screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-iPadOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -73,7 +73,7 @@ struct ContentView: View {
         On macOS, the `leftToRight` style arranges dots horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-macOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -83,7 +83,7 @@ struct ContentView: View {
         On tvOS, the `leftToRight` style arranges dots horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-tvOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -93,7 +93,7 @@ struct ContentView: View {
         On visionOS, the `leftToRight` style arranges dots horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-visionOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -103,7 +103,7 @@ struct ContentView: View {
         On watchOS, the `leftToRight` style arranges dots horizontally from left to right, optimized for small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-watchOS-Left-To-Right", alt: "Left to Right") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Left-To-Right", alt: "Left to Right") {
                     Left to Right
                 }
             }
@@ -114,8 +114,8 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlDirection/natural``
-- ``PagerKit/PKPageControlDirection/rightToLeft``
-- ``PagerKit/PKPageControlDirection/topToBottom``
-- ``PagerKit/PKPageControlDirection/bottomToTop``
+- ``PagerKit/PKPageControlIndicatorDirection``
+- ``PagerKit/PKPageControlIndicatorDirection/natural``
+- ``PagerKit/PKPageControlIndicatorDirection/rightToLeft``
+- ``PagerKit/PKPageControlIndicatorDirection/topToBottom``
+- ``PagerKit/PKPageControlIndicatorDirection/bottomToTop``

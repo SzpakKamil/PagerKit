@@ -43,8 +43,8 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
         }
         .pkPageNavigationOrientation(.vertical)
-        .pkPageControlAlignment(spacing: 10, alignment: .leading)
-        .pkPageControlBackgroundStyle(.prominent)
+        .pkPageControlIndicatorAlignment(spacing: 10, alignment: .leading)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
     }
 }
 ```
@@ -54,5 +54,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``

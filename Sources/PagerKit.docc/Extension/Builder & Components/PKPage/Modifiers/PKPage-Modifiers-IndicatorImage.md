@@ -29,7 +29,7 @@ The `pkPageIndicatorImage(_:)` modifier, applied to a ``PKPage`` inside a ``PKPa
 
 This modifier is ideal for creating thematic or branded page indicators—such as using icons like stars, circles, or custom assets—while keeping the **current page indicator** distinct via `.pkPageCurrentIndicatorImage(_:)`.
 
-> This affects **only the inactive state**. Use ``.pkPageCurrentIndicatorImage(_:)`` for the active/selected appearance.
+> This affects **only the inactive state**. Use ``pkPageCurrentIndicatorImage(_:)`` for the active/selected appearance.
 
 ## Parameters
 
@@ -165,5 +165,5 @@ struct ContentView: View {
 - ``PagerKit/PKPage/pkPageCurrentIndicatorImage(_:)`` – Customizes the **current** page indicator
 - ``PagerKit/PKPagesView``
 - ``PagerKit/PKPage``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``

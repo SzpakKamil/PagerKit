@@ -9,7 +9,7 @@
 import SwiftUI
 
 public extension PKPagesView{
-    func pkPageControlHidesForSignlePage(_ condition: Bool) -> Self{
+    func pkPageControlIndicatorHidesForSignlePage(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.hidesForSinglePage = condition
         return copy
@@ -20,28 +20,34 @@ public extension PKPagesView{
         return copy
     }
     
-    func pkPageFooterViewAlignment(_ alignment: Alignment = .bottomLeading) -> Self{
+    func pkPageControlFooterAlignment(_ alignment: Alignment = .bottomLeading) -> Self{
         var copy = self
-        copy.pageControlStyle.alignment = alignment
+        copy.pageControlStyle.indicatorAlignment = alignment
         return copy
     }
     
-    func pkPageFooterViewAlignment(spacing: CGFloat, alignment: Alignment = .bottomLeading) -> Self{
+    func pkPageControlFooterAlignment(spacing: CGFloat, alignment: Alignment = .bottomLeading) -> Self{
         var copy = self
         copy.pageControlStyle.footerAlignment = alignment
         copy.pageControlStyle.footerSpacing = spacing
         return copy
     }
 
-    func pkPageControlAlignment(_ alignment: Alignment = .bottom) -> Self{
+    func pkPageControlIndicatorAlignment(_ alignment: Alignment = .bottom) -> Self{
         var copy = self
-        copy.pageControlStyle.alignment = alignment
+        copy.pageControlStyle.indicatorAlignment = alignment
         return copy
     }
-    func pkPageControlAlignment(spacing: CGFloat, alignment: Alignment = .bottom) -> Self{
+    func pkPageControlPadding(_ edges: Edge.Set, _ lenght: CGFloat) -> Self{
         var copy = self
-        copy.pageControlStyle.alignment = alignment
-        copy.pageControlStyle.spacing = spacing
+        copy.pageControlStyle.paddingEdges = edges
+        copy.pageControlStyle.paddingLeght = lenght
+        return copy
+    }
+    func pkPageControlIndicatorAlignment(spacing: CGFloat, alignment: Alignment = .bottom) -> Self{
+        var copy = self
+        copy.pageControlStyle.indicatorAlignment = alignment
+        copy.pageControlStyle.indicatorSpacing = spacing
         return copy
     }
     
@@ -50,28 +56,28 @@ public extension PKPagesView{
         copy.pageControlStyle.indicatorTintColor = color
         return copy
     }
-    func pkPageControlAllowsContinuousInteraction(_ condition: Bool) -> Self{
+    func pkPageControlIndicatorAllowsContinuousInteraction(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.allowsContinuousInteraction = condition
         return copy
     }
-    func pkPageControlCurrentIndicatorTintColor(_ color: Color?) -> Self{
+    func pkPageControlIndicatorCurrentIndicatorTintColor(_ color: Color?) -> Self{
         var copy = self
         copy.pageControlStyle.currentPageIndicatorTintColor = color
         return copy
     }
-    func pkPageControlHidden(_ condition: Bool) -> Self{
+    func pkPageControlIndicatorHidden(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.hidden = condition
         return copy
     }
-    func pkPageControlBackgroundStyle(_ style: PKPageControlBackgroundStyle = .automatic) -> Self{
+    func pkPageControlIndicatorBackgroundStyle(_ style: PKPageControlIndicatorBackgroundStyle = .automatic) -> Self{
         var copy = self
         copy.pageControlStyle.backgroundStyle = style
         return copy
     }
 
-    func pkPageControlPreferredIndicatorImage(image: Image?) -> Self{
+    func pkPageControlIndicatorPreferredIndicatorImage(image: Image?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredIndicatorImage = image
         return copy
@@ -81,20 +87,20 @@ public extension PKPagesView{
         copy.pageControlStyle.indicatorImage[forPage] = image
         return copy
     }
-    func pkPageControlCurrentIndicator(_ image: Image?, forPage: Int) -> Self{
+    func pkPageControlIndicatorCurrentIndicator(_ image: Image?, forPage: Int) -> Self{
         var copy = self
         copy.pageControlStyle.currentIndicatorImage[forPage] = image
         return copy
     }
     @available(iOS 16.0, tvOS 16.0, *)
-    func pkPageControlPreferredCurrentPageIndicatorImage(image: Image?) -> Self{
+    func pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image: Image?) -> Self{
         var copy = self
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
 
     @available(iOS 16.0, tvOS 16.0, *)
-    func pkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
+    func pkPageControlIndicatorDirection(_ direction: PKPageControlIndicatorDirection) -> Self{
         var copy = self
         copy.pageControlStyle.direction = direction
         return copy

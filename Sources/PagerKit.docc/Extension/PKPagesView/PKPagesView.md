@@ -30,21 +30,21 @@ The `PKPagesViewUIKit` struct in the `PagerKit` framework is a `View` which prov
 
 | Name | Parameters | Description |
 |------|------------|-------------|
-| `pkPageControlHidesForSignlePage(_:)` | `condition: Bool` | Hides the page control when there is only one page. |
+| `pkPageControlIndicatorHidesForSignlePage(_:)` | `condition: Bool` | Hides the page control when there is only one page. |
 | `pkPageNavigationOrientation(_:)` | `orientation: Axis` | Sets the navigation orientation (horizontal or vertical). |
 | `pkPageOptions(_:)` | `options: [UIPageViewController.OptionsKey : Any]?` | Configures page view controller options. |
-| `pkPageControlAlignment(_:)` | `alignment: Alignment = .bottom` | Sets the page control alignment (e.g., top, center, bottom). |
-| `pkPageControlAlignment(spacing:alignment:)` | `spacing: CGFloat, alignment: Alignment = .bottom` | Sets alignment and spacing for the page control. |
+| `pkPageControlIndicatorAlignment(_:)` | `alignment: Alignment = .bottom` | Sets the page control alignment (e.g., top, center, bottom). |
+| `pkPageControlIndicatorAlignment(spacing:alignment:)` | `spacing: CGFloat, alignment: Alignment = .bottom` | Sets alignment and spacing for the page control. |
 | `pkPageControlIndicatorTintColor(_:)` | `color: Color? = .secondary` | Sets the tint color for non-current page indicators. |
-| `pkPageControlAllowsContinuousInteraction(_:)` | `condition: Bool` | Enables or disables continuous interaction with the page control. |
-| `pkPageControlCurrentIndicatorTintColor(_:)` | `color: Color? = .primary` | Sets the tint color for the current page indicator. |
-| `pkPageControlHidden(_:)` | `condition: Bool` | Hides or shows the page control. |
-| `pkPageControlBackgroundStyle(_:)` | `style: PKPageControlBackgroundStyle = .automatic` | Sets the background style for the page control (e.g., automatic, minimal, prominent). |
-| `pkPageControlPreferredIndicatorUIImage(image:)` | `image: UIImage?` | Sets the preferred image for page indicators. |
+| `pkPageControlIndicatorAllowsContinuousInteraction(_:)` | `condition: Bool` | Enables or disables continuous interaction with the page control. |
+| `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` | `color: Color? = .primary` | Sets the tint color for the current page indicator. |
+| `pkPageControlIndicatorHidden(_:)` | `condition: Bool` | Hides or shows the page control. |
+| `pkPageControlIndicatorBackgroundStyle(_:)` | `style: PKPageControlIndicatorBackgroundStyle = .automatic` | Sets the background style for the page control (e.g., automatic, minimal, prominent). |
+| `pkPageControlIndicatorPreferredIndicatorUIImage(image:)` | `image: UIImage?` | Sets the preferred image for page indicators. |
 | `pkPageControlIndicator(_:forPage:)` | `image: UIImage?, forPage: Int` | Sets a specific image for a page’s indicator. |
-| `pkPageControlCurrentIndicator(_:forPage:)` | `image: UIImage?, forPage: Int` | Sets a specific image for a page’s current indicator. |
-| `pkPageControlPreferredCurrentPageIndicatorImage(image:)` | `image: UIImage?` | Sets the preferred image for the current page indicator (iOS 16.0, tvOS 16.0+). |
-| `pkPageControlDirection(_:)` | `direction: PKPageControlDirection` | Sets the layout direction for page control dots (iOS 16.0, tvOS 16.0+). |
+| `pkPageControlIndicatorCurrentIndicator(_:forPage:)` | `image: UIImage?, forPage: Int` | Sets a specific image for a page’s current indicator. |
+| `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)` | `image: UIImage?` | Sets the preferred image for the current page indicator (iOS 16.0, tvOS 16.0+). |
+| `pkPageControlIndicatorDirection(_:)` | `direction: PKPageControlIndicatorDirection` | Sets the layout direction for page control dots (iOS 16.0, tvOS 16.0+). |
 | `pkCurrentPageIndex(index:)` | `index: Binding<Int>` | Binds the current page index to a state variable. |
 | `pkOnManualPageChange(action:)` | `action: @escaping (_ currentIndex: Int, _ direction: PKPageDirection) -> Void` | Executes a closure when the page changes manually, providing the current index and direction. |
 | `pkOnManualPageChange(action:)` | `action: @escaping (_ previousIndex: Int, _ currentIndex: Int) -> Void` | Executes a closure when the page changes manually, providing previous and current indices. |
@@ -68,14 +68,14 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkPageControlAlignment(spacing: 5, alignment: .leading)
-        .pkPageControlBackgroundStyle(.prominent)
-        .pkPageControlDirection(.topToBottom)
+        .pkPageControlIndicatorAlignment(spacing: 5, alignment: .leading)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
+        .pkPageControlIndicatorDirection(.topToBottom)
         .pkPageControlIndicatorTintColor(.gray)
-        .pkPageControlCurrentIndicatorTintColor(.blue)
-        .pkPageControlHidesForSignlePage(true)
-        .pkPageControlAllowsContinuousInteraction(true)
-        .pkPageControlHidden(false)
+        .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
+        .pkPageControlIndicatorHidesForSignlePage(true)
+        .pkPageControlIndicatorAllowsContinuousInteraction(true)
+        .pkPageControlIndicatorHidden(false)
         .pkPageNavigationOrientation(.horizontal)
         .pkOnManualPageChange { currentIndex, direction in
             print("Manual page change to index \(currentIndex) in direction \(direction)")
@@ -104,19 +104,19 @@ struct ContentView: View {
 - ``PagerKit/PKPagesView/pkPageOptions(_:)``
 
 ### Control Styling
-- ``PagerKit/PKPagesView/pkPageControlAlignment(_:)``
-- ``PagerKit/PKPagesView/pkPageControlAlignment(spacing:alignment:)``
-- ``PagerKit/PKPagesView/pkPageControlBackgroundStyle(_:)``
-- ``PagerKit/PKPagesView/pkPageControlDirection(_:)``
-- ``PagerKit/PKPagesView/pkPageControlHidden(_:)``
-- ``PagerKit/PKPagesView/pkPageControlHidesForSignlePage(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAlignment(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAlignment(spacing:alignment:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorBackgroundStyle(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorDirection(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorHidden(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorHidesForSignlePage(_:)``
 - ``PagerKit/PKPagesView/pkPageControlIndicatorTintColor(_:)``
-- ``PagerKit/PKPagesView/pkPageControlCurrentIndicatorTintColor(_:)``
-- ``PagerKit/PKPagesView/pkPageControlAllowsContinuousInteraction(_:)``
-- ``PagerKit/PKPagesView/pkPageControlPreferredIndicatorImage(image:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorCurrentIndicatorTintColor(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAllowsContinuousInteraction(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorPreferredIndicatorImage(image:)``
 - ``PagerKit/PKPagesView/pkPageControlIndicator(_:forPage:)``
-- ``PagerKit/PKPagesView/pkPageControlCurrentIndicator(_:forPage:)``
-- ``PagerKit/PKPagesView/pkPageControlPreferredCurrentPageIndicatorImage(image:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorCurrentIndicator(_:forPage:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)``
 
 ### Logic and Triggers
 - ``PagerKit/PKPagesView/pkCurrentPageIndex(index:)``

@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkPageControlPreferredCurrentPageIndicatorImage(image:)``
+# ``PagerKit/PKPagesView/pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -20,7 +20,7 @@ Sets a custom image for the page control's current page indicator.
 
 ## Overview
 
-The `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures a custom image for the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `preferredCurrentPageIndicatorImage` to the specified `UIImage` on iOS, iPadOS, and visionOS, or `Image` on macOS and watchOS, allowing customization of the dot representing the active page. This modifier is not supported on tvOS. If `nil`, the default system dot is used.
+The `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures a custom image for the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `preferredCurrentPageIndicatorImage` to the specified `UIImage` on iOS, iPadOS, and visionOS, or `Image` on macOS and watchOS, allowing customization of the dot representing the active page. This modifier is not supported on tvOS. If `nil`, the default system dot is used.
 
 ## Parameters
 
@@ -41,9 +41,9 @@ struct ContentView: View {
             PKPage { Text("Page 2")}
         }
         #if os(macOS) || os(watchOS)
-        .pkPageControlPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
+        .pkPageControlIndicatorPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
         #else
-        .pkPageControlPreferredCurrentPageIndicatorImage(UIImage(systemName: "car"))
+        .pkPageControlIndicatorPreferredCurrentPageIndicatorImage(UIImage(systemName: "car"))
         #endif
     }
 }
@@ -55,69 +55,69 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot.
+        On iOS, the `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-iOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-iOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-iOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-iOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot, optimized for larger screens.
+        On iPadOS, the `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot, optimized for larger screens.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-iPadOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-iPadOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-iPadOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-iPadOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for mouse-based navigation.
+        On macOS, the `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for mouse-based navigation.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-macOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-macOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-macOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-macOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for focus-based interaction.
+        On visionOS, the `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for focus-based interaction.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-visionOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-visionOS-Default", alt: "Default") {
                     Default
                 }
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-visionOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-visionOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for touch-based interaction on small screens.
+        On watchOS, the `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(_:)` modifier sets a custom image for the current page indicator dot for touch-based interaction on small screens.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-watchOS-Default", alt: "Default") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-watchOS-Default", alt: "Default") {
                     Default
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPages-PKPageControlPreferredCurrentIndicatorImage-watchOS-Custom", alt: "Custom") {
+                @Image(source: "Documentation-PKPages-PKPageControlIndicatorPreferredCurrentIndicatorImage-watchOS-Custom", alt: "Custom") {
                     Custom
                 }
             }
@@ -130,5 +130,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``

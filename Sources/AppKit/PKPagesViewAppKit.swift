@@ -34,7 +34,7 @@ public struct PKPagesView: View {
     @_documentation(visibility: internal)
     public var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: pageControlStyle.alignment) {
+            ZStack(alignment: pageControlStyle.indicatorAlignment) {
                 scrollContent(geo: geo)
                 if !pageControlStyle.hidden && (!pageControlStyle.hidesForSinglePage || pages.count > 1) {
                     PKPagesControlView(

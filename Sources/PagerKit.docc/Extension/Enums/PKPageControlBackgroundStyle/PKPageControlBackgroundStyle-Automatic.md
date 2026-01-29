@@ -1,4 +1,4 @@
-# ``PagerKit/PKPageControlBackgroundStyle/automatic``
+# ``PagerKit/PKPageControlIndicatorBackgroundStyle/automatic``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Adapts the background appearance for page control dots based on the platform.
 
 ## Overview
 
-The `automatic` case of the `PKPageControlBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It adapts to the platform: on iOS and iPadOS, it shows a light grey background during drag interactions (pressed state) and no background when static; on macOS, watchOS, and visionOS, it behaves like `minimal` (no background); on tvOS, it behaves like `prominent` (always showing a light grey background). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
+The `automatic` case of the `PKPageControlIndicatorBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It adapts to the platform: on iOS and iPadOS, it shows a light grey background during drag interactions (pressed state) and no background when static; on macOS, watchOS, and visionOS, it behaves like `minimal` (no background); on tvOS, it behaves like `prominent` (always showing a light grey background). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
 
 ### Properties
 | Name | Type | Description |
@@ -41,7 +41,7 @@ struct ContentView: View {
             PKPage { Text("Page 1").font(.title) }
             PKPage { Text("Page 2").font(.title) }
         }
-        .pkPageControlBackgroundStyle(.automatic)
+        .pkPageControlIndicatorBackgroundStyle(.automatic)
     }
 }
 ```
@@ -53,12 +53,12 @@ struct ContentView: View {
         On iOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static.
         @Row(numberOfColumns: 2) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatic-Static", alt: "Automatic Static") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Automatic-Static", alt: "Automatic Static") {
                     Static
                 }
             }
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iOS-Automatic-Pressed", alt: "Automatic Pressed") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iOS-Automatic-Pressed", alt: "Automatic Pressed") {
                     Pressed
                 }
             }
@@ -68,10 +68,10 @@ struct ContentView: View {
         On iPadOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static, optimized for larger touch interfaces.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatic-Static", alt: "Automatic Static") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Automatic-Static", alt: "Automatic Static") {
                     Static
                 }
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-iPadOS-Automatic-Pressed", alt: "Automatic Pressed") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-iPadOS-Automatic-Pressed", alt: "Automatic Pressed") {
                     Pressed
                 }
             }
@@ -81,7 +81,7 @@ struct ContentView: View {
         On macOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the mouse-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-macOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-macOS-Automatic-Static", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -91,7 +91,7 @@ struct ContentView: View {
         On tvOS, the `automatic` style always shows a light grey background, equivalent to the `prominent` style, due to the remote-based navigation model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-tvOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-tvOS-Automatic-Static", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -101,7 +101,7 @@ struct ContentView: View {
         On visionOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the focus-based interaction model.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-visionOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-visionOS-Automatic-Static", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -111,7 +111,7 @@ struct ContentView: View {
         On watchOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the touch-based interaction model on small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlBackgroundStyle-watchOS-Automatic-Static", alt: "Automatic") {
+                @Image(source: "Documentation-PKPageControlIndicatorBackgroundStyle-watchOS-Automatic-Static", alt: "Automatic") {
                     Automatic
                 }
             }
@@ -122,6 +122,6 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlBackgroundStyle/minimal``
-- ``PagerKit/PKPageControlBackgroundStyle/prominent``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle/minimal``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle/prominent``

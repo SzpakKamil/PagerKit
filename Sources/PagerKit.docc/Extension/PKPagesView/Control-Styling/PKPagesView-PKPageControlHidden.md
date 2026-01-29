@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkPageControlHidden(_:)``
+# ``PagerKit/PKPagesView/pkPageControlIndicatorHidden(_:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Sets the visibility of the page control.
 
 ## Overview
 
-The `pkPageControlHidden(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework controls whether the `PageControl` within the `PKPagesView` is visible or hidden. It sets the `isHidden` to the specified Boolean value, determining whether the page control dots are displayed. When set to `true`, the page control is hidden, and when set to `false`, it is visible.
+The `pkPageControlIndicatorHidden(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework controls whether the `PageControl` within the `PKPagesView` is visible or hidden. It sets the `isHidden` to the specified Boolean value, determining whether the page control dots are displayed. When set to `true`, the page control is hidden, and when set to `false`, it is visible.
 
 ## Parameters
 
@@ -42,7 +42,7 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkPageControlHidden(true)
+        .pkPageControlIndicatorHidden(true)
     }
 }
 ```
@@ -53,5 +53,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``

@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkPageControlAllowsContinuousInteraction(_:)``
+# ``PagerKit/PKPagesView/pkPageControlIndicatorAllowsContinuousInteraction(_:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -17,7 +17,7 @@ Enables or disables continuous interaction with the page control.
 
 ## Overview
 
-The `pkPageControlAllowsContinuousInteraction(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures whether the `UIPageControl` within the `PKPagesView` allows continuous interaction. It sets the `allowsContinuousInteraction` to the specified Boolean value, determining whether users can drag across the page control to change pages rapidly. When set to `true`, dragging across the dots updates the current page continuously; when `false`, interaction is limited to discrete taps on individual dots. This modifier is supported only on iOS and iPadOS, as `allowsContinuousInteraction` is a UIKit-specific feature.
+The `pkPageControlIndicatorAllowsContinuousInteraction(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures whether the `UIPageControl` within the `PKPagesView` allows continuous interaction. It sets the `allowsContinuousInteraction` to the specified Boolean value, determining whether users can drag across the page control to change pages rapidly. When set to `true`, dragging across the dots updates the current page continuously; when `false`, interaction is limited to discrete taps on individual dots. This modifier is supported only on iOS and iPadOS, as `allowsContinuousInteraction` is a UIKit-specific feature.
 
 ## Parameters
 
@@ -38,9 +38,9 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkPageControlAllowsContinuousInteraction(false)
-        .pkPageControlAlignment(spacing: 15, alignment: .bottom)
-        .pkPageControlBackgroundStyle(.prominent)
+        .pkPageControlIndicatorAllowsContinuousInteraction(false)
+        .pkPageControlIndicatorAlignment(spacing: 15, alignment: .bottom)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
     }
 }
 ```
@@ -50,5 +50,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
-- ``PagerKit/PKPageControlDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``

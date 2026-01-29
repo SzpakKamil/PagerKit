@@ -22,7 +22,7 @@ Initializes a `PKPagesView` with an array of `PKPage` views.
 
 ## Overview
 
-The `init(pages:)` initializer of the `PKPagesView` struct in the `PagerKit` framework creates a SwiftUI view that displays a collection of `PKPage` views for page-based navigation. It supports customization through modifiers like `pkPageControlDirection`, `pkPageControlBackgroundStyle`, and `pkCurrentPageIndex` for controlling page control appearance and navigation behavior on iOS, iPadOS, tvOS, macOS, watchOS, and visionOS.
+The `init(pages:)` initializer of the `PKPagesView` struct in the `PagerKit` framework creates a SwiftUI view that displays a collection of `PKPage` views for page-based navigation. It supports customization through modifiers like `pkPageControlIndicatorDirection`, `pkPageControlIndicatorBackgroundStyle`, and `pkCurrentPageIndex` for controlling page control appearance and navigation behavior on iOS, iPadOS, tvOS, macOS, watchOS, and visionOS.
 
 ## Parameters
 
@@ -45,9 +45,9 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) },
             PKPage { Text("Page 3").font(.title) }
         ])
-        .pkPageControlAlignment(spacing: 10, alignment: .leading)
-        .pkPageControlBackgroundStyle(.prominent)
-        .pkPageControlDirection(.topToBottom)
+        .pkPageControlIndicatorAlignment(spacing: 10, alignment: .leading)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
+        .pkPageControlIndicatorDirection(.topToBottom)
         .pkCurrentPageIndex(index: $currentPage)
     }
 }
@@ -58,5 +58,5 @@ struct ContentView: View {
 ### Related Types
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorDirection``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``

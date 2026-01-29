@@ -23,7 +23,7 @@ Learn about the modifiers available for customizing the `PagerKit` package in Sw
 
 ## Overview
 
-The `PagerKit` package provides a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView` within SwiftUI applications. These modifiers are applied using SwiftUI’s dot syntax (e.g., `.pkPageControlDirection(_:)`), supporting accessibility features like VoiceOver and Dynamic Type. Below, modifiers are grouped by category, with platform-specific availability noted.
+The `PagerKit` package provides a variety of modifiers to customize the appearance, behavior, and interaction of `PKPagesView` within SwiftUI applications. These modifiers are applied using SwiftUI’s dot syntax (e.g., `.pkPageControlIndicatorDirection(_:)`), supporting accessibility features like VoiceOver and Dynamic Type. Below, modifiers are grouped by category, with platform-specific availability noted.
 
 > Important: Some modifiers are exclusive to iOS, iPadOS, tvOS, and visionOS due to `UIPageViewController` dependencies, while others are available on macOS and watchOS with SwiftUI-based implementations. Check each modifier’s availability for compatibility.
 
@@ -34,17 +34,17 @@ The `PagerKit` package provides a variety of modifiers to customize the appearan
 - ``PagerKit/PKPagesView/pkPageOptions(_:)``: Configures `UIPageViewController` options (e.g., inter-page spacing, transition style) with a dictionary of `UIPageViewController.OptionsKey`. Available on iOS, iPadOS, tvOS, and visionOS.
 
 ### Control Styling Modifiers
-- ``PagerKit/PKPagesView/pkPageControlAlignment(_:)``: Sets the alignment of the page control (e.g., `.topLeading`, `.bottom`, `.center`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlAlignment(spacing:alignment:)``: Configures alignment with custom spacing from the screen edge (e.g., 10–15 points). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlBackgroundStyle(_:)``: Applies a background style (`.automatic`, `.minimal`, `.prominent`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlDirection(_:)``: Sets the layout direction of page control dots (`.natural`, `.leftToRight`, `.rightToLeft`, `.topToBottom`, `.bottomToTop`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlHidesForSignlePage(_:)``: Hides the page control when there is only one page. Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlCurrentIndicatorTintColor(_:)``: Sets the tint color for the current page indicator using `UIColor` (iOS, iPadOS, visionOS) or `NSColor` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAlignment(_:)``: Sets the alignment of the page control (e.g., `.topLeading`, `.bottom`, `.center`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAlignment(spacing:alignment:)``: Configures alignment with custom spacing from the screen edge (e.g., 10–15 points). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorBackgroundStyle(_:)``: Applies a background style (`.automatic`, `.minimal`, `.prominent`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorDirection(_:)``: Sets the layout direction of page control dots (`.natural`, `.leftToRight`, `.rightToLeft`, `.topToBottom`, `.bottomToTop`). Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorHidesForSignlePage(_:)``: Hides the page control when there is only one page. Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorCurrentIndicatorTintColor(_:)``: Sets the tint color for the current page indicator using `UIColor` (iOS, iPadOS, visionOS) or `NSColor` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
 - ``PagerKit/PKPagesView/pkPageControlIndicatorTintColor(_:)``: Sets the tint color for non-current page indicators using `UIColor` (iOS, iPadOS, visionOS) or `NSColor` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlPreferredIndicatorImage(image:)``: Sets a custom image for non-current page indicators using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlPreferredCurrentPageIndicatorImage(image:)``: Sets a custom image for the current page indicator using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlCurrentIndicator(_:forPage:)``: Sets a custom image for the current page indicator at a specific page index using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
-- ``PagerKit/PKPagesView/pkPageControlAllowsContinuousInteraction(_:)``: Enables or disables dragging across page control dots for rapid page changes. Available on iOS and iPadOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorPreferredIndicatorImage(image:)``: Sets a custom image for non-current page indicators using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)``: Sets a custom image for the current page indicator using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorCurrentIndicator(_:forPage:)``: Sets a custom image for the current page indicator at a specific page index using `UIImage` (iOS, iPadOS, visionOS) or `NSImage` (macOS, watchOS). Available on iOS, iPadOS, visionOS, macOS, and watchOS.
+- ``PagerKit/PKPagesView/pkPageControlIndicatorAllowsContinuousInteraction(_:)``: Enables or disables dragging across page control dots for rapid page changes. Available on iOS and iPadOS.
 
 ### Logic and Trigger Modifiers
 - ``PagerKit/PKPagesView/pkCurrentPageIndex(index:)``: Binds the current page index to a `Binding<Int>` for two-way synchronization. Available on iOS, iPadOS, tvOS, visionOS, macOS, and watchOS.
@@ -72,10 +72,10 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkPageControlAlignment(spacing: 15, alignment: .topLeading)
-        .pkPageControlBackgroundStyle(.prominent)
-        .pkPageControlDirection(.leftToRight)
-        .pkPageControlCurrentIndicatorTintColor(.blue)
+        .pkPageControlIndicatorAlignment(spacing: 15, alignment: .topLeading)
+        .pkPageControlIndicatorBackgroundStyle(.prominent)
+        .pkPageControlIndicatorDirection(.leftToRight)
+        .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
         .pkPageControlIndicatorTintColor(.gray)
         .pkPageNavigationOrientation(.vertical)
         .pkCurrentPageIndex($currentPage)
@@ -83,10 +83,10 @@ struct ContentView: View {
             print("Page changed to \(index) in \(direction) direction")
         }
         #if os(iOS) || os(iPadOS)
-        .pkPageControlAllowsContinuousInteraction(true)
+        .pkPageControlIndicatorAllowsContinuousInteraction(true)
         .pkPageOptions([.interPageSpacing: 20, .transitionStyle: .scroll])
         #endif
-        .pkPageControlPreferredCurrentPageIndicatorImage(UIImage(systemName: "star.fill"))
+        .pkPageControlIndicatorPreferredCurrentPageIndicatorImage(UIImage(systemName: "star.fill"))
     }
 }
 ```

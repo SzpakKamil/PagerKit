@@ -127,7 +127,14 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
             return
         }
         let safeArea = uiViewController.view.safeAreaLayoutGuide
-        let pageFooterSpcaing: CGFloat = pageControlStyle.footerSpacing
+        let pageFooterSpacing: CGFloat = pageControlStyle.footerSpacing
+        
+        // Compute per-edge paddings from style
+        let paddings = perEdgePaddings()
+        let topPadding = paddings.top
+        let bottomPadding = paddings.bottom
+        let leadingPadding = paddings.leading
+        let trailingPadding = paddings.trailing
         
         // Remove old constraints
         NSLayoutConstraint.deactivate(coordinator.activeFooterConstraints)
@@ -136,72 +143,80 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
         var constraints: [NSLayoutConstraint] = []
         switch pageControlStyle.footerAlignment {
             case .top:
-                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpcaing))
+                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpacing + topPadding))
                 constraints.append(footerView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             case .topLeading:
-                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpcaing))
-                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpcaing))
+                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpacing + topPadding))
+                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpacing + leadingPadding))
             case .topTrailing:
-                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpcaing))
-                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageFooterSpcaing))
+                constraints.append(footerView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageFooterSpacing + topPadding))
+                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageFooterSpacing + trailingPadding)))
             case .leading:
                 constraints.append(footerView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
-                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpcaing))
+                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpacing + leadingPadding))
             case .center:
                 constraints.append(footerView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
                 constraints.append(footerView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             case .trailing:
                 constraints.append(footerView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
-                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageFooterSpcaing))
+                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageFooterSpacing + trailingPadding)))
             case .bottomLeading:
-                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageFooterSpcaing))
-                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpcaing))
+                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageFooterSpacing + bottomPadding)))
+                constraints.append(footerView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageFooterSpacing + leadingPadding))
             case .bottom:
-                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageFooterSpcaing))
+                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageFooterSpacing + bottomPadding)))
                 constraints.append(footerView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             default:
-                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageFooterSpcaing))
-                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageFooterSpcaing))
+                constraints.append(footerView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageFooterSpacing + bottomPadding)))
+                constraints.append(footerView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageFooterSpacing + trailingPadding)))
         }
         NSLayoutConstraint.activate(constraints)
         coordinator.activeFooterConstraints = constraints
     }
     
-    // MARK: - Page control styling (unchanged except removal of pageFooter usage)
+    // MARK: - Page control styling (updated to include padding)
     func updatePageIndicatorStyle(for uiViewController: PKPagesUIViewController) {
         let safeArea = uiViewController.view.safeAreaLayoutGuide
         let pageControl = uiViewController.pageControl
-        let pageControlSpcaing: CGFloat = pageControlStyle.spacing
+        let pageControlSpacing: CGFloat = pageControlStyle.indicatorSpacing
+        
+        // Compute per-edge paddings from style
+        let paddings = perEdgePaddings()
+        let topPadding = paddings.top
+        let bottomPadding = paddings.bottom
+        let leadingPadding = paddings.leading
+        let trailingPadding = paddings.trailing
+        
         var pageControlConstraints: [NSLayoutConstraint] = []
         
-        switch pageControlStyle.alignment {
+        switch pageControlStyle.indicatorAlignment {
             case .top:
-                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpcaing))
+                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpacing + topPadding))
                 pageControlConstraints.append(pageControl.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             case .topLeading:
-                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpcaing))
-                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpcaing))
+                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpacing + topPadding))
+                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpacing + leadingPadding))
             case .topTrailing:
-                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpcaing))
-                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageControlSpcaing))
+                pageControlConstraints.append(pageControl.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: pageControlSpacing + topPadding))
+                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageControlSpacing + trailingPadding)))
             case .leading:
                 pageControlConstraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
-                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpcaing))
+                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpacing + leadingPadding))
             case .center:
                 pageControlConstraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
                 pageControlConstraints.append(pageControl.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             case .trailing:
                 pageControlConstraints.append(pageControl.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor))
-                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageControlSpcaing))
+                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageControlSpacing + trailingPadding)))
             case .bottomLeading:
-                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageControlSpcaing))
-                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpcaing))
+                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageControlSpacing + bottomPadding)))
+                pageControlConstraints.append(pageControl.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: pageControlSpacing + leadingPadding))
             case .bottom:
-                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageControlSpcaing))
+                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageControlSpacing + bottomPadding)))
                 pageControlConstraints.append(pageControl.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor))
             default:
-                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -pageControlSpcaing))
-                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -pageControlSpcaing))
+                pageControlConstraints.append(pageControl.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -(pageControlSpacing + bottomPadding)))
+                pageControlConstraints.append(pageControl.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -(pageControlSpacing + trailingPadding)))
         }
         
         // Activate new constraints
@@ -264,6 +279,38 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
         }
     }
     
+    // MARK: - Helpers
+    private func perEdgePaddings() -> (top: CGFloat, leading: CGFloat, bottom: CGFloat, trailing: CGFloat) {
+        let length = pageControlStyle.paddingLeght ?? 0
+        guard let edges = pageControlStyle.paddingEdges, length > 0 else {
+            return (0, 0, 0, 0)
+        }
+        var top: CGFloat = 0
+        var leading: CGFloat = 0
+        var bottom: CGFloat = 0
+        var trailing: CGFloat = 0
+        
+        // Iterate Edge.Set and assign length to corresponding edges
+        if edges.contains(.top) { top = length }
+        if edges.contains(.bottom) { bottom = length }
+        if edges.contains(.leading) { leading = length }
+        if edges.contains(.trailing) { trailing = length }
+        if edges.contains(.horizontal) {
+            leading = max(leading, length)
+            trailing = max(trailing, length)
+        }
+        if edges.contains(.vertical) {
+            top = max(top, length)
+            bottom = max(bottom, length)
+        }
+        if edges.contains(.all) {
+            top = max(top, length)
+            bottom = max(bottom, length)
+            leading = max(leading, length)
+            trailing = max(trailing, length)
+        }
+        return (top, leading, bottom, trailing)
+    }
 }
 
 public struct PKPagesView: View {
@@ -320,8 +367,7 @@ public struct PKPagesView: View {
             Text("dd")
         }
     }
-    .pkPageControlAlignment(.topTrailing)
-    .pkPageControlBackgroundStyle(.prominent)
+    .pkPageControlIndicatorAlignment(.topTrailing)
+    .pkPageControlIndicatorBackgroundStyle(.prominent)
 }
 #endif
-

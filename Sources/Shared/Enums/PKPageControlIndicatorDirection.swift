@@ -1,5 +1,5 @@
 //
-//  PKPageControlDirection.swift
+//  PKPageControlIndicatorDirection.swift
 //  PagerKit
 //
 //  Created by Kamil Szpak on 07/10/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public enum PKPageControlDirection{
+public enum PKPageControlIndicatorDirection{
     case natural
     case leftToRight
     case rightToLeft

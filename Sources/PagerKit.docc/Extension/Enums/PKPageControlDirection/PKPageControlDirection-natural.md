@@ -1,4 +1,4 @@
-# ``PagerKit/PKPageControlDirection/natural``
+# ``PagerKit/PKPageControlIndicatorDirection/natural``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -21,7 +21,7 @@ Adapts page control dots to the system layout direction.
 
 ## Overview
 
-The `natural` case of the `PKPageControlDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` based on the system layout direction (left-to-right or right-to-left) across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.natural` via the `uiKitValue` property.
+The `natural` case of the `PKPageControlIndicatorDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` based on the system layout direction (left-to-right or right-to-left) across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.natural` via the `uiKitValue` property.
 
 ### Properties
 | Name | Type | Description |
@@ -41,7 +41,7 @@ struct ContentView: View {
             PKPage { Text("Page 1").font(.title) }
             PKPage { Text("Page 2").font(.title) }
         }
-        .pkPageControlDirection(.natural)
+        .pkPageControlIndicatorDirection(.natural)
     }
 }
 ```
@@ -53,7 +53,7 @@ struct ContentView: View {
         On iOS, the `natural` style adapts to the system layout direction (left-to-right or right-to-left).
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-iOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-iOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -63,7 +63,7 @@ struct ContentView: View {
         On iPadOS, the `natural` style adapts to the system layout direction, optimized for larger screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-iPadOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-iPadOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -73,7 +73,7 @@ struct ContentView: View {
         On macOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-macOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-macOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -83,7 +83,7 @@ struct ContentView: View {
         On tvOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-tvOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-tvOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -93,7 +93,7 @@ struct ContentView: View {
         On visionOS, the `natural` style adapts to the system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-visionOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-visionOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -103,7 +103,7 @@ struct ContentView: View {
         On watchOS, the `natural` style adapts to the system layout direction, optimized for small screens.
         @Row(numberOfColumns: 1) {
             @Column {
-                @Image(source: "Documentation-PKPageControlDirection-watchOS-Natural", alt: "Natural") {
+                @Image(source: "Documentation-PKPageControlIndicatorDirection-watchOS-Natural", alt: "Natural") {
                     Natural
                 }
             }
@@ -114,8 +114,8 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlDirection/leftToRight``
-- ``PagerKit/PKPageControlDirection/rightToLeft``
-- ``PagerKit/PKPageControlDirection/topToBottom``
-- ``PagerKit/PKPageControlDirection/bottomToTop``
+- ``PagerKit/PKPageControlIndicatorDirection``
+- ``PagerKit/PKPageControlIndicatorDirection/leftToRight``
+- ``PagerKit/PKPageControlIndicatorDirection/rightToLeft``
+- ``PagerKit/PKPageControlIndicatorDirection/topToBottom``
+- ``PagerKit/PKPageControlIndicatorDirection/bottomToTop``
