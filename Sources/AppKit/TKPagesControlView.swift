@@ -131,11 +131,12 @@ struct TKPagesControlView: View{
     TKPagesView{
         TKPage{
             ZStack{
-                Color.red
+                Color.white
                 Text("Apple")
             }
             .ignoresSafeArea()
         }
+        .tkPageDuration(1)
         TKPage{
             ZStack{
                 Color.green
@@ -153,6 +154,8 @@ struct TKPagesControlView: View{
         }
         .tkPageDuration(1)
     }
+    .tkPageControlAlignment(.leading)
+    .tkPageControlDirection(.topToBottom)
     .tkPageControlPreferredCurrentPageIndicatorImage(image: NSImage(systemSymbolName: "bus", accessibilityDescription: ""))
     .tkPageControlPreferredIndicatorImage(image: NSImage(systemSymbolName: "car", accessibilityDescription: ""))
 }
