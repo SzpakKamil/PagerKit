@@ -1,4 +1,4 @@
-# ``PagerKit/PKPageBuilder/buildBlock(_:)-6jnbz``
+# ``PagerKit/PKPageBuilder/buildBlock(_:)-([PKPage])``
 
 @Metadata {
     @SupportedLanguage(swift)

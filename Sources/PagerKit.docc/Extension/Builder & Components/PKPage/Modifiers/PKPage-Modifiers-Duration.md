@@ -55,7 +55,7 @@ struct ContentView: View {
 ## Read Also
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPage/init(content:)``
-- ``PagerKit/PKPage/pkPageProgress(_:)-7m7n5``
+- ``PagerKit/PKPage/pkPageProgress(_:)-(()->Double?)``
 - ``PagerKit/PKPage/pkPageProgress(_:)-(()->UIPageControlProgress)``
 - ``PagerKit/PKPage/pkPageProgress(_:)-(UIPageControlProgress)``
 - ``PagerKit/PKPagesView``

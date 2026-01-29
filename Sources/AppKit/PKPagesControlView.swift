@@ -185,22 +185,5 @@ struct PKPagesControlView: View{
         .buttonStyle(.plain)
     }
 }
-
-#Preview{
-    PKPagesView {
-        PKPage {
-            Text("Page1")
-        }
-        PKPage {
-            Text("Page2")
-        }
-        PKPage {
-            Text("Page3")
-        }
-    }
-    .pkPageControlBackgroundStyle(.prominent)
-}
-
-
 #endif
 

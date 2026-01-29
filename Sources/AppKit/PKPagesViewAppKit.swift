@@ -31,17 +31,21 @@ public struct PKPagesView: View {
     let options: PKPageOptions
     var pageControlStyle: PKPageControlStyle
 
+    @_documentation(visibility: internal)
     public var body: some View {
         GeometryReader { geo in
             ZStack(alignment: pageControlStyle.alignment) {
                 scrollContent(geo: geo)
-                PKPagesControlView(
-                    currentSelectedElement: selectedIndex,
-                    progress: timerProgress,
-                    duration: remindingDuration,
-                    numberOfElements: pages.count,
-                    style: pageControlStyle
-                )
+                if (pageControlStyle.hidesForSinglePage && pages.count >= 1) || !pageControlStyle.hidden {
+                    PKPagesControlView(
+                        currentSelectedElement: selectedIndex,
+                        progress: timerProgress,
+                        duration: remindingDuration,
+                        numberOfElements: pages.count,
+                        style: pageControlStyle
+                    )
+                }
+
             }
         }
         .ignoresSafeArea()
