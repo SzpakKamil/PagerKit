@@ -39,7 +39,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkPageControlIndicatorTintColor(_ color: Color?) -> Self{
+    func tkPageControlIndicatorTintColor(_ color: Color? = .secondary) -> Self{
         var copy = self
         copy.pageControlStyle.indicatorTintColor = color
         return copy
@@ -49,7 +49,7 @@ public extension TKPagesView{
         copy.pageControlStyle.allowsContinuousInteraction = condition
         return copy
     }
-    func tkPageControlCurrentIndicatorTintColor(_ color: Color?) -> Self{
+    func tkPageControlCurrentIndicatorTintColor(_ color: Color? = .primary) -> Self{
         var copy = self
         copy.pageControlStyle.currentPageIndicatorTintColor = color
         return copy

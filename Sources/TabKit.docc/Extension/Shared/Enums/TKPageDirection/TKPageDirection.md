@@ -25,8 +25,8 @@ The `TKPageDirection` enum in the `TabKit` framework specifies the direction of 
 ### Cases
 | Case | Description |
 |------|-------------|
-| ``TKPageDirection/forward`` | Represents a transition to the next page in the sequence. |
-| ``TKPageDirection/reverse`` | Represents a transition to the previous page in the sequence. |
+| ``forward`` | Represents a transition to the next page in the sequence. |
+| ``reverse`` | Represents a transition to the previous page in the sequence. |
 
 ### Private Properties
 | Property Name | Type | Description |

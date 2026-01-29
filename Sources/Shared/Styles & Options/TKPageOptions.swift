@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public class TKPageOptions{
+class TKPageOptions{
     var orientationRaw: Axis
     var pages: [TKPage]
     var pageAutoChangeIndexFunction: ((Int, Int) -> Void)?
