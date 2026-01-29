@@ -159,4 +159,4 @@ struct ContentView: View {
 - ``PagerKit/PKPagesView/pkPageControlIndicatorAlignment(_:)``
 - ``PagerKit/PKPage``
 - ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlBackgroundStyle``
+- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
