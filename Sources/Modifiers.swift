@@ -84,7 +84,7 @@ public extension TKPagesView{
         copy.pageControlStyle.preferredCurrentPageIndicatorImage = image
         return copy
     }
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, tvOS 16.0, *)
     func tkPageControlDirection(_ direction: UIPageControl.Direction) -> Self{
         var copy = self
         copy.pageControlStyle.direction = direction.rawValue
@@ -132,7 +132,7 @@ public extension TKPagesView{
 }
 
 public extension TKPage{
-    @available(iOS 17.0, *)
+    @available(iOS 17.0, tvOS 17.0, *)
     func tkPageDuration(_ duration: Double?) -> Self {
         var copy = self
         if let duration{
@@ -145,7 +145,7 @@ public extension TKPage{
         }
         return copy
     }
-    @available(iOS 17.0, *)
+    @available(iOS 17.0, tvOS 17.0, *)
     func tkPageProgress(_ progress: UIPageControlProgress) -> Self {
         var copy = self
         copy.progress = {
@@ -153,7 +153,7 @@ public extension TKPage{
         }
         return copy
     }
-    @available(iOS 17.0, *)
+    @available(iOS 17.0, tvOS 17.0, *)
     func tkPageProgress(_ progress: @escaping () -> UIPageControlProgress) -> Self {
         var copy = self
         copy.progress = progress

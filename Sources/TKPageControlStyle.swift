@@ -22,7 +22,7 @@ struct TKPageControlStyle{
     var allowsContinuousInteraction: Bool
     var alignment: Alignment
     
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, tvOS 16.0, *)
     func getDirection() -> UIPageControl.Direction{
         if let direction{
             return UIPageControl.Direction(rawValue: direction) ?? .natural
@@ -72,7 +72,7 @@ struct TKPageControlStyle{
         self.alignment = alignment
     }
     
-    @available(iOS 16.0, *)
+    @available(iOS 16.0, tvOS 16.0, *)
     public init(
         hidden: Bool = false,
         backgroundStyle: UIPageControl.BackgroundStyle = .automatic,
