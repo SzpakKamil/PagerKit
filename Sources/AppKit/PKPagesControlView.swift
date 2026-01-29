@@ -151,7 +151,7 @@ struct PKPagesControlView: View{
                     
                 }
                 .frame(width: 7, height: 7)
-                .clipShape(.capsule)
+
                 .animation(.smooth, value: currentSelectedElement)
             }
 
