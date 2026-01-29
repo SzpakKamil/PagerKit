@@ -48,7 +48,9 @@ public struct PKPagesView: View {
 
             }
         }
+        #if os(watchOS)
         .ignoresSafeArea()
+        #endif
         .onAppear {
             onPageChange(oldValue: selectedIndex.wrappedValue, newValue: selectedIndex.wrappedValue, isInitial: true)
         }
