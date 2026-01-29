@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "TabKit",
+    name: "PagerKit",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v14), .tvOS(.v14), .visionOS(.v1), .macOS(.v14), .watchOS(.v10)
     ],
     products: [
-        .library(name: "TabKit", targets: ["TabKit"])
+        .library(name: "PagerKit", targets: ["PagerKit"])
     ],
     targets: [
         .target(
-            name: "TabKit"
+            name: "PagerKit"
         ),
 
     ]

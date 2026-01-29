@@ -1,6 +1,6 @@
 //
-//  TKPage.swift
-//  TabKit
+//  PKPage.swift
+//  PagerKit
 //
 //  Created by Kamil Szpak on 30/09/2025.
 //
@@ -8,7 +8,7 @@
 #if os(macOS) || os(watchOS)
 import SwiftUI
 
-public extension TKPagesView{
+public extension PKPagesView{
     func tkPageControlHidesForSignlePage(_ condition: Bool) -> Self{
         var copy = self
         copy.pageControlStyle.hidesForSinglePage = condition
@@ -53,7 +53,7 @@ public extension TKPagesView{
         copy.pageControlStyle.hidden = condition
         return copy
     }
-    func tkPageControlBackgroundStyle(_ style: TKPageControlBackgroundStyle = .automatic) -> Self{
+    func tkPageControlBackgroundStyle(_ style: PKPageControlBackgroundStyle = .automatic) -> Self{
         var copy = self
         copy.pageControlStyle.backgroundStyle = style
         return copy
@@ -104,7 +104,7 @@ public extension TKPagesView{
     }
     #endif
     @available(iOS 16.0, tvOS 16.0, *)
-    func tkPageControlDirection(_ direction: TKPageControlDirection) -> Self{
+    func tkPageControlDirection(_ direction: PKPageControlDirection) -> Self{
         var copy = self
         copy.pageControlStyle.direction = direction
         return copy
@@ -115,7 +115,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageDirection) -> Void) -> Self{
+    func tkOnManualPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageManualChangeDirectionFunction = action
         return copy
@@ -127,7 +127,7 @@ public extension TKPagesView{
         return copy
     }
     
-    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: TKPageDirection) -> Void) -> Self{
+    func tkOnAutoPageChange(action: @escaping ( _ currentIndex: Int,_ direction: PKPageDirection) -> Void) -> Self{
         let copy = self
         copy.options.pageAutoChangeDirectionFunction = action
         return copy
@@ -150,7 +150,7 @@ public extension TKPagesView{
     }
 }
 
-public extension TKPage{
+public extension PKPage{
     @available(iOS 17.0, tvOS 17.0, *)
     func tkPageDuration(_ duration: Double?) -> Self {
         var copy = self
