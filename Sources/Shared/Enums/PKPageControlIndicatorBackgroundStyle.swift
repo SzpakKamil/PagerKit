@@ -1,5 +1,5 @@
 //
-//  PKPageControlBackgroundStyle.swift
+//  PKPageControlIndicatorBackgroundStyle.swift
 //  PagerKit
 //
 //  Created by Kamil Szpak on 07/10/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public enum PKPageControlBackgroundStyle: Int, Hashable, Equatable, Identifiable{
+public enum PKPageControlIndicatorBackgroundStyle: Int, Hashable, Equatable, Identifiable{
     case automatic
     case minimal
     case prominent
