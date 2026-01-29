@@ -100,8 +100,16 @@ struct PKPagesViewUIKit: UIViewControllerRepresentable {
         footerView.translatesAutoresizingMaskIntoConstraints = false
         footerView.backgroundColor = .clear
         uiViewController.view.addSubview(footerView)
-        if uiViewController.view.backgroundColor == nil || uiViewController.view.backgroundColor == .systemBackground {
+        if uiViewController.view.backgroundColor == nil {
             uiViewController.view.backgroundColor = .clear
+        } else {
+            #if os(iOS)
+            if #available(iOS 13.0, *) {
+                if uiViewController.view.backgroundColor == .systemBackground {
+                    uiViewController.view.backgroundColor = .clear
+                }
+            }
+            #endif
         }
         footerVC.didMove(toParent: uiViewController)
         coordinator.currentFooterVC = footerVC
