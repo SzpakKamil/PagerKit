@@ -69,16 +69,15 @@ public class TKPagesUIViewController: UIPageViewController {
 
         
         if #available(iOS 17.0, *){
-            if let progress = targetViewController.page.progress?() as? UIPageControlProgress{
-                if let durationProgress = progress as? UIPageControlTimerProgress, durationProgress.preferredDuration > 0{
-                    pageControl.progress = durationProgress
-                    return
-                }else{
-                    pageControl.progress = progress
-                    return
-                }
+            
+
+            if let duration = targetViewController.page.duration {
+                let progress = UIPageControlTimerProgress(preferredDuration: 0)
+                progress.setDuration(duration, forPage: index)
+                pageControl.progress = progress
+            }else{
+                pageControl.progress = nil
             }
-            pageControl.progress = nil
         }
     }
     
