@@ -13,16 +13,11 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-@Options {
-    @AutomaticSeeAlso(disabled)
-    @AutomaticArticleSubheading(disabled)
-}
-
 A SwiftUI view thats build for page-based navigation.
 
 ## Overview
 
-The `PKPagesViewUIKit` struct in the `PagerKit` framework is a `UIViewControllerRepresentable` that wraps a `UIPageViewController` to provide page-based navigation in SwiftUI applications on iOS, iPadOS, tvOS, and visionOS (excluding macOS and watchOS). It manages a collection of `PKPage` views and supports customization through a variety of modifiers applied to `PKPagesView`, which serves as the SwiftUI interface delegating to `PKPagesViewUIKit`.
+The `PKPagesViewUIKit` struct in the `PagerKit` framework is a `View` which provides page-based navigation in SwiftUI applications . It manages a collection of `PKPage` views and supports customization through a variety of modifiers applied to `PKPagesView`.
 
 ## Initializers
 
@@ -98,7 +93,36 @@ struct ContentView: View {
 }
 ```
 
-## Read Also
-- ``PagerKit/PKPage``
-- ``PagerKit/PKPageControlDirection``
-- ``PagerKit/PKPageControlBackgroundStyle``
+## Topics
+
+### Initialisers
+- ``PagerKit/PKPagesView/init(pages:)-([PKPage])``
+- ``PagerKit/PKPagesView/init(pages:)-(()->[PKPage])``
+
+### Pager Styling
+- ``PagerKit/PKPagesView/pkPageNavigationOrientation(_:)``
+- ``PagerKit/PKPagesView/pkPageOptions(_:)``
+
+### Control Styling
+- ``PagerKit/PKPagesView/pkPageControlAlignment(_:)``
+- ``PagerKit/PKPagesView/pkPageControlAlignment(spacing:alignment:)``
+- ``PagerKit/PKPagesView/pkPageControlBackgroundStyle(_:)``
+- ``PagerKit/PKPagesView/pkPageControlDirection(_:)``
+- ``PagerKit/PKPagesView/pkPageControlHidden(_:)``
+- ``PagerKit/PKPagesView/pkPageControlHidesForSignlePage(_:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicatorTintColor(_:)``
+- ``PagerKit/PKPagesView/pkPageControlCurrentIndicatorTintColor(_:)``
+- ``PagerKit/PKPagesView/pkPageControlAllowsContinuousInteraction(_:)``
+- ``PagerKit/PKPagesView/pkPageControlPreferredIndicatorUIImage(image:)``
+- ``PagerKit/PKPagesView/pkPageControlIndicator(_:forPage:)``
+- ``PagerKit/PKPagesView/pkPageControlCurrentIndicator(_:forPage:)``
+- ``PagerKit/PKPagesView/pkPageControlPreferredCurrentPageIndicatorImage(image:)``
+
+### Logic and Triggers
+- ``PagerKit/PKPagesView/pkCurrentPageIndex(index:)``
+- ``PagerKit/PKPagesView/pkOnManualPageChange(action:)-((Int,PKPageDirection)->Void)``
+- ``PagerKit/PKPagesView/pkOnManualPageChange(action:)-((Int,Int)->Void)``
+- ``PagerKit/PKPagesView/pkOnAutoPageChange(action:)-((Int,PKPageDirection)->Void)``
+- ``PagerKit/PKPagesView/pkOnAutoPageChange(action:)-((Int,Int)->Void)``
+- ``PagerKit/PKPagesView/pkOnTransitionStart(action:)``
+- ``PagerKit/PKPagesView/pkOnTransitionEnd(action:)``
