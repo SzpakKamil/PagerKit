@@ -29,7 +29,7 @@ You can install the PagerKit skill for your CLI agent to get expert guidance on 
 
 ### Using skills.sh:
 ```bash
-npx skills add szpakkamil/pagerkit
+npx skills add https://github.com/SzpakKamil/AgentSkills --skill PagerKit
 ```
 
 ### Using ClawdHub:
