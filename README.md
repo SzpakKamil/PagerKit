@@ -49,6 +49,8 @@ Paging shouldn't force your hand. Shape your vision with tools that respect your
 ## Instant Integration
 Kill the boilerplate. Drop PagerKit in and build complex paging systems with zero overhead.
 
+The `PK` prefix is used also to minimize the PagerKit. usage to just PK. I know about Swift namespacing but for project constraints and other my frameworks parity I use package shortcut prefix.
+
 ### Basic Usage
 A minimal setup for a functional page view across platforms:
 
