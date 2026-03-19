@@ -1,58 +1,49 @@
-# `PagerKit`
-![Swift Version](https://img.shields.io/badge/Swift-5.9+-teal.svg)
-![Platforms](https://img.swiftpackageindex.com/SzpakKamil/PagerKit/platforms.svg)
-![License](https://img.shields.io/badge/License-MIT-C8ECFE.svg)
-
+# PagerKit
+![Swift Version](https://img.shields.io/badge/Swift-5.9%2B-teal.svg)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%2014.0+%20|%20iPadOS%2014.0+%20|%20macOS%2011.0+%20|%20watchOS%2010.0+%20|%20tvOS%2014.0+%20|%20visionOS%201.0+-15437D.svg)
 ![Banner](./Resources/PagerKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/PagerKit-Banner~dark.webp#gh-dark-mode-only)
 
-# Paging, Unbound.
-### I stopped settling for the limits of `.tabViewStyle`. PagerKit augments Apple’s native logic with layout-aware tools that fit your design system—not the other way around.
-
-Forget rigid carousels. I built **PagerKit** to give you back architectural control. It uses native SwiftUI patterns to provide the structural flexibility that standard components usually miss.
-
-> **Native Terminal Integration**
-> In v1.1.1, I introduced Agent Skill. Now you can inject technical patterns into your AI-assisted CLI workflows for instant integration.
+PagerKit is a SwiftUI library for building customizable, page-based navigation. It offers a flexible, layout-aware alternative to native tab views, giving you architectural control over paging components.
 
 Visit the [Site](https://kamilszpak.com/pagerkit) or [Documentation](https://documentation.kamilszpak.com/documentation/pagerkit).
 
----
+***
 
 ## Table of Contents
 
-- [Production-Ready Features](#production-ready-features)
-- [Your Layout, Your Rules](#your-layout-your-rules)
-- [Instant Integration](#instant-integration)
-- [Modifiers](#modifiers)
-- [Resources](#resources)
-- [Installation](#installation)
-- [Requirements](#requirements)
-- [License](#license)
+* [Core Architecture](#core-architecture)
+* [Layout Control](#layout-control)
+* [Implementation](#implementation)
+* [Modifiers](#modifiers)
+* [Resources](#resources)
+* [Installation](#installation)
+* [Requirements](#requirements)
+* [License](#license)
 
-## Production-Ready Features
-I handled the structural complexity so you can focus on the interface. PagerKit stays out of the way until you need its power.
+## Core Architecture
 
-- **Native, Expanded**: Uses `UIPageViewController` for iOS and tvOS, with custom SwiftUI implementations for macOS and watchOS to ensure authentic platform behavior.
-- **Lifecycle Timing**: Set duration-based transitions and react to precise timing events without leaving the declarative world.
-- **Result Builders**: It feels like a first-party tool, using `PKPageBuilder` to support conditionals and platform-specific logic natively.
-- **Adaptive Indicators**: I took the standard paging indicator and made it yours. Style, align, and orient markers to match your brand perfectly.
-- **Ecosystem Wide**: One API that respects platform-specific behaviors from the wrist to the desktop without platform-specific drift.
+* **Platform Parity**: Leverages native `UIPageViewController` on iOS/visionOS/tvOS and custom SwiftUI implementations on macOS/watchOS for authentic platform behavior.
+* **Lifecycle Precision**: Declaratively configure transition durations and respond to precise lifecycle events.
+* **Result Builders**: Uses `PKPageBuilder` for a native-like integration experience with support for conditionals and platform-specific logic.
+* **Adaptive Indicators**: Replace default page indicators. Customize style, alignment, orientation, and use custom images to match your app's design.
+* **Unified API**: Provides a consistent API that adapts to platform-specific behaviors without compromising architectural integrity.
 
-## Your Layout, Your Rules
-Paging shouldn't force your hand. Shape your vision with tools that respect your frame and your architectural rules.
+## Layout Control
 
-- **Compact View Integrity**: Engineered for tight hierarchies. PagerKit brings reliable paging to small, embedded containers where native system views often clip or fail.
-- **Hierarchy Aware**: Paging that respects your view structure instead of forcing full-screen patterns on your users.
-- **Brand Integration**: Bring your own assets to indicators and keep your app’s identity front and center with pixel-perfect alignment.
-- **Flexible Orientation**: Control navigation flow independently while staying within the SwiftUI layout engine.
+PagerKit is designed to integrate into your existing view hierarchy without forcing a specific layout structure.
 
-## Instant Integration
-Kill the boilerplate. Drop PagerKit in and build complex paging systems with zero overhead.
+* **Container Integrity**: Provides reliable paging behavior, even within small, embedded container views where native solutions may fail.
+* **Hierarchy Awareness**: Integrates cleanly with your view hierarchy, avoiding full-screen takeovers.
+* **Brand Consistency**: Use custom assets for page indicators to maintain brand consistency with pixel-perfect alignment.
+* **Orientation Control**: Programmatically set the navigation flow to horizontal or vertical, independent of the SwiftUI layout direction.
 
-The `PK` prefix is used also to minimize the PagerKit. usage to just PK. I know about Swift namespacing but for project constraints and other my frameworks parity I use package shortcut prefix.
+## Implementation
+
+PagerKit components and modifiers are prefixed with `PK` for clarity and to avoid naming conflicts.
 
 ### Basic Usage
-A minimal setup for a functional page view across platforms:
+Minimal setup for a functional page view:
 
 ```swift
 import SwiftUI
@@ -69,8 +60,8 @@ struct ContentView: View {
 }
 ```
 
-### Advanced Customization
-Enhance the experience with custom indicators, orientation, and lifecycle events:
+### Advanced Configuration
+An enhanced configuration with custom indicators and lifecycle events:
 
 ```swift
 import SwiftUI
@@ -91,36 +82,37 @@ struct ContentView: View {
         .pkPageControlIndicatorBackgroundStyle(.prominent)
         .pkPageControlIndicatorCurrentIndicatorTintColor(.white)
         .pkOnManualPageChange { index, direction in
-            print("User swiped to \(index) moving \(direction)")
+            print("Navigated to page \(index) via \(direction)")
         }
     }
 }
 ```
 
 ## Modifiers
-Explore the full range of modifiers to personalize indicators, configure transitions, and manage logic. For a complete list, refer to the [Documentation](https://documentation.kamilszpak.com/documentation/pagerkit/modifiers).
+A selection of modifiers for customizing indicators and managing navigation logic.
 
-### Appearance & Style
-- `pkPageControlIndicatorAlignment(_:)`: Position dots exactly where you need them.
-- `pkPageControlIndicatorBackgroundStyle(_:)`: Choose between `.minimal`, `.prominent`, or `.automatic`.
-- `pkPageControlIndicatorDirection(_:)`: Layout dots vertically or horizontally.
-- `pkPageControlIndicatorCurrentIndicatorImage(_:for:)`: Use specific icons for specific pages.
+### Style
+* `pkPageControlIndicatorAlignment(_:)`: Sets the alignment for the page indicator control.
+* `pkPageControlIndicatorBackgroundStyle(_:)`: Configures the background style of the indicator control.
+* `pkPageControlIndicatorDirection(_:)`: Defines the layout direction (horizontal/vertical) for the indicators.
+* `pkPageIndicatorImage(_:)`: Provides a custom image for a page's indicator.
 
-### Navigation & Logic
-- `pkPageNavigationOrientation(_:)`: Switch between horizontal and vertical flows.
-- `pkOnManualPageChange(_:)`: React to user-initiated swipes.
-- `pkOnAutoPageChange(_:)`: Track programmatically triggered transitions.
-- `pkOnTransitionStart(_:)` / `pkOnTransitionEnd(_:)`: Sync your UI with the paging lifecycle.
+### Logic
+* `pkCurrentPageIndex(_:)`: Binds the current page index to a state variable.
+* `pkPageNavigationOrientation(_:)`: Sets the paging orientation (horizontal/vertical).
+* `pkOnManualPageChange(_:)`: Closure executed when the user manually swipes to a new page.
+* `pkOnAutoPageChange(_:)`: Closure executed for programmatic page transitions.
+* `pkOnTransitionStart(_:)` / `pkOnTransitionEnd(_:)`: Closures to sync UI with the paging animation lifecycle.
 
 ## Resources
-- **Documentation**: Detailed [API Reference](https://documentation.kamilszpak.com/documentation/pagerkit).
-- **GitHub Repo**: Track issues and help refine the future of paging.
-- **Swift Package Index**: Check [Compatibility](https://swiftpackageindex.com/SzpakKamil/PagerKit) across all platforms.
+* **Documentation**: [API Reference](https://documentation.kamilszpak.com/documentation/pagerkit).
+* **GitHub**: [SzpakKamil/PagerKit](https://github.com/SzpakKamil/PagerKit) - Track issues and contributions.
+* **Index**: [Swift Package Index](https://swiftpackageindex.com/SzpakKamil/PagerKit) - View compatibility and release history.
 
 ## Installation
 
 ### Swift Package Manager
-Add `PagerKit` via SPM. The current stable version is **1.1.1**.
+Add PagerKit as a package dependency in your `Package.swift` file. The current stable version is `1.1.1`.
 
 ```swift
 dependencies: [
@@ -129,14 +121,14 @@ dependencies: [
 ```
 
 ### Agent Skill
-Get expert guidance directly in your terminal:
+Install the Agent Skill for AI-assisted workflows.
 ```bash
 npx skills add https://github.com/SzpakKamil/AgentSkills --skill PagerKit
 ```
 
 ## Requirements
-- **Platforms**: iOS 14.0+, macOS 14.0+, tvOS 14.0+, watchOS 10.0+, visionOS 1.0+
-- **Tools**: Swift 5.9+, Xcode 15.0+
+* **Platforms**: iOS 14.0+, macOS 14.0+, tvOS 14.0+, watchOS 10.0+, visionOS 1.0+
+* **Tools**: Swift 5.9+, Xcode 15.0+
 
 ## License
-`PagerKit` is released under the MIT license.
+PagerKit is released under the MIT license.
