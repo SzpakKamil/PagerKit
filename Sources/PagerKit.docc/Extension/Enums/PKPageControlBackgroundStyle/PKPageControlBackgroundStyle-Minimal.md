@@ -21,12 +21,12 @@ Displays only the page control dots without a background.
 
 ## Overview
 
-The `minimal` case of the `PKPageControlIndicatorBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It shows only the dots without any background across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS), regardless of interaction state (static or pressed). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
+Customizes the background style to show only the dots, without any background, across all platforms. Maps to `UIPageControl.BackgroundStyle` on supported platforms.
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps the `minimal` case to a UIKit background style (not on macOS or watchOS). |
+| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps `minimal` to UIKit style. |
 
 ## Preview
 
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `minimal` style displays only the page control dots without a background in both static and pressed states.
+        Dots only, no background.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-iOS", alt: "Minimal Static") {
@@ -65,7 +65,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `minimal` style displays only the page control dots without a background in both static and pressed states, optimized for larger touch interfaces.
+        Dots only, no background.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-iPadOS", alt: "Minimal Static") {
@@ -78,7 +78,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the mouse-based interaction model.
+        Dots only.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-macOSTahoe", alt: "Minimal") {
@@ -88,7 +88,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the remote-based navigation model.
+        Dots only.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-tvOS", alt: "Minimal") {
@@ -98,7 +98,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the focus-based interaction model.
+        Dots only.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-visionOS", alt: "Minimal") {
@@ -108,7 +108,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `minimal` style displays only the page control dots without a background, with only the static state due to the touch-based interaction model on small screens.
+        Dots only.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-watchOS", alt: "Minimal") {

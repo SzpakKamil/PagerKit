@@ -21,12 +21,12 @@ Builds a block from an array of ``PKPage`` components.
 
 ## Overview
 
-The `buildBlock(_:)` method in the ``PKPageBuilder`` result builder accepts a single array of ``PKPage`` instances and returns it unchanged. This method supports the `PagerKit` framework's declarative syntax by allowing developers to pass an array of pages directly, which is useful for constructing tab-based navigation structures from pre-existing collections of ``PKPage`` components.
+Passes an array of `PKPage` instances through the result builder unchanged. Use this for constructing navigation structures from pre-existing collections of pages.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `components` | `[PKPage]` | An array of ``PKPage`` instances to be included in the result. |
+| `components` | `[PKPage]` | Array of `PKPage` instances. |
 
 ### Example Usage
 ```swift

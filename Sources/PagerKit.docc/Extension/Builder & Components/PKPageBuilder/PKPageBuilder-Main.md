@@ -22,7 +22,7 @@ Result builder for constructing arrays of ``PKPage`` components.
 
 ## Overview
 
-The `PKPageBuilder` is a Swift result builder in the `PagerKit` framework, designed to simplify the construction of arrays of `PKPage` components for use within a `PKPagesView`. It provides a declarative syntax for aggregating `PKPage` instances, supporting various scenarios such as variadic components, optional content, conditional branches, and platform-specific pages. The `PKPageBuilder` is integral to the `PagerKit` framework, enabling developers to define the pages to be displayed in a tab-based navigation interface efficiently and expressively. It is typically used as a `@resultBuilder` within the `PKPagesView` to collect and organize pages for rendering.
+Result builder for constructing arrays of `PKPage` components in `PKPagesView`. It supports declarative syntax for aggregating pages, including variadic components, optional content, conditional branches, and platform-specific checks.
 
 ### Example Usage
 ```swift

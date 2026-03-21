@@ -22,12 +22,12 @@ Builds a block from an optional array of ``PKPage`` components.
 
 ## Overview
 
-The `buildOptional(_:)` method in the ``PKPageBuilder`` result builder handles an optional array of ``PKPage`` instances, returning the array if it exists or an empty array if it is `nil`. This method supports optional content in the `PagerKit` framework, enabling developers to conditionally include pages based on runtime conditions while maintaining a consistent result builder interface.
+Handles optional arrays of `PKPage` instances, returning the array if present or an empty array if `nil`. Enables conditional inclusion of pages based on runtime conditions.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `component` | `[PKPage]?` | An optional array of ``PKPage`` instances to be included in the result. |
+| `component` | `[PKPage]?` | Optional array of `PKPage` instances. |
 
 ### Example Usage
 ```swift

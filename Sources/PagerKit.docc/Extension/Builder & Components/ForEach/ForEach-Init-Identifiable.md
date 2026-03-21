@@ -23,14 +23,14 @@ Init with manual id passing.
 
 ## Overview
 
-The `init(_:id:content:)` initializer of the ``ForEach`` view in `PagerKit` is designed for collections where elements do not necessarily conform to the `Identifiable` protocol. This initializer allows developers to explicitly specify a key path to a hashable property of the data elements to use as the identifier. It provides flexibility for iterating over custom data types in the `PagerKit` framework, generating an array of `PKPage` views for each element in the collection. This initializer is particularly useful when working with data models that lack a built-in `id` property or when a specific property should be used for identification.
+Creates a `ForEach` view that computes views on demand from an underlying collection of data, identified by a key path. Use this initializer when your data elements do not conform to `Identifiable` or when you need to specify a specific property for uniqueness.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
 | `data` | `Data` | A collection of elements conforming to `RandomAccessCollection`. |
-| `id` | `KeyPath<Data.Element, ID>` | A key path to a hashable property used to uniquely identify each element. |
-| `content` | `(Data.Element) -> [PKPage]` | A closure that transforms each data element into an array of ``PKPage`` views, built using the ``PKPageBuilder``. |
+| `id` | `KeyPath<Data.Element, ID>` | Key path to a hashable property for identification. |
+| `content` | `(Data.Element) -> [PKPage]` | A closure transforming each element into an array of `PKPage` views. |
 
 ### Example Usage
 ```swift
@@ -46,7 +46,7 @@ struct ContentView: View {
     let items = [Item(name: "Home", uniqueId: 1), Item(name: "Profile", uniqueId: 2), Item(name: "Settings", uniqueId: 3)]
     
     var body: some View {
-        PKPagesView{
+        PKPagesView {
             ForEach(items, id: \.uniqueId) { item in
                 PKPage {
                     Text(item.name)

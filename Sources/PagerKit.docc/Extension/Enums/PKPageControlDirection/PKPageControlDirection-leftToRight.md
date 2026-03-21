@@ -21,12 +21,12 @@ Arranges page control dots horizontally from left to right.
 
 ## Overview
 
-The `leftToRight` case of the `PKPageControlIndicatorDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` horizontally from left to right across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.leftToRight` via the `uiKitValue` property.
+Arranges dots horizontally from left to right. Maps to `UIPageControl.Direction.leftToRight` on supported platforms (iOS 16.0+, tvOS 16.0+).
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `leftToRight` direction (available on iOS 16.0, tvOS 16.0+, not macOS/watchOS). |
+| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `leftToRight` direction. |
 
 ## Preview
 
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `leftToRight` style arranges dots horizontally from left to right.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-iOS", alt: "Left to Right") {
@@ -60,7 +60,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `leftToRight` style arranges dots horizontally from left to right, optimized for larger screens.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-iPadOS", alt: "Left to Right") {
@@ -70,7 +70,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `leftToRight` style arranges dots horizontally from left to right.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-macOSTahoe", alt: "Left to Right") {
@@ -80,7 +80,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `leftToRight` style arranges dots horizontally from left to right.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-tvOS", alt: "Left to Right") {
@@ -90,7 +90,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `leftToRight` style arranges dots horizontally from left to right.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-visionOS", alt: "Left to Right") {
@@ -100,7 +100,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `leftToRight` style arranges dots horizontally from left to right, optimized for small screens.
+        Dots arranged horizontally from left to right.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-watchOS", alt: "Left to Right") {

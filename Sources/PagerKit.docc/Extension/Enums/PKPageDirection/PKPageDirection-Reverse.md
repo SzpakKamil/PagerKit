@@ -21,7 +21,7 @@ Represents a reverse page transition.
 
 ## Overview
 
-The `reverse` case of the ``PKPageDirection`` enum in the `PagerKit` framework indicates a transition to the previous page in a ``PKPagesView``. It is returned when the previous page index is greater than the current page index, used for styling or implementing custom backward navigation transitions.
+Indicates a transition to the previous page. Returned when the previous index is greater than the current index.
 
 ## Read Also
 - ``PagerKit/PKPage``

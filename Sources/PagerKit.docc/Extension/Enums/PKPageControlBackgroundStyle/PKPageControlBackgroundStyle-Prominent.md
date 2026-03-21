@@ -21,12 +21,12 @@ Displays a light grey background behind page control dots.
 
 ## Overview
 
-The `prominent` case of the `PKPageControlIndicatorBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It consistently displays a light grey background behind the dots across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS), regardless of interaction state (static or pressed). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
+Customizes the background style to consistently display a light grey background behind the dots across all platforms. Maps to `UIPageControl.BackgroundStyle` on supported platforms.
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps the `prominent` case to a UIKit background style (not on macOS or watchOS). |
+| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps `prominent` to UIKit style. |
 
 ## Preview
 
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states.
+        Light grey background in static and pressed states.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iOS", alt: "Prominent Static") {
@@ -65,7 +65,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `prominent` style displays a light grey background behind the page control dots in both static and pressed states, optimized for larger touch interfaces.
+        Light grey background in static and pressed states.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iPadOS", alt: "Prominent Static") {
@@ -78,7 +78,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the mouse-based interaction model.
+        Light grey background (static only).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-macOSTahoe", alt: "Prominent") {
@@ -88,7 +88,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the remote-based navigation model.
+        Light grey background (static only).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-tvOS", alt: "Prominent") {
@@ -98,7 +98,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the focus-based interaction model.
+        Light grey background (static only).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-visionOS", alt: "Prominent") {
@@ -108,7 +108,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `prominent` style displays a light grey background behind the page control dots, with only the static state due to the touch-based interaction model on small screens.
+        Light grey background (static only).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-watchOS", alt: "Prominent") {

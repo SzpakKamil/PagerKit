@@ -21,14 +21,17 @@ Sets the alignment and spacing of the page control from the edge of the screen.
 
 ## Overview
 
-The `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the alignment and spacing of the `UIPageControl` within the `PKPagesView`. It sets the `alignment` property of `PKPageControlStyle` to one of the supported `Alignment` values: `.topLeading`, `.top`, `.topTrailing`, `.leading`, `.center`, `.trailing`, `.bottomLeading`, `.bottom`, or `.bottomTrailing`, with `.bottom` as the default. The `spacing` parameter specifies the distance from the edge of the screen for non-center alignments, while the `.center` alignment ignores the spacing value. The default spacing is platform-dependent, ranging between 10 and 15 points.
+Configures alignment and edge distance of the `UIPageControl` within `PKPagesView`.
+
+- `alignment`: Position (e.g., `.topLeading`). Default: `.bottom`.
+- `spacing`: Distance from screen edge (ignored for `.center`). Default: **10–15 points**.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `spacing` | `CGFloat` | The distance from the edge of the screen for non-center alignments (ignored for `.center`). Defaults to 10–15 points, depending on the platform. |
-| `alignment` | `Alignment = .bottom` | The alignment of the page control. Default is `.bottom`. |
+| `spacing` | `CGFloat` | Distance from screen edge. |
+| `alignment` | `Alignment = .bottom` | Page control alignment. |
 
 ## Example Usage
 
@@ -53,7 +56,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier sets the page control alignment and spacing from the screen edge for nine supported styles.
+        Sets alignment and spacing on iOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -139,7 +142,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier positions the page control with specified spacing for larger screens across nine alignment styles.
+        Sets alignment and spacing on iPadOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -225,7 +228,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier aligns the page control with specified spacing for mouse-based navigation across nine alignment styles.
+        Sets alignment and spacing on macOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -311,7 +314,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier sets the page control alignment and spacing for remote-based navigation across nine alignment styles.
+        Sets alignment and spacing on tvOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -397,7 +400,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier aligns the page control with specified spacing for focus-based interaction across nine alignment styles.
+        Sets alignment and spacing on visionOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -483,7 +486,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorAlignment(spacing:alignment:)` modifier positions the page control with specified spacing for small screens and touch-based interaction across nine alignment styles.
+        Sets alignment and spacing on watchOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {

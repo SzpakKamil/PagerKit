@@ -21,7 +21,7 @@ Builds an empty block of ``PKPage`` components.
 
 ## Overview
 
-The `buildBlock()` method in the `PKPageBuilder` result builder returns an empty array of ``PKPage`` instances. This method is used as a fallback when no components are provided in a ``PKPageBuilder`` context, ensuring that the result builder always returns a valid array, even in the absence of content. It supports the declarative syntax of the `PagerKit` framework by providing a consistent interface for constructing tab-based navigation structures.
+Returns an empty array of `PKPage` instances. Used as a fallback when no components are provided, ensuring a valid return value.
 
 ### Example Usage
 ```swift

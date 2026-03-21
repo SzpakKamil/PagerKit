@@ -23,13 +23,13 @@ Init for identifiable components
 
 ## Overview
 
-The `init(_:content:)` initializer of the ``ForEach`` view in `PagerKit` is designed for collections where the elements conform to the `Identifiable` protocol. This initializer simplifies the creation of a ``ForEach`` view by automatically using the `id` property of the elements as the identifier, eliminating the need to specify a key path explicitly. It is particularly useful when working with data models that already include a unique identifier, enabling concise and type-safe iteration to generate ``PKPage`` views within the `PagerKit` framework.
+Creates a `ForEach` view that computes views on demand from an underlying collection of identifiable data. This initializer automatically uses the `id` property of the elements, eliminating the need for an explicit key path. Use this to generate `PKPage` views from data models that conform to `Identifiable`.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `data` | `Data` | A collection of elements conforming to `RandomAccessCollection` and `Identifiable`. |
-| `content` | `(Data.Element) -> [PKPage]` | A closure that transforms each data element into an array of ``PKPage`` views, built using the ``PKPageBuilder``. |
+| `data` | `Data` | A collection of identifiable elements conforming to `RandomAccessCollection`. |
+| `content` | `(Data.Element) -> [PKPage]` | A closure transforming each element into an array of `PKPage` views. |
 
 ### Example Usage
 ```swift
@@ -45,7 +45,7 @@ struct ContentView: View {
     let items = [Item(title: "Home"), Item(title: "Profile"), Item(title: "Settings")]
     
     var body: some View {
-        PKPagesView{
+        PKPagesView {
             ForEach(items) { item in
                 PKPage {
                     Text(item.title)

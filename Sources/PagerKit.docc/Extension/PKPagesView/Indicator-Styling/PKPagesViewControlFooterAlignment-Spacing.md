@@ -21,19 +21,19 @@ Sets the **alignment and spacing** of the **footer content** from the edge of th
 
 ## Overview
 
-The `pkPageControlFooterAlignment(spacing:alignment:)` modifier configures **both the position and edge distance** of per-page footers (added via ``PKPage/pkPageFooter(_:)``). It offers fine-grained control over layout:
+Configures **both the position and edge distance** of per-page footers. Offers precise layout control:
 
-- `alignment`: One of nine `Alignment` values (`.topLeading`, `.top`, `.topTrailing`, `.leading`, `.center`, `.trailing`, `.bottomLeading`, `.bottom`, `.bottomTrailing`). Default: `.bottom`
-- `spacing`: `CGFloat` distance from the screen edge. Ignored when `alignment` is `.center`. Default: **10–15 points** (platform-specific)
+- `alignment`: One of nine `Alignment` values (e.g., `.topLeading`). Default: `.bottom`.
+- `spacing`: Distance from screen edge. Ignored for `.center` alignment. Default: **10–15 points**.
 
-> This modifier **only affects footers**, not the page indicator dots. Use ``pkPageControlIndicatorAlignment(spacing:alignment:)`` to position dots separately.
+> **Note:** Affects **only footers**, not indicator dots.
 
 ## Parameters
 
 | Name        | Type                  | Description |
 |-------------|-----------------------|-------------|
-| `spacing`   | `CGFloat`             | Distance from screen edge (non-center alignments). Default: 10–15 pt |
-| `alignment` | `Alignment = .bottom` | Footer alignment within the safe area |
+| `spacing`   | `CGFloat`             | Distance from screen edge (non-center). Default: 10–15 pt. |
+| `alignment` | `Alignment = .bottom` | Footer alignment. |
 
 ## Example Usage
 
@@ -56,7 +56,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier sets the footer alignment and spacing from the screen edge for nine supported styles.
+        Sets footer alignment and spacing on iOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -142,7 +142,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier positions the footer with specified spacing for larger screens across nine alignment styles.
+        Sets footer alignment and spacing on iPadOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -228,7 +228,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier aligns the footer with specified spacing for mouse-based navigation across nine alignment styles.
+        Sets footer alignment and spacing on macOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -314,7 +314,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier sets the footer alignment and spacing for remote-based navigation across nine alignment styles.
+        Sets footer alignment and spacing on tvOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -400,7 +400,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier aligns the footer with specified spacing for focus-based interaction across nine alignment styles.
+        Sets footer alignment and spacing on visionOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -486,7 +486,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlFooterAlignment(spacing:alignment:)` modifier positions the footer with specified spacing for small screens and touch-based interaction across nine alignment styles.
+        Sets footer alignment and spacing on watchOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {

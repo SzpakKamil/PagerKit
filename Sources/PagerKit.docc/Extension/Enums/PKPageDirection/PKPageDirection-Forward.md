@@ -21,7 +21,7 @@ Represents a forward page transition.
 
 ## Overview
 
-The `forward` case of the ``PKPageDirection`` enum in the `PagerKit` framework indicates a transition to the next page in a ``PKPagesView``. It is returned when the previous page index is less than the current page index, used for styling or implementing custom forward navigation transitions.
+Indicates a transition to the next page. Returned when the previous index is less than the current index.
 
 ## Read Also
 - ``PagerKit/PKPage``

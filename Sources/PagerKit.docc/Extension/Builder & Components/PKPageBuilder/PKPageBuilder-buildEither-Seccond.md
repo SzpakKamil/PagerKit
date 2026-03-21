@@ -17,12 +17,12 @@ Builds a block from the second branch of a conditional ``PKPage`` array.
 
 ## Overview
 
-The `buildEither(second:)` method in the `PKPageBuilder` result builder handles the second branch of a conditional statement, accepting an array of ``PKPage`` instances and returning it unchanged. This method supports Swift's result builder syntax for conditional logic (e.g., `if-else` statements) within the `PagerKit` framework, allowing developers to define alternative sets of pages based on runtime conditions.
+Handles the second branch of a conditional statement (e.g., `else`), returning the array of `PKPage` instances unchanged. Supports defining alternative page sets based on runtime conditions.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `component` | `[PKPage]` | An array of ``PKPage`` instances representing the second branch of a conditional. |
+| `component` | `[PKPage]` | Array of `PKPage` instances from the second branch. |
 
 ### Example Usage
 ```swift

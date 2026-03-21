@@ -21,13 +21,13 @@ Sets the alignment of the page control.
 
 ## Overview
 
-The `pkPageControlIndicatorAlignment(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the alignment of the `UIPageControl` within the `PKPagesView`. It sets the `alignment` property of `PKPageControlStyle` to one of the supported `Alignment` values: `.topLeading`, `.top`, `.topTrailing`, `.leading`, `.center`, `.trailing`, `.bottomLeading`, `.bottom`, or `.bottomTrailing`. The default alignment is `.bottom`.
+Configures the alignment of the `UIPageControl` within the `PKPagesView`. Sets the `alignment` property to one of the supported `Alignment` values. Default: `.bottom`.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `alignment` | `Alignment = .bottom` | The alignment of the page control. Defaults to `.bottom`. |
+| `alignment` | `Alignment = .bottom` | Alignment of the page control. |
 
 ## Example Usage
 
@@ -52,7 +52,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorAlignment` modifier sets the page control alignment to one of nine supported styles.
+        Sets page control alignment on iOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -138,7 +138,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorAlignment` modifier positions the page control for larger screens with nine alignment styles.
+        Sets page control alignment on iPadOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -224,7 +224,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorAlignment` modifier aligns the page control for mouse-based navigation with nine alignment styles.
+        Sets page control alignment on macOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -310,7 +310,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlIndicatorAlignment` modifier sets the page control alignment for remote-based navigation with nine alignment styles.
+        Sets page control alignment on tvOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -396,7 +396,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorAlignment` modifier aligns the page control for focus-based interaction with nine alignment styles.
+        Sets page control alignment on visionOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -482,7 +482,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorAlignment` modifier positions the page control for small screens and touch-based interaction with nine alignment styles.
+        Sets page control alignment on watchOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {

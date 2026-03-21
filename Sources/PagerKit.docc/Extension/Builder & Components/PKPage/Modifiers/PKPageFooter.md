@@ -1,4 +1,3 @@
-
 # ``PagerKit/PKPage/pkPageFooter(_:)``
 
 @Metadata {
@@ -18,24 +17,24 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Adds a custom footer view to a specific page, visible only when that page is active.
+Adds a custom footer view, visible only when the page is active.
 
 ## Overview
 
-The `pkPageFooter(_:)` modifier attaches a custom view—typically text—to a `PKPage`. This footer appears **only when the associated page is currently displayed** and is **not shown** on other pages unless explicitly added.
+Attaches a custom view (e.g., text) to a `PKPage`. This footer appears **only when the associated page is active**.
 
-Footers are overlaid on top of page content and do not scroll. They are ideal for:
-- Page-specific captions
-- Step indicators (e.g., "This is Page 1")
-- Contextual hints
+Footers overlay the page content and do not scroll. Use them for:
+- Page-specific captions.
+- Step indicators.
+- Contextual hints.
 
-Positioning is controlled globally via `PKPagesView` modifiers like `.pkPageControlFooterAlignment(_:)` and `.pkPageControlIndicatorAlignment(_:)`.
+Control positioning globally via `PKPagesView` modifiers like `.pkPageControlFooterAlignment(_:)`.
 
 ## Parameters
 
 | Name      | Type                        | Description |
 |-----------|-----------------------------|-------------|
-| `content` | `@ViewBuilder () -> Content` | The view to display as the footer for this page. |
+| `content` | `@ViewBuilder () -> Content` | View to display as the footer. |
 
 ## Example Usage
 
@@ -50,8 +49,8 @@ struct ContentView: View {
                 Text("Page 1")
                     .font(.title)
             }
-            .pkPageFooter{
-                    Text("This is Page 1")
+            .pkPageFooter {
+                Text("This is Page 1")
             }
 
             PKPage {
@@ -69,7 +68,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageFooter(_:)` modifier adds a text footer ("This is Page 1") to the first page, visible only when active.
+        Adds a text footer to the first page on iOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-iOS", alt: "Default") {
@@ -84,7 +83,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageFooter(_:)` modifier displays the per-page footer text, optimized for larger screens and dynamic type.
+        Displays the per-page footer text on iPadOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-iPadOS", alt: "Default") {
@@ -97,7 +96,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageFooter(_:)` modifier shows the footer text only on the active page, supporting mouse hover and selection.
+        Shows the footer text on the active page on macOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-macOSTahoe", alt: "Default") {
@@ -110,7 +109,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageFooter(_:)` modifier presents the footer text with focus-based visibility and high contrast.
+        Presents the footer text on tvOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-tvOS", alt: "Default") {
@@ -123,7 +122,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageFooter(_:)` modifier renders the footer text with spatial awareness and focus-driven interaction.
+        Renders the footer text on visionOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-visionOS", alt: "Default") {
@@ -136,7 +135,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageFooter(_:)` modifier adds a text footer ("This is Page 1") to the first page, visible only when active.
+        Adds a text footer to the first page on watchOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPage-PKPageFooter-Default-watchOS", alt: "Default") {

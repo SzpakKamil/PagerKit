@@ -21,13 +21,13 @@ Executes a closure on automatic page change with previous and current indices.
 
 ## Overview
 
-The `pkOnAutoPageChange(action:)` modifier of the `PKPagesView` struct in the `PagerKit` framework sets a closure that is called when the page changes automatically (e.g., via timer or animation). The closure receives the previous and current page indices, enabling custom logic for automatic navigation. 
+Triggers a closure when the page changes automatically. Provides the previous and current indices.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `action` | `@escaping (Int, Int) -> Void` | A closure executed on automatic page change, providing the previous and current indices. |
+| `action` | `(Int, Int) -> Void` | Closure with previous and current indices. |
 
 ## Example Usage
 
@@ -38,21 +38,12 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
-            PKPage { Text("Page 3").font(.title) }
+            PKPage { Text("Page 1") }.pkPageDuration(2.0)
+            PKPage { Text("Page 2") }
         }
-        .pkOnAutoPageChange { previousIndex, currentIndex in
-            print("Auto change from page \(previousIndex) to \(currentIndex)")
+        .pkOnAutoPageChange { prev, curr in
+            print("Auto-advanced from \(prev) to \(curr)")
         }
     }
 }
 ```
-
-## Read Also
-
-### Related Types
-- ``PagerKit/PKPage``
-- ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlIndicatorDirection``
-- ``PagerKit/PKPageControlIndicatorBackgroundStyle``

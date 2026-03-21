@@ -19,13 +19,13 @@ Configures options for the underlying `UIPageViewController`.
 
 ## Overview
 
-The `pkPageOptions(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework sets custom options for the underlying `UIPageViewController` via the `PKPageOptions` struct. It allows customization of page navigation behavior, such as the spacing between pages, by setting the `options` property with a dictionary of `UIPageViewController.OptionsKey` keys and corresponding values. For example, setting the `interPageSpacing` option adjusts the gap between pages during transitions.
+Sets custom options for the `UIPageViewController` on supported platforms (iOS, iPadOS, tvOS, visionOS). Adjusts navigation behavior, such as transition style or inter-page spacing.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `options` | `[UIPageViewController.OptionsKey : Any]?` | A dictionary of `UIPageViewController` options, such as `.interPageSpacing` to control spacing between pages, or `nil` to use default settings. |
+| `options` | `[UIPageViewController.OptionsKey : Any]?` | Dictionary of `UIPageViewController` options (e.g., `.interPageSpacing`). `nil` for defaults. |
 
 ## Example Usage
 
@@ -37,18 +37,8 @@ import UIKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage {
-                ZStack{
-                    Color.red
-                    Text("Page 1").font(.title) 
-                }
-            }
-            PKPage {
-                ZStack{
-                    Color.green
-                    Text("Page 2").font(.title) 
-                }
-            }
+            PKPage { Color.red }
+            PKPage { Color.green }
         }
         .pkPageOptions([.interPageSpacing: 20])
     }

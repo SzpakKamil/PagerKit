@@ -21,14 +21,14 @@ Component for creating pages
 
 ## Overview
 
-The `PKPage` struct in the `PagerKit` framework is a core component for creating individual pages within a tab-based navigation structure in SwiftUI applications. It encapsulates a SwiftUI view as its content, providing a flexible way to define and display pages. The `PKPage` struct is designed to work seamlessly with SwiftUI's view hierarchy and supports platform-specific hosting on iOS, iPadOS, tvOS, and visionOS through a `UIHostingController` when UIKit is available (not supported on macOS). The `progress` property, an optional closure, enables tracking or reporting page-specific progress, such as automatic transition durations or UIKit-based progress indicators. This makes `PKPage` versatile for dynamic tab interfaces, including slideshow-like experiences or custom navigation behaviors within a ``PKPagesView``. The struct supports modifiers like ``pkPageDuration(_:)`` for setting fixed transition times and ``pkPageProgress(_:)-(()->Double?)`` for dynamic progress management, with UIKit-specific variants for `UIPageControlProgress` on non-macOS platforms.
+Core component for creating pages in PagerKit. `PKPage` encapsulates a SwiftUI view, supporting platform-specific hosting (via `UIHostingController` on iOS/iPadOS/tvOS/visionOS). The `progress` closure enables tracking or reporting page-specific progress (e.g., transition durations, UIKit progress).
 
 ### Properties Grid
 | Property Name | Type | Description |
 |---------------|------|-------------|
-| `content` | `AnyView` | The SwiftUI view that defines the content of the page. |
-| `hostingViewController` | `UIHostingController<AnyView>` | A UIKit hosting controller for the page content, available when UIKit is imported (iOS, iPadOS, tvOS, visionOS). |
-| `progress` | `(() -> Any)?` | An optional closure for tracking or reporting progress, returning a `Double?`, `UIPageControlProgress`, or other types based on applied modifiers. |
+| `content` | `AnyView` | The SwiftUI view content. |
+| `hostingViewController` | `UIHostingController<AnyView>` | UIKit hosting controller (iOS/iPadOS/tvOS/visionOS). |
+| `progress` | `(() -> Any)?` | Optional progress closure. |
 
 ### Example Usage
 ```swift

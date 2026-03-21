@@ -21,12 +21,12 @@ Arranges page control dots vertically from top to bottom.
 
 ## Overview
 
-The `topToBottom` case of the `PKPageControlIndicatorDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` vertically from top to bottom across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.topToBottom` via the `uiKitValue` property.
+Arranges dots vertically from top to bottom. Maps to `UIPageControl.Direction.topToBottom` on supported platforms (iOS 16.0+, tvOS 16.0+).
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `topToBottom` direction (available on iOS 16.0, tvOS 16.0+, not macOS/watchOS). |
+| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `topToBottom` direction. |
 
 ## Preview
 
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `topToBottom` style arranges dots vertically from top to bottom.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-iOS", alt: "Top to Bottom") {
@@ -60,7 +60,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `topToBottom` style arranges dots vertically from top to bottom, optimized for larger screens.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-iPadOS", alt: "Top to Bottom") {
@@ -70,7 +70,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `topToBottom` style arranges dots vertically from top to bottom.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-macOSTahoe", alt: "Top to Bottom") {
@@ -80,7 +80,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `topToBottom` style arranges dots vertically from top to bottom.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-tvOS", alt: "Top to Bottom") {
@@ -90,7 +90,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `topToBottom` style arranges dots vertically from top to bottom.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-visionOS", alt: "Top to Bottom") {
@@ -100,7 +100,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `topToBottom` style arranges dots vertically from top to bottom, optimized for small screens.
+        Dots arranged vertically from top to bottom.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-watchOS", alt: "Top to Bottom") {

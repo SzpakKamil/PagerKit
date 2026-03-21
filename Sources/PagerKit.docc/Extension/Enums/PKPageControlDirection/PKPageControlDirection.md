@@ -21,26 +21,26 @@ Defines the layout direction for page control dots.
 
 ## Overview
 
-The `PKPageControlIndicatorDirection` enum in the `PagerKit` framework specifies the layout direction for page control dots in a `PKPagesView`. It provides five cases: `natural` (adapts to system layout), `leftToRight` (horizontal left to right), `rightToLeft` (horizontal right to left), `topToBottom` (vertical top to bottom), and `bottomToTop` (vertical bottom to top). This enum controls how dots are arranged, with horizontal directions for standard layouts and vertical for alternative orientations. On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction` via `uiKitValue`, with `caseFor(uiKitValue:)` for conversion, defaulting to `natural`.
+Specifies the layout direction for page control dots in `PKPagesView`.
 
 ### Cases
 | Case | Description |
 |------|-------------|
-| `natural` | Adapts to system layout direction (left-to-right or right-to-left). |
-| `leftToRight` | Dots laid out horizontally from left to right. |
-| `rightToLeft` | Dots laid out horizontally from right to left. |
-| `topToBottom` | Dots laid out vertically from top to bottom. |
-| `bottomToTop` | Dots laid out vertically from bottom to top. |
+| `natural` | Adapts to system layout direction. |
+| `leftToRight` | Horizontal left to right. |
+| `rightToLeft` | Horizontal right to left. |
+| `topToBottom` | Vertical top to bottom. |
+| `bottomToTop` | Vertical bottom to top. |
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit direction (available on iOS 16.0, tvOS 16.0+, not macOS/watchOS). |
+| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit direction. |
 
 ### Static Methods
 | Name | Return Type | Description |
 |------|-------------|-------------|
-| `caseFor(uiKitValue:)` | `PKPageControlIndicatorDirection` | Converts UIKit direction, defaults to `natural` (available on iOS 16.0, tvOS 16.0+, not macOS/watchOS). |
+| `caseFor(uiKitValue:)` | `PKPageControlIndicatorDirection` | Converts UIKit direction. |
 
 ## Preview
 
@@ -64,10 +64,10 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots.
+        Defines the layout direction of page control dots on iOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-iOS", alt: "Natural") {
@@ -77,7 +77,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-iOS", alt: "Left to Right") {
@@ -87,7 +87,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-iOS", alt: "Right to Left") {
@@ -97,7 +97,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-iOS", alt: "Top to Bottom") {
@@ -107,7 +107,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-iOS", alt: "Bottom to Top") {
@@ -119,10 +119,10 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots, optimized for larger screens.
+        Defines the layout direction of page control dots on iPadOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-iPadOS", alt: "Natural") {
@@ -132,7 +132,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-iPadOS", alt: "Left to Right") {
@@ -142,7 +142,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-iPadOS", alt: "Right to Left") {
@@ -152,7 +152,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-iPadOS", alt: "Top to Bottom") {
@@ -162,7 +162,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-iPadOS", alt: "Bottom to Top") {
@@ -174,10 +174,10 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots.
+        Defines the layout direction of page control dots on macOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-macOSTahoe", alt: "Natural") {
@@ -187,7 +187,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-macOSTahoe", alt: "Left to Right") {
@@ -197,7 +197,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-macOSTahoe", alt: "Right to Left") {
@@ -207,7 +207,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-macOSTahoe", alt: "Top to Bottom") {
@@ -217,7 +217,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-macOSTahoe", alt: "Bottom to Top") {
@@ -229,10 +229,10 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots.
+        Defines the layout direction of page control dots on tvOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-tvOS", alt: "Natural") {
@@ -242,7 +242,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-tvOS", alt: "Left to Right") {
@@ -252,7 +252,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-tvOS", alt: "Right to Left") {
@@ -262,7 +262,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-tvOS", alt: "Top to Bottom") {
@@ -272,7 +272,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-tvOS", alt: "Bottom to Top") {
@@ -284,10 +284,10 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots.
+        Defines the layout direction of page control dots on visionOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-visionOS", alt: "Natural") {
@@ -297,7 +297,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-visionOS", alt: "Left to Right") {
@@ -307,7 +307,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-visionOS", alt: "Right to Left") {
@@ -317,7 +317,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-visionOS", alt: "Top to Bottom") {
@@ -327,7 +327,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-visionOS", alt: "Bottom to Top") {
@@ -339,10 +339,10 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `PKPageControlIndicatorDirection` defines the layout direction of page control dots, optimized for small screens.
+        Defines the layout direction of page control dots on watchOS.
         @TabNavigator {
             @Tab("Natural") {
-                Adapts to system layout direction (left-to-right or right-to-left).
+                Adapts to system layout direction.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-watchOS", alt: "Natural") {
@@ -352,7 +352,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Left to Right") {
-                Dots laid out horizontally from left to right.
+                Horizontal left to right.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Left-To-Right-watchOS", alt: "Left to Right") {
@@ -362,7 +362,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Right to Left") {
-                Dots laid out horizontally from right to left.
+                Horizontal right to left.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Right-To-Left-watchOS", alt: "Right to Left") {
@@ -372,7 +372,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Top to Bottom") {
-                Dots laid out vertically from top to bottom.
+                Vertical top to bottom.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Top-To-Bottom-watchOS", alt: "Top to Bottom") {
@@ -382,7 +382,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Bottom to Top") {
-                Dots laid out vertically from bottom to top.
+                Vertical bottom to top.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Bottom-To-Top-watchOS", alt: "Bottom to Top") {

@@ -16,17 +16,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Sets the tint color of the page control's current page indicator.
+Sets the tint color of the page control's indicators.
 
 ## Overview
 
-The `pkPageControlIndicatorTintColor(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the tint color of the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `currentPageIndicatorTintColor` to the specified `UIColor` or `NSColor` on macOS, allowing customization of the dot representing the active page.
+Configures the tint color for **inactive** page indicators. Sets `pageIndicatorTintColor`. Use `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` for the active indicator.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `color` | `UIColor?` or `NSColor?` | The tint color for the current page indicator dot. If `nil`, the default system color is used. |
+| `color` | `UIColor?` or `NSColor?` | Tint color for inactive indicators. `nil` uses default. |
 
 ## Example Usage
 
@@ -40,7 +40,7 @@ struct ContentView: View {
             PKPage { Text("Page 1") }
             PKPage { Text("Page 2") }
         }
-        .pkPageControlIndicatorTintColor(.red)
+        .pkPageControlIndicatorTintColor(.gray)
     }
 }
 ```
@@ -51,7 +51,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot.
+        Sets tint color for inactive indicators on iOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-iOS", alt: "Default") {
@@ -66,7 +66,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot, optimized for larger screens.
+        Sets tint color for inactive indicators on iPadOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-iPadOS", alt: "Default") {
@@ -81,7 +81,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for mouse-based navigation.
+        Sets tint color for inactive indicators on macOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-macOSTahoe", alt: "Default") {
@@ -96,7 +96,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
+        Sets tint color for inactive indicators on visionOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-visionOS", alt: "Default") {
@@ -110,8 +110,23 @@ struct ContentView: View {
             }
         }
     }
+    @Tab("tvOS") {
+        Sets tint color for inactive indicators on tvOS.
+        @Row(numberOfColumns: 2) {
+            @Column {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-tvOS", alt: "Default") {
+                    Default
+                }
+            }
+            @Column {
+                @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Custom-tvOS", alt: "Custom") {
+                    Custom
+                }
+            }
+        }
+    }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for touch-based interaction on small screens.
+        Sets tint color for inactive indicators on watchOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorTintColor-Default-watchOS", alt: "Default") {

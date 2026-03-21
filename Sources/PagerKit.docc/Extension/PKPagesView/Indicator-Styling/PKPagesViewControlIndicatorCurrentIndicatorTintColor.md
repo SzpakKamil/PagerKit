@@ -21,13 +21,13 @@ Sets the tint color of the page control's current page indicator.
 
 ## Overview
 
-The `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the tint color of the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `currentPageIndicatorTintColor` property of `PKPageControlStyle` to the specified `UIColor` (or `NSColor` on macOS), allowing customization of the dot representing the active page. 
+Configures the tint color of the `PageControl`'s current page indicator. Sets the `currentPageIndicatorTintColor` to the specified color.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `color` | `UIColor?` or `NSColor?` | The tint color for the current page indicator dot. If `nil`, the default system color is used. |
+| `color` | `UIColor?` or `NSColor?` | Tint color for the current page indicator. `nil` for default. |
 
 ## Example Usage
 
@@ -52,7 +52,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot.
+        Sets tint color for current page indicator on iOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-iOS", alt: "Default") {
@@ -67,7 +67,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot, optimized for larger screens.
+        Sets tint color for current page indicator on iPadOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-iPadOS", alt: "Default") {
@@ -82,7 +82,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for mouse-based navigation.
+        Sets tint color for current page indicator on macOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-macOSTahoe", alt: "Default") {
@@ -97,7 +97,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
+        Sets tint color for current page indicator on visionOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-visionOS", alt: "Default") {
@@ -112,7 +112,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for focus-based interaction.
+        Sets tint color for current page indicator on tvOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-tvOS", alt: "Default") {
@@ -127,7 +127,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` modifier sets the tint color of the current page indicator dot for touch-based interaction on small screens.
+        Sets tint color for current page indicator on watchOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorCurrentIndicatorTintColor-Default-watchOS", alt: "Default") {

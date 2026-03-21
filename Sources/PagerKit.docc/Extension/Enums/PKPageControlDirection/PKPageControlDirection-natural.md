@@ -21,12 +21,12 @@ Adapts page control dots to the system layout direction.
 
 ## Overview
 
-The `natural` case of the `PKPageControlIndicatorDirection` enum in the `PagerKit` framework arranges page control dots in a `PKPagesView` based on the system layout direction (left-to-right or right-to-left) across all platforms (iOS, iPadOS, macOS, tvOS, visionOS, watchOS). On iOS 16.0 and tvOS 16.0 or later (excluding macOS and watchOS), it maps to `UIPageControl.Direction.natural` via the `uiKitValue` property.
+Arranges dots based on the system layout direction (left-to-right or right-to-left). Maps to `UIPageControl.Direction.natural` on supported platforms (iOS 16.0+, tvOS 16.0+).
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `natural` direction (available on iOS 16.0, tvOS 16.0+, not macOS/watchOS). |
+| `uiKitValue` | `UIPageControl.Direction` | Maps to UIKit's `natural` direction. |
 
 ## Preview
 
@@ -50,7 +50,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `natural` style adapts to the system layout direction (left-to-right or right-to-left).
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-iOS", alt: "Natural") {
@@ -60,7 +60,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `natural` style adapts to the system layout direction, optimized for larger screens.
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-iPadOS", alt: "Natural") {
@@ -70,7 +70,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `natural` style adapts to the system layout direction.
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-macOSTahoe", alt: "Natural") {
@@ -80,7 +80,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `natural` style adapts to the system layout direction.
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-tvOS", alt: "Natural") {
@@ -90,7 +90,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `natural` style adapts to the system layout direction.
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-visionOS", alt: "Natural") {
@@ -100,7 +100,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `natural` style adapts to the system layout direction, optimized for small screens.
+        Adapts to system layout direction.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorDirection-Natural-watchOS", alt: "Natural") {

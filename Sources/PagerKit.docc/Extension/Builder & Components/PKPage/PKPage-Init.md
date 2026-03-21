@@ -23,12 +23,12 @@ Initializer for Page
 
 ## Overview
 
-The `init(content:)` initializer of the ``PKPage`` struct in the `PagerKit` framework is used to create a page with a specified SwiftUI view as its content. This initializer leverages the `@ViewBuilder` attribute to allow flexible and declarative construction of the page's content. It automatically wraps the provided view in an `AnyView` for type erasure and, when UIKit is available (on iOS and iPadOS), initializes a `UIHostingController` to host the SwiftUI content. The initializer sets the `progress` property to `nil` by default, allowing for optional progress tracking to be configured separately. This initializer is ideal for creating individual pages within a tab-based navigation structure in a SwiftUI application.
+Create a `PKPage` with a SwiftUI view. This initializer uses `@ViewBuilder` for flexible content definition, wrapping the view in `AnyView`. On iOS/iPadOS/tvOS/visionOS, it initializes a `UIHostingController`.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `content` | `() -> some View` | A closure, marked with `@ViewBuilder`, that defines the SwiftUI view content for the page. |
+| `content` | `() -> some View` | Closure defining the page content. |
 
 ### Example Usage
 ```swift

@@ -17,12 +17,12 @@ Builds a block from variadic `PKPage` expressions.
 
 ## Overview
 
-The `buildExpression(_:)` method in the `PKPageBuilder` result builder accepts a variadic number of ``PKPage`` instances and returns them as an array. This method enables the `PagerKit` framework to process individual ``PKPage`` components or expressions, converting them into a consistent array format for use in tab-based navigation structures. It is a key part of the result builder's ability to handle single or multiple page expressions in a declarative manner.
+Converts a variadic list of `PKPage` instances into an array. Enables processing of individual page components or expressions within `PKPageBuilder`.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `components` | `PKPage...` | A variadic list of ``PKPage`` instances to be included in the resulting array. |
+| `components` | `PKPage...` | Variadic list of `PKPage` instances. |
 
 ### Example Usage
 ```swift

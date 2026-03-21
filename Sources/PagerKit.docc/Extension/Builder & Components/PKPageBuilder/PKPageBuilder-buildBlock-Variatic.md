@@ -21,12 +21,12 @@ Builds a block from variadic `PKPage` components.
 
 ## Overview
 
-The `buildBlock(_:)` method in the ``PKPageBuilder`` result builder accepts a variadic number of ``PKPage`` instances and returns them as an array. This method is a core component of the ``PKPageBuilder`` result builder, enabling the creation of multiple ``PKPage`` views in a declarative syntax. It is used to aggregate individual ``PKPage`` components into a single array, which can then be used within the `PagerKit` framework to construct tab-based navigation structures.
+Aggregates a variadic list of `PKPage` instances into a single array. This enables declarative syntax for creating multiple pages within `PKPageBuilder`.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `components` | `PKPage...` | A variadic list of `PKPage` instances to be included in the resulting array. |
+| `components` | `PKPage...` | Variadic list of `PKPage` instances. |
 
 ### Example Usage
 ```swift

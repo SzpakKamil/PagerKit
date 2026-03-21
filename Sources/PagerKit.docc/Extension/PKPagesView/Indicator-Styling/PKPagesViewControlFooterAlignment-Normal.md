@@ -21,22 +21,22 @@ Sets the alignment of the **footer content** within the page control area.
 
 ## Overview
 
-The `pkPageControlFooterAlignment(_:)` modifier configures the **position of per-page footers** (added via ``PKPage/pkPageFooter(_:)``) relative to the ``PKPagesView``. It controls how footer views are aligned within the safe area and alongside the page indicator dots.
+Configures the **position of per-page footers** (added via `PKPage/pkPageFooter(_:)`) relative to the `PKPagesView`. Controls how footer views align within the safe area and alongside indicator dots.
 
 Supported alignments:
 - `.topLeading`, `.top`, `.topTrailing`
 - `.leading`, `.center`, `.trailing`
 - `.bottomLeading`, `.bottom`, `.bottomTrailing`
 
-Default: `.bottom`
+Default: `.bottom`.
 
-> This modifier **only affects footers**, not the page indicator dots. Use ``pkPageControlIndicatorAlignment(_:)`` to position the dots independently.
+> **Note:** Affects **only footers**, not indicator dots. Use `pkPageControlIndicatorAlignment(_:)` for dots.
 
 ## Parameters
 
 | Name        | Type                  | Description |
 |-------------|-----------------------|-------------|
-| `alignment` | `Alignment = .bottom` | The alignment of the footer content. |
+| `alignment` | `Alignment = .bottom` | Alignment of footer content. |
 
 ## Example Usage
 
@@ -59,7 +59,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlFooterAlignment` modifier sets the footer alignment to one of nine supported styles.
+        Sets footer alignment on iOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -145,7 +145,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlFooterAlignment` modifier positions the footer for larger screens with nine alignment styles.
+        Sets footer alignment on iPadOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -231,7 +231,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlFooterAlignment` modifier aligns the footer for mouse-based navigation with nine alignment styles.
+        Sets footer alignment on macOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -317,7 +317,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlFooterAlignment` modifier sets the footer alignment for remote-based navigation with nine alignment styles.
+        Sets footer alignment on tvOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -403,7 +403,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlFooterAlignment` modifier aligns the footer for focus-based interaction with nine alignment styles.
+        Sets footer alignment on visionOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {
@@ -489,7 +489,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlFooterAlignment` modifier positions the footer for small screens and touch-based interaction with nine alignment styles.
+        Sets footer alignment on watchOS.
         @TabNavigator {
             @Tab("Top-Leading") {
                 @Row(numberOfColumns: 1) {

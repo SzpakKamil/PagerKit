@@ -1,6 +1,6 @@
 # ``PagerKit``
 
-Native, Highly Customizable Page-Based Navigation Component
+Native, Customizable Page-Based Navigation.
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -23,11 +23,11 @@ Native, Highly Customizable Page-Based Navigation Component
 
 ## Overview
 
-The `PagerKit` package offers a SwiftUI-based page navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS, enabling developers to create intuitive, customizable paging experiences. It leverages `UIPageViewController` for native integration on iOS, iPadOS, tvOS, and visionOS, while on macOS and watchOS, it uses a SwiftUI-reimplemented equivalent for enhanced flexibility and consistency. With support for dynamic page control, navigation orientation, and event handling, `PagerKit` empowers you to build modern, user-friendly paging interfaces that adapt to your app’s unique needs.
+PagerKit provides a SwiftUI page navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Create intuitive, customizable paging experiences. It leverages `UIPageViewController` on iOS/iPadOS/tvOS/visionOS and a custom SwiftUI implementation on macOS/watchOS. With dynamic page control, navigation orientation, and event handling, PagerKit helps build modern paging interfaces.
 
 @Image(source: "PagerKit-Banner", alt: "Pager app on iPhone and iPad, mac and tv with a sleek page navigation interface.")
 
-Whether you’re adding custom page control styles, real-time navigation callbacks, or data-driven page generation, `PagerKit` provides a flexible API to enhance your app’s navigation functionality. Its accessibility features, like VoiceOver and Dynamic Type support, ensure an inclusive experience, while its extensive documentation makes integration straightforward. Explore the resources below to start building with `PagerKit` and see how it can transform user interactions in your app.
+Whether adding custom styles, real-time callbacks, or data-driven pages, PagerKit offers a flexible API. Accessibility features like VoiceOver and Dynamic Type support ensure an inclusive experience.
 
 ## Getting Started
 

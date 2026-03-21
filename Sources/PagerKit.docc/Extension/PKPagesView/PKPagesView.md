@@ -13,45 +13,40 @@
     @DocumentationExtension(mergeBehavior: override)
 }
 
-A SwiftUI view thats build for page-based navigation.
+A SwiftUI view built for page-based navigation.
 
 ## Overview
 
-The `PKPagesViewUIKit` struct in the `PagerKit` framework is a `View` which provides page-based navigation in SwiftUI applications . It manages a collection of `PKPage` views and supports customization through a variety of modifiers applied to `PKPagesView`.
+`PKPagesView` provides unified, customizable page-based navigation. It manages a collection of `PKPage` views and offers precise control over orientation, styling, and event handling across all Apple platforms.
 
 ## Initializers
 
 | Name | Parameters | Description |
 |------|------------|-------------|
-| `init(pages:)` | `pages: [PKPage]` | Initializes with an array of `PKPage` views, setting default options. |
-| `init(pages:)` | `@PKPageBuilder pages: () -> [PKPage]` | Initializes with a page builder closure, allowing declarative page creation. |
+| `init(pages:)` | `pages: [PKPage]` | Initialize with an array of pages. |
+| `init(pages:)` | `@PKPageBuilder pages: () -> [PKPage]` | Initialize using a declarative builder. |
 
 ## Modifiers
 
-| Name | Parameters | Description |
-|------|------------|-------------|
-| `pkPageControlIndicatorHidesForSignlePage(_:)` | `condition: Bool` | Hides the page control when there is only one page. |
-| `pkPageNavigationOrientation(_:)` | `orientation: Axis` | Sets the navigation orientation (horizontal or vertical). |
-| `pkPageOptions(_:)` | `options: [UIPageViewController.OptionsKey : Any]?` | Configures page view controller options. |
-| `pkPageControlIndicatorAlignment(_:)` | `alignment: Alignment = .bottom` | Sets the page control alignment (e.g., top, center, bottom). |
-| `pkPageControlIndicatorAlignment(spacing:alignment:)` | `spacing: CGFloat, alignment: Alignment = .bottom` | Sets alignment and spacing for the page control. |
-| `pkPageControlIndicatorTintColor(_:)` | `color: Color? = .secondary` | Sets the tint color for non-current page indicators. |
-| `pkPageControlIndicatorAllowsContinuousInteraction(_:)` | `condition: Bool` | Enables or disables continuous interaction with the page control. |
-| `pkPageControlIndicatorCurrentIndicatorTintColor(_:)` | `color: Color? = .primary` | Sets the tint color for the current page indicator. |
-| `pkPageControlIndicatorHidden(_:)` | `condition: Bool` | Hides or shows the page control. |
-| `pkPageControlIndicatorBackgroundStyle(_:)` | `style: PKPageControlIndicatorBackgroundStyle = .automatic` | Sets the background style for the page control (e.g., automatic, minimal, prominent). |
-| `pkPageControlIndicatorPreferredIndicatorUIImage(image:)` | `image: UIImage?` | Sets the preferred image for page indicators. |
-| `pkPageControlIndicator(_:forPage:)` | `image: UIImage?, forPage: Int` | Sets a specific image for a page’s indicator. |
-| `pkPageControlIndicatorCurrentIndicator(_:forPage:)` | `image: UIImage?, forPage: Int` | Sets a specific image for a page’s current indicator. |
-| `pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)` | `image: UIImage?` | Sets the preferred image for the current page indicator (iOS 16.0, tvOS 16.0+). |
-| `pkPageControlIndicatorDirection(_:)` | `direction: PKPageControlIndicatorDirection` | Sets the layout direction for page control dots (iOS 16.0, tvOS 16.0+). |
-| `pkCurrentPageIndex(index:)` | `index: Binding<Int>` | Binds the current page index to a state variable. |
-| `pkOnManualPageChange(action:)` | `action: @escaping (_ currentIndex: Int, _ direction: PKPageDirection) -> Void` | Executes a closure when the page changes manually, providing the current index and direction. |
-| `pkOnManualPageChange(action:)` | `action: @escaping (_ previousIndex: Int, _ currentIndex: Int) -> Void` | Executes a closure when the page changes manually, providing previous and current indices. |
-| `pkOnAutoPageChange(action:)` | `action: @escaping (_ currentIndex: Int, _ direction: PKPageDirection) -> Void` | Executes a closure when the page changes automatically, providing the current index and direction. |
-| `pkOnAutoPageChange(action:)` | `action: @escaping (_ previousIndex: Int, _ currentIndex: Int) -> Void` | Executes a closure when the page changes automatically, providing previous and current indices. |
-| `pkOnTransitionStart(action:)` | `action: @escaping (_ previousIndex: Int, _ currentIndex: Int) -> Void` | Executes a closure when a page transition starts. |
-| `pkOnTransitionEnd(action:)` | `action: @escaping (_ previousIndex: Int, _ currentIndex: Int) -> Void` | Executes a closure when a page transition ends. |
+### Pager Styling
+- `pkPageNavigationOrientation(_:)`: Set horizontal or vertical orientation.
+- `pkPageOptions(_:)`: Configure native `UIPageViewController` options.
+
+### Control Styling
+- `pkPageControlIndicatorAlignment(_:)`: Position the indicator dots.
+- `pkPageControlIndicatorBackgroundStyle(_:)`: Set background (automatic, minimal, prominent).
+- `pkPageControlIndicatorDirection(_:)`: Configure dot layout direction.
+- `pkPageControlIndicatorHidden(_:)`: Show or hide dots.
+- `pkPageControlIndicatorTintColor(_:)`: Set inactive dot color.
+- `pkPageControlIndicatorCurrentIndicatorTintColor(_:)`: Set active dot color.
+- `pkPageControlIndicatorAllowsContinuousInteraction(_:)`: Enable dragging across dots (iOS/iPadOS).
+
+### Interaction & Logic
+- `pkCurrentPageIndex(index:)`: Bind index to a state variable.
+- `pkOnManualPageChange(action:)`: Handle user-initiated swipes.
+- `pkOnAutoPageChange(action:)`: Handle programmatic transitions.
+- `pkOnTransitionStart(action:)`: Trigger logic on animation start.
+- `pkOnTransitionEnd(action:)`: Trigger logic on animation end.
 
 ## Example Usage
 
@@ -68,26 +63,11 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
             PKPage { Text("Page 3").font(.title) }
         }
-        .pkPageControlIndicatorAlignment(spacing: 5, alignment: .leading)
+        .pkPageControlIndicatorAlignment(spacing: 5, alignment: .bottom)
         .pkPageControlIndicatorBackgroundStyle(.prominent)
-        .pkPageControlIndicatorDirection(.topToBottom)
-        .pkPageControlIndicatorTintColor(.gray)
-        .pkPageControlIndicatorCurrentIndicatorTintColor(.blue)
-        .pkPageControlIndicatorHidesForSignlePage(true)
-        .pkPageControlIndicatorAllowsContinuousInteraction(true)
-        .pkPageControlIndicatorHidden(false)
-        .pkPageNavigationOrientation(.horizontal)
-        .pkOnManualPageChange { currentIndex, direction in
-            print("Manual page change to index \(currentIndex) in direction \(direction)")
-        }
-        .pkOnAutoPageChange { previousIndex, currentIndex in
-            print("Auto page change from \(previousIndex) to \(currentIndex)")
-        }
-        .pkOnTransitionStart { previousIndex, currentIndex in
-            print("Transition started from \(previousIndex) to \(currentIndex)")
-        }
-        .pkOnTransitionEnd { previousIndex, currentIndex in
-            print("Transition ended from \(previousIndex) to \(currentIndex)")
+        .pkCurrentPageIndex(index: $currentPage)
+        .pkOnManualPageChange { index, direction in
+            print("Swiped to \(index)")
         }
     }
 }

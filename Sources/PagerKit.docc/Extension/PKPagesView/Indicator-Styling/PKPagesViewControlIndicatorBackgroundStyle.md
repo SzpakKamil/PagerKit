@@ -21,13 +21,13 @@ Sets the background style of the page control.
 
 ## Overview
 
-The `pkPageControlIndicatorBackgroundStyle(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the background appearance of the `PageControl` within the `PKPagesView`. It sets the `style` property of `PKPageControlStyle` to one of three supported ``PKPageControlIndicatorBackgroundStyle`` values: `.automatic`, `.minimal`, or `.prominent`. The behavior of these styles varies by platform. On iOS and iPadOS, `.Automatic` shows no background when static and a background during drag interactions (pressed state), `.minimal` displays only the dots, and `.prominent` includes a light grey background in both states. On macOS, visionOS, and watchOS, `.Automatic` behaves like `.minimal`, showing no background, while on tvOS, `.Automatic` behaves like `.prominent`, always showing a light grey background.
+Configures the background appearance of the page control. Supports `.automatic`, `.minimal`, or `.prominent` styles, adapting to platform-specific behaviors.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `style` | ``PKPageControlIndicatorBackgroundStyle`` | The background style of the page control, either `.Automatic`, `.minimal`, or `.prominent`. |
+| `style` | ``PKPageControlIndicatorBackgroundStyle`` | Background style (`.automatic`, `.minimal`, or `.prominent`). |
 
 ## Example Usage
 
@@ -53,10 +53,10 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorBackgroundStyle` defines the appearance of page control dots, with the `Automatic` style showing a background during drag interactions (pressed state) and no background when static. The `minimal` style displays only the dots, and the `prominent` style includes a light grey background.
+        Sets background style on iOS.
         @TabNavigator {
             @Tab("Automatic") {
-                The `Automatic` style shows no background when static and a background during drag interactions.
+                Background visible only during drag.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iOS", alt: "Automatic Static") {
@@ -71,7 +71,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots, in both static and pressed states.
+                Dots only.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-iOS", alt: "Minimal Static") {
@@ -86,7 +86,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots in both static and pressed states.
+                Light grey background always visible.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iOS", alt: "Prominent Static") {
@@ -103,10 +103,10 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorBackgroundStyle` behaves similarly to iOS, with the `Automatic` style showing a background during drag interactions (pressed state) and no background when static. The `minimal` style displays only the dots, and the `prominent` style includes a light grey background, optimized for larger touch interfaces.
+        Sets background style on iPadOS.
         @TabNavigator {
             @Tab("Automatic") {
-                The `Automatic` style shows no background when static and a background during drag interactions.
+                Background visible only during drag.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iPadOS", alt: "Automatic Static") {
@@ -121,7 +121,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots, in both static and pressed states.
+                Dots only.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-iPadOS", alt: "Minimal Static") {
@@ -136,7 +136,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots in both static and pressed states.
+                Light grey background always visible.
                 @Row(numberOfColumns: 2) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-iPadOS", alt: "Prominent Static") {
@@ -153,10 +153,10 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorBackgroundStyle` uses the `minimal` style for `Automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the mouse-based interaction model.
+        Sets background style on macOS.
         @TabNavigator {
             @Tab("Automatic") {
-                No background is shown, equivalent to the `minimal` style.
+                No background (minimal).
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-macOSTahoe", alt: "Automatic") {
@@ -166,7 +166,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots.
+                Dots only.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-macOSTahoe", alt: "Minimal") {
@@ -176,7 +176,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots.
+                Light grey background.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-macOSTahoe", alt: "Prominent") {
@@ -188,10 +188,10 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `pkPageControlIndicatorBackgroundStyle` uses the `prominent` style for `Automatic`, always displaying a light grey background behind the page control dots, with `minimal` showing only the dots. Only the static state is applicable due to the remote-based navigation model.
+        Sets background style on tvOS.
         @TabNavigator {
             @Tab("Automatic") {
-                A light grey background is shown, equivalent to the `prominent` style.
+                Light grey background (prominent).
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-tvOS", alt: "Automatic") {
@@ -201,7 +201,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots.
+                Dots only.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-tvOS", alt: "Minimal") {
@@ -211,7 +211,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots.
+                Light grey background.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-tvOS", alt: "Prominent") {
@@ -223,10 +223,10 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorBackgroundStyle` uses the `minimal` style for `Automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the focus-based interaction model.
+        Sets background style on visionOS.
         @TabNavigator {
             @Tab("Automatic") {
-                No background is shown, equivalent to the `minimal` style.
+                No background (minimal).
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-visionOS", alt: "Automatic") {
@@ -236,7 +236,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots.
+                Dots only.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-visionOS", alt: "Minimal") {
@@ -246,7 +246,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots.
+                Light grey background.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-visionOS", alt: "Prominent") {
@@ -258,10 +258,10 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorBackgroundStyle` uses the `minimal` style for `Automatic`, showing only the page control dots without a background, while `prominent` displays a light grey background. Only the static state is applicable due to the touch-based interaction model on small screens.
+        Sets background style on watchOS.
         @TabNavigator {
             @Tab("Automatic") {
-                No background is shown, equivalent to the `minimal` style.
+                No background (minimal).
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-watchOS", alt: "Automatic") {
@@ -271,7 +271,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Minimal") {
-                No background is shown, displaying only the dots.
+                Dots only.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Minimal-Static-watchOS", alt: "Minimal") {
@@ -281,7 +281,7 @@ struct ContentView: View {
                 }
             }
             @Tab("Prominent") {
-                A light grey background is shown behind the dots.
+                Light grey background.
                 @Row(numberOfColumns: 1) {
                     @Column {
                         @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Prominent-Static-watchOS", alt: "Prominent") {

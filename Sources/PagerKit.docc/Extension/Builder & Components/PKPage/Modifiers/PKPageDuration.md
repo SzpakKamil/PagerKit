@@ -21,12 +21,12 @@ Sets the duration for automatic page transitions.
 
 ## Overview
 
-The `pkPageDuration(_:)` modifier in the `PagerKit` framework configures the duration for automatic transitions of a ``PKPage`` instance within a tab-based navigation structure. This modifier allows developers to specify a time interval (in seconds) after which the page automatically transitions to the next one. The duration is stored in the `progress` closure of the ``PKPage``, which returns the specified duration as a `Double`. If a `nil` duration is provided, the `progress` closure remains unchanged, disabling automatic transitions for that page. This modifier is particularly useful for creating slideshow-like or timed navigation experiences in a ``PKPagesView``.
+Configures the duration for automatic transitions of a `PKPage`. Specify a time interval (in seconds) for the page to transition to the next one automatically. This updates the `progress` closure of the `PKPage`. Passing `nil` disables automatic transitions for that page. Use this for slideshows or timed navigation.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `duration` | `Double?` | An optional duration in seconds for automatic page transitions. If `nil`, no automatic transition is set. |
+| `duration` | `Double?` | Duration in seconds for automatic transition. `nil` disables it. |
 
 ### Example Usage
 ```swift

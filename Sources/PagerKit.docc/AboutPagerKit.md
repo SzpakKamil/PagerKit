@@ -18,49 +18,49 @@
     @AutomaticSeeAlso(disabled)
 }
 
-Learn about the customizable SwiftUI `PagerKit` package for enhanced page-based navigation functionality.
+Customizable SwiftUI page-based navigation.
 
 ## Overview
 
-The `PagerKit` package extends SwiftUI’s capabilities with a flexible and customizable page-based navigation component. Supporting iOS, iPadOS, macOS, tvOS, visionOS, and watchOS, it integrates native components (`UIPageViewController` for iOS, iPadOS, tvOS, and visionOS, and a SwiftUI-reimplemented equivalent for macOS and watchOS) into a unified SwiftUI API for seamless, platform-specific solutions.
+PagerKit extends SwiftUI with a flexible page navigation component. It supports iOS, iPadOS, macOS, tvOS, visionOS, and watchOS, integrating native components (`UIPageViewController` on iOS/iPadOS/tvOS/visionOS, and a SwiftUI equivalent on macOS/watchOS) into a unified API.
 
 ## Why Use PagerKit?
 
-The `PagerKit` package improves upon standard page navigation with:
+PagerKit improves upon standard page navigation:
 
-- **Detailed Documentation**: Swift DocC with API references for easy adoption.
-- **Flexible Placement**: Embed in custom layouts with customizable page control alignment and navigation orientation.
-- **Custom Styling**: Modifiers for page control alignment, background styles, dot directions, tint colors, and custom indicator images.
-- **Dynamic Navigation**: Real-time page index updates with `Binding<Int>`, manual and automatic page change callbacks, and transition event handling.
-- **Data-Driven Pages**: Integrates `ForEach` for dynamic page generation from data collections.
-- **Result Builder Support**: Uses `PKPageBuilder` for declarative page creation, supporting conditionals and platform-specific pages.
-- **Accessibility**: Supports VoiceOver and Dynamic Type for inclusive experiences.
-- **Platform Consistency**: Unified SwiftUI API with tailored behaviors (e.g., optimized dot layout for watchOS small screens).
+- **Detailed Documentation**: Swift DocC API references.
+- **Flexible Placement**: Embed in custom layouts with configurable alignment and orientation.
+- **Custom Styling**: Modify alignment, background styles, dot directions, tint colors, and indicator images.
+- **Dynamic Navigation**: Update page indices with `Binding<Int>`, handle manual/auto changes, and track transitions.
+- **Data-Driven Pages**: Generate pages dynamically with `ForEach`.
+- **Result Builder Support**: Create pages declaratively with `PKPageBuilder`, supporting conditionals.
+- **Accessibility**: VoiceOver and Dynamic Type support.
+- **Platform Consistency**: Unified API with platform-tailored behaviors.
 
-These features enable developers to create accessible, customized, and dynamic page navigation interfaces efficiently.
+Build accessible, customized, and dynamic navigation interfaces efficiently.
 
 ## Customization Modifiers
 
-The `PagerKit` package offers modifiers for tailoring appearance, navigation, and behavior using SwiftUI’s dot syntax. Here are some key examples:
+Tailor appearance, navigation, and behavior using SwiftUI modifiers.
 
 - **Pager Styling**:
-  - `.pkPageNavigationOrientation(_:)`: Sets navigation orientation (`.horizontal` or `.vertical`) for page transitions.
-  - `.pkPageOptions(_:)`: Configures `UIPageViewController` options (e.g., inter-page spacing, transition style) for iOS, iPadOS, tvOS, and visionOS.
+  - `.pkPageNavigationOrientation(_:)`: Set navigation orientation (`.horizontal` or `.vertical`).
+  - `.pkPageOptions(_:)`: Configure `UIPageViewController` options (e.g., spacing, transition style) on iOS/iPadOS/tvOS/visionOS.
 
 - **Control Styling**:
-  - `.pkPageControlIndicatorAlignment(_:)`: Sets page control alignment (e.g., `.topLeading`, `.bottom`).
-  - `.pkPageControlIndicatorBackgroundStyle(_:)`: Applies background style (`.automatic`, `.minimal`, `.prominent`).
-  - `.pkPageControlIndicatorDirection(_:)`: Configures dot layout direction (e.g., `.natural`, `.leftToRight`, `.topToBottom`).
-  - `.pkPageControlIndicatorCurrentIndicatorTintColor(_:)`: Sets tint color for the current page indicator.
-  - `.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)`: Sets a custom image for the current page indicator.
+  - `.pkPageControlIndicatorAlignment(_:)`: Set alignment (e.g., `.topLeading`, `.bottom`).
+  - `.pkPageControlIndicatorBackgroundStyle(_:)`: Apply background style (`.automatic`, `.minimal`, `.prominent`).
+  - `.pkPageControlIndicatorDirection(_:)`: Configure dot layout direction (e.g., `.natural`, `.leftToRight`).
+  - `.pkPageControlIndicatorCurrentIndicatorTintColor(_:)`: Set active indicator tint.
+  - `.pkPageControlIndicatorPreferredCurrentPageIndicatorImage(image:)`: Set custom active indicator image.
 
 - **Logic and Triggers**:
-  - `.pkCurrentPageIndex(index:)`: Binds the current page index to a `Binding<Int>`.
-  - `.pkOnManualPageChange(action:)`: Executes a closure with previous and current indices on manual page changes.
-  - `.pkOnTransitionStart(action:)`: Triggers an action when a page transition begins.
-  - `.pkOnTransitionEnd(action:)`: Triggers an action when a page transition completes.
+  - `.pkCurrentPageIndex(index:)`: Bind current page index.
+  - `.pkOnManualPageChange(action:)`: Execute closure on manual changes.
+  - `.pkOnTransitionStart(action:)`: Trigger action on transition start.
+  - `.pkOnTransitionEnd(action:)`: Trigger action on transition end.
 
-For a complete list, see <doc:Modifiers>.
+See <doc:Modifiers> for the complete list.
 
 Example:
 
@@ -100,14 +100,13 @@ struct ContentView: View {
 
 ## Target Use Cases
 
-The `PagerKit` package is ideal for:
-- **Custom Navigation**: Embedding page views in custom layouts with tailored page control placement.
-- **Branded Apps**: Matching app design with custom page control styles and indicator images.
-- **Dynamic Content**: Generating pages dynamically from data collections using `ForEach`.
-- **Cross-Platform Apps**: Consistent navigation across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS.
-- **Interactive Experiences**: Adding real-time navigation feedback with event handling modifiers.
+- **Custom Navigation**: Embed pages in custom layouts.
+- **Branded Apps**: Match design with custom styles and images.
+- **Dynamic Content**: Generate pages from data collections.
+- **Cross-Platform Apps**: Maintain consistency across Apple platforms.
+- **Interactive Experiences**: Add real-time feedback with event handling.
 
 ## Next Steps
 
-- Learn to integrate the package in <doc:SetUp>.
-- Explore modifier details in <doc:Modifiers>.
+- Integrate PagerKit: <doc:SetUp>.
+- Explore modifiers: <doc:Modifiers>.

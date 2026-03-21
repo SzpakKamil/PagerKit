@@ -21,12 +21,12 @@ Sets a custom progress closure for a page.
 
 ## Overview
 
-The `pkPageProgress(_:)` modifier in the `PagerKit` framework allows developers to attach a custom progress closure to a ``PKPage`` instance, which returns an optional `Double` value. This modifier sets the `progress` property of the ``PKPage`` to the provided closure, enabling dynamic tracking or reporting of page-specific progress. This is particularly useful for scenarios requiring custom timing logic, progress indicators, or conditional navigation behaviors within a `PKPagesView`. Unlike the ``pkPageDuration(_:)`` modifier, which sets a fixed duration for automatic transitions, `pkPageProgress(_:)` offers greater flexibility by allowing the progress value to be determined dynamically at runtime.
+Attach a custom progress closure to a `PKPage`, returning an optional `Double`. This sets the `progress` property, enabling dynamic tracking or page-specific progress. Use this for custom timing logic, indicators, or conditional navigation. Unlike `pkPageDuration(_:)` (fixed duration), this offers dynamic runtime flexibility.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `progress` | `() -> Double?` | A closure that returns an optional `Double` representing the progress or duration for the page. If `nil`, no progress is reported. |
+| `progress` | `() -> Double?` | Closure returning an optional `Double` for progress/duration. `nil` means no progress. |
 
 ### Example Usage
 ```swift
@@ -61,4 +61,3 @@ struct ContentView: View {
 - ``PagerKit/PKPage/pkPageProgress(_:)-(()->UIPageControlProgress)``
 - ``PagerKit/PKPage/pkPageProgress(_:)-(UIPageControlProgress)``
 - ``PagerKit/PKPagesView``
-

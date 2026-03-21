@@ -23,15 +23,15 @@ Component for iterating over elements
 
 ## Overview
 
-The `ForEach` view in `PagerKit` is a SwiftUI component designed for iterating over a collection of data to generate an array of ``PKPage`` views. It leverages SwiftUI's dynamic view creation to render content based on the provided data, with support for identifiable elements or custom key paths for identification. The view is optimized for use within the `PagerKit` framework, enabling seamless integration with tab-based navigation structures. The `ForEach` component is particularly useful for creating dynamic tab content, where each element in the data collection maps to one or more ``PKPage`` instances.
+Iterate over a collection to generate `PKPage` views. `ForEach` leverages SwiftUI's dynamic view creation to render content based on data, supporting both `Identifiable` elements and manual key paths. It maps each element in the collection to one or more `PKPage` instances.
 
 ### Properties Grid
 | Property Name | Type | Description |
 |---------------|------|-------------|
-| `data` | `Data` | The collection of elements to iterate over, conforming to `RandomAccessCollection`. |
-| `keyPath` | `KeyPath<Data.Element, ID>` | A key path to a hashable property used to identify elements in the data collection. |
-| `content` | `(Data.Element) -> [PKPage]` | A closure that transforms each data element into an array of ``PKPage`` views. |
-| `components` | `[PKPage]` | A computed property that flattens the results of the content closure into an array of ``PKPage`` views. |
+| `data` | `Data` | The collection to iterate over (`RandomAccessCollection`). |
+| `keyPath` | `KeyPath<Data.Element, ID>` | Key path to a hashable identifier property. |
+| `content` | `(Data.Element) -> [PKPage]` | Closure transforming each element into `PKPage` views. |
+| `components` | `[PKPage]` | Flattened array of resulting `PKPage` views. |
 
 ### Example Usage
 ```swift
@@ -42,7 +42,7 @@ struct ContentView: View {
     let items = ["Home", "Profile", "Settings"]
     
     var body: some View {
-        PKPagesView{
+        PKPagesView {
             ForEach(items, id: \.self) { item in
                 PKPage {
                     Text(item)

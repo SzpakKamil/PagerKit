@@ -16,17 +16,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Sets a custom image for the page control's current page indicator.
+Sets a custom image for the page control's indicator.
 
 ## Overview
 
-The `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures a custom image for the `PageControl`’s current page indicator within the `PKPagesView`. It sets the `preferredIndicatorImage` propert to the specified `UIImage` on iOS, iPadOS, and visionOS, or `Image` on macOS and watchOS, allowing customization of the dot representing the active page. This modifier is not supported on tvOS. If `nil`, the default system dot is used.
+Sets the preferred custom image for **inactive** page indicators. Use `UIImage` on iOS/iPadOS/visionOS, or `Image` on macOS/watchOS. `nil` uses the default system dot. Not supported on tvOS.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `image` | `UIImage?` or `Image?` | The custom image for the current page indicator. Use `UIImage` on iOS, iPadOS, and visionOS; use `Image` on macOS and watchOS. If `nil`, the default system dot is used. |
+| `image` | `UIImage?` or `Image?` | Custom image for inactive indicators. |
 
 ## Example Usage
 
@@ -41,9 +41,9 @@ struct ContentView: View {
             PKPage { Text("Page 2")}
         }
         #if os(macOS) || os(watchOS)
-        .pkPageControlIndicatorPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
+        .pkPageControlIndicatorPreferredIndicatorImage(Image(systemName: "car"))
         #else
-        .pkPageControlIndicatorPreferredCurrentPageIndicatorImage(Image(systemName: "car"))
+        .pkPageControlIndicatorPreferredIndicatorImage(UIImage(systemName: "car"))
         #endif
     }
 }
@@ -55,7 +55,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier sets a custom image for the current page indicator dot.
+        Sets custom inactive indicator image on iOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-iOS", alt: "Default") {
@@ -70,7 +70,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier sets a custom image for the current page indicator dot, optimized for larger screens.
+        Sets custom inactive indicator image on iPadOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-iPadOS", alt: "Default") {
@@ -83,7 +83,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier sets a custom image for the current page indicator dot for mouse-based navigation.
+        Sets custom inactive indicator image on macOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2) {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-macOSTahoe", alt: "Default") {
@@ -96,7 +96,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier sets a custom image for the current page indicator dot for focus-based interaction.
+        Sets custom inactive indicator image on visionOS.
         @Row(numberOfColumns: 2) {
             @Column(size: 2){
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-visionOS", alt: "Default") {
@@ -109,7 +109,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `pkPageControlIndicatorPreferredIndicatorImage(image:)` modifier sets a custom image for the current page indicator dot for touch-based interaction on small screens.
+        Sets custom inactive indicator image on watchOS.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-PKPagesView-PKPagesViewControlIndicatorPreferredIndicatorImage-Default-watchOS", alt: "Default") {

@@ -21,13 +21,13 @@ Executes a closure on manual page change with current index and direction.
 
 ## Overview
 
-The `pkOnManualPageChange(action:)` modifier of the `PKPagesView` struct in the `PagerKit` framework sets a closure that is called when the page changes manually (e.g., via swipe or tap). The closure receives the current page index and the transition direction (`PKPageDirection`), allowing custom logic based on user-initiated navigation.
+Triggers a closure when the user manually changes the page (swipe/tap). Provides the new index and direction.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `action` | `@escaping (Int, PKPageDirection) -> Void` | A closure executed on manual page change, providing the current index and direction. |
+| `action` | `(Int, PKPageDirection) -> Void` | Closure with new index and direction. |
 
 ## Example Usage
 
@@ -38,22 +38,12 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
-            PKPage { Text("Page 3").font(.title) }
+            PKPage { Text("Page 1") }
+            PKPage { Text("Page 2") }
         }
-        .pkOnManualPageChange { currentIndex, direction in
-            print("Manual change to page \(currentIndex) in \(direction)")
+        .pkOnManualPageChange { index, direction in
+            print("Swiped to \(index) via \(direction)")
         }
     }
 }
 ```
-
-## Read Also
-
-### Related Types
-- ``PagerKit/PKPage``
-- ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlIndicatorDirection``
-- ``PagerKit/PKPageControlIndicatorBackgroundStyle``
-- ``PagerKit/PKPageDirection``

@@ -1,4 +1,4 @@
-# ``PagerKit/PKPagesView/pkOnTransitionStart(action:)``
+# ``PagerKit/PKPagesView/pkOnTransitionEnd(action:)``
 
 @Metadata {
     @SupportedLanguage(swift)
@@ -17,17 +17,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Executes a closure on manual page change with previous and current indices.
+Executes a closure when a page transition completes.
 
 ## Overview
 
-The `pkOnManualPageChange(action:)` modifier of the `PKPagesView` struct in the `PagerKit` framework sets a closure that is called when the page changes manually (e.g., via swipe or tap). The closure receives the previous and current page indices, enabling custom logic for user-initiated navigation. 
+Triggers a closure after a page transition (animation) finishes.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `action` | `@escaping (Int, Int) -> Void` | A closure executed on manual page change, providing the previous and current indices. |
+| `action` | `() -> Void` | Closure executed on transition end. |
 
 ## Example Usage
 
@@ -38,21 +38,12 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
-            PKPage { Text("Page 3").font(.title) }
+            PKPage { Text("Page 1") }
+            PKPage { Text("Page 2") }
         }
-        .pkOnManualPageChange { previousIndex, currentIndex in
-            print("Manual change from page \(previousIndex) to \(currentIndex)")
+        .pkOnTransitionEnd {
+            print("Animation finished")
         }
     }
 }
 ```
-
-## Read Also
-
-### Related Types
-- ``PagerKit/PKPage``
-- ``PagerKit/PKPagesView``
-- ``PagerKit/PKPageControlIndicatorDirection``
-- ``PagerKit/PKPageControlIndicatorBackgroundStyle``

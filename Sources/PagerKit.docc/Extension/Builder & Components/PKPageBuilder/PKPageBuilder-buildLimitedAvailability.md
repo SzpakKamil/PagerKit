@@ -23,12 +23,12 @@ Builds a block for platform-specific `PKPage` components.
 
 ## Overview
 
-The `buildLimitedAvailability(_:)` method in the `PKPageBuilder` result builder handles platform-specific ``PKPage`` components by accepting an array of ``PKPage`` instances and returning them unchanged. This method supports conditional compilation or platform-specific logic within the `PagerKit` framework, ensuring that pages are only included when available on the target platform. It is part of the result builder's infrastructure to enable flexible and safe page construction in tab-based navigation.
+Handles platform-specific `PKPage` components by returning the array of pages unchanged. Supports conditional compilation and availability checks (e.g., `#available`), ensuring pages are included only when supported.
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `component` | `[PKPage]` | An array of ``PKPage`` instances to be included in the result. |
+| `component` | `[PKPage]` | Array of `PKPage` instances. |
 
 ### Example Usage
 ```swift

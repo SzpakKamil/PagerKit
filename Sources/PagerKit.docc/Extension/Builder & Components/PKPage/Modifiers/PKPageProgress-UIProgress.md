@@ -20,12 +20,12 @@ Sets a `UIPageControlProgress` for a page.
 
 ## Overview
 
-The `pkPageProgress(_:)` modifier in the `PagerKit` framework allows developers to attach a `UIPageControlProgress` object to a ``PKPage`` instance for managing page-specific progress in a tab-based navigation structure.This modifier sets the `progress` property of the ``PKPage`` to a closure that returns the provided `UIPageControlProgress` object. This is particularly useful for integrating with UIKit-based page control mechanisms, enabling precise control over progress indicators or navigation behaviors within a ``PKPagesView``. Unlike the ``pkPageDuration(_:)`` modifier, which sets a fixed duration, or the `pkPageProgress(_:)` modifier with a `Double?` closure, this variant is tailored for UIKit environments and is not available on macOS and watchOS.
+Attach a `UIPageControlProgress` object to a `PKPage` for managing page-specific progress. This sets the `progress` property to a closure returning the object. Use this for integrating with UIKit-based page control mechanisms, enabling precise control over indicators or navigation. Tailored for UIKit environments (not available on macOS/watchOS).
 
 ### Parameters
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
-| `progress` | `UIPageControlProgress` | A `UIPageControlProgress` object that defines the progress behavior for the page. |
+| `progress` | `UIPageControlProgress` | `UIPageControlProgress` object defining behavior. |
 
 ### Example Usage
 ```swift

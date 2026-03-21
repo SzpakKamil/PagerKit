@@ -17,13 +17,13 @@ Enables or disables continuous interaction with the page control.
 
 ## Overview
 
-The `pkPageControlIndicatorAllowsContinuousInteraction(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures whether the `UIPageControl` within the `PKPagesView` allows continuous interaction. It sets the `allowsContinuousInteraction` to the specified Boolean value, determining whether users can drag across the page control to change pages rapidly. When set to `true`, dragging across the dots updates the current page continuously; when `false`, interaction is limited to discrete taps on individual dots. This modifier is supported only on iOS and iPadOS, as `allowsContinuousInteraction` is a UIKit-specific feature.
+Configures continuous interaction (dragging) for the page control. Set to `true` to allow dragging across dots for rapid navigation; `false` limits interaction to taps. Supported on iOS/iPadOS only.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `allows` | `Bool` | A Boolean value that determines whether continuous interaction is enabled (`true`) or disabled (`false`). Defaults to `true`. |
+| `allows` | `Bool` | `true` enables continuous interaction; `false` disables it. Default: `true`. |
 
 ## Example Usage
 

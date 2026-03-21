@@ -22,13 +22,13 @@ Sets the navigation orientation for page transitions.
 
 ## Overview
 
-The `pkPageNavigationOrientation(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework configures the navigation orientation for page transitions. It sets the `orientation` property to either `.horizontal` or `.vertical`, determining whether pages transition side-to-side or up-and-down.
+Configures the scrolling direction for page transitions. Sets the orientation to either `.horizontal` or `.vertical`.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `orientation` | `Axis` | The navigation orientation, either `.horizontal` or `.vertical`. |
+| `orientation` | `Axis` | Navigation orientation (`.horizontal` or `.vertical`). |
 
 ## Example Usage
 
@@ -43,8 +43,6 @@ struct ContentView: View {
             PKPage { Text("Page 2").font(.title) }
         }
         .pkPageNavigationOrientation(.vertical)
-        .pkPageControlIndicatorAlignment(spacing: 10, alignment: .leading)
-        .pkPageControlIndicatorBackgroundStyle(.prominent)
     }
 }
 ```

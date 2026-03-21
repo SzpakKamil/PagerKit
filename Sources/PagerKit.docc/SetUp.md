@@ -18,14 +18,14 @@
     @AutomaticSeeAlso(disabled)
 }
 
-Learn how to integrate the `PagerKit` package into your SwiftUI project.
+Integrate PagerKit into your SwiftUI project.
 
 ## Overview
 
-The `PagerKit` package provides a customizable SwiftUI page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. This guide explains how to add the package using Swift Package Manager (SPM).
+PagerKit provides a customizable SwiftUI page-based navigation component for iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Add the package using Swift Package Manager (SPM).
 
 ## Installing Agent Skill
-You can install the PagerKit skill for your CLI agent to get expert guidance on PagerKit directly in your terminal.
+Install the PagerKit skill for your CLI agent to get expert guidance.
 
 ### Using skills.sh:
 ```bash
@@ -39,23 +39,23 @@ npx dlx clawdhub@latest install pagerkit
 
 ## Adding PagerKit to Your Project
 
-Add the `PagerKit` package to your project via Swift Package Manager:
+Add PagerKit via Swift Package Manager:
 
-1. In Xcode, go to **File > Add Package Dependency**.
-2. Enter the package URL: `https://github.com/SzpakKamil/PagerKit.git`.
-3. Select a version (e.g., a specific tag) or use the `main` branch, then click **Add Package**.
-4. Ensure your project uses Swift 5.9+ for compatibility.
-5. Import the module in your SwiftUI view:
+1. In Xcode, select **File > Add Package Dependency**.
+2. Enter the URL: `https://github.com/SzpakKamil/PagerKit.git`.
+3. Select a version or the `main` branch, then click **Add Package**.
+4. Ensure your project uses Swift 5.9+.
+5. Import the module:
 
    ```swift
    import PagerKit
    ```
 
-For setup instructions, supported versions, and contribution guidelines, see the README at https://github.com/SzpakKamil/PagerKit.
+See the [README](https://github.com/SzpakKamil/PagerKit) for setup instructions, supported versions, and contribution guidelines.
 
 ### Example Integration
 
-Here’s a minimal example of using `PKPagesView` in a SwiftUI view:
+Minimal `PKPagesView` usage:
 
 ```swift
 import SwiftUI
@@ -78,15 +78,15 @@ struct ContentView: View {
 }
 ```
 
-This creates a basic page view with three pages that logs the current page index and direction when changed manually.
+This creates a basic page view with three pages, logging index and direction on manual changes.
 
 ## Troubleshooting
 
-- **Package not found**: Verify the URL (`https://github.com/SzpakKamil/PagerKit.git`) and your internet connection.
-- **Dependency issues**: Confirm the version or branch exists in the repository. Try the `main` branch if unsure.
-- **Module not recognized**: Ensure the package is added to your project’s target and `import PagerKit` is included.
-- **Compatibility errors**: Check that your project’s deployment target meets iOS 14.0+, iPadOS 14.0+, macOS 14.0+, tvOS 14.0+, visionOS 1.0+, or watchOS 10.0+.
+- **Package not found**: Verify the URL (`https://github.com/SzpakKamil/PagerKit.git`) and connection.
+- **Dependency issues**: Confirm the version or branch exists. Try `main`.
+- **Module not recognized**: Ensure the package is added to the target and `import PagerKit` is present.
+- **Compatibility errors**: Check deployment targets (iOS 14.0+, macOS 14.0+, tvOS 14.0+, visionOS 1.0+, watchOS 10.0+).
 
 ## Next Steps
 
-- Explore modifiers at <doc:Modifiers>
+- Explore modifiers: <doc:Modifiers>

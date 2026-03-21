@@ -17,17 +17,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Initializes a `PKPagesView` with a closure that returns an array of `PKPage` views.
+Initializes a `PKPagesView` with a `PKPageBuilder` closure.
 
 ## Overview
 
-The `init(pages:)` initializer of the `PKPagesView` struct in the `PagerKit` framework creates a SwiftUI view that displays a collection of `PKPage` views for page-based navigation. It uses a `@PKPageBuilder` closure to declaratively define an array of `PKPage` views. It supports customization through modifiers like `pkPageControlIndicatorDirection`, `pkPageControlIndicatorBackgroundStyle`, and `pkCurrentPageIndex` to control page control appearance and navigation behavior.
+Creates a `PKPagesView` using a declarative `@PKPageBuilder` closure to define the pages. Supports all standard modifiers for customization.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `pages` | `() -> [PKPage]` | A closure with the `@PKPageBuilder` attribute that returns an array of `PKPage` views to be displayed in the page view controller. |
+| `pages` | `() -> [PKPage]` | Closure returning an array of `PKPage` views. |
 
 ## Example Usage
 
@@ -40,13 +40,9 @@ struct ContentView: View {
     
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
-            PKPage { Text("Page 3").font(.title) }
+            PKPage { Text("Page 1") }
+            PKPage { Text("Page 2") }
         }
-        .pkPageControlIndicatorAlignment(spacing: 10, alignment: .leading)
-        .pkPageControlIndicatorBackgroundStyle(.prominent)
-        .pkPageControlIndicatorDirection(.topToBottom)
         .pkCurrentPageIndex(index: $currentPage)
     }
 }

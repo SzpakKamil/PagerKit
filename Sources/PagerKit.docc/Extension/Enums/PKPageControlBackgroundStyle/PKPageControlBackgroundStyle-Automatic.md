@@ -21,12 +21,17 @@ Adapts the background appearance for page control dots based on the platform.
 
 ## Overview
 
-The `automatic` case of the `PKPageControlIndicatorBackgroundStyle` enum in the `PagerKit` framework customizes the background style for page control dots in a `PKPagesView`. It adapts to the platform: on iOS and iPadOS, it shows a light grey background during drag interactions (pressed state) and no background when static; on macOS, watchOS, and visionOS, it behaves like `minimal` (no background); on tvOS, it behaves like `prominent` (always showing a light grey background). When UIKit is available (iOS, iPadOS, tvOS, visionOS), it maps to `UIPageControl.BackgroundStyle` via the `uiKitValue` property.
+Customizes the background style for page control dots, adapting to the platform:
+- **iOS/iPadOS**: Light grey background during drag (pressed), no background when static.
+- **macOS/watchOS/visionOS**: Behaves like `minimal` (no background).
+- **tvOS**: Behaves like `prominent` (always shows light grey background).
+
+Maps to `UIPageControl.BackgroundStyle` on supported platforms.
 
 ### Properties
 | Name | Type | Description |
 |------|------|-------------|
-| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps the `automatic` case to a UIKit background style (not on macOS or watchOS). |
+| `uiKitValue` | `UIPageControl.BackgroundStyle` | Maps `automatic` to UIKit style. |
 
 ## Preview
 
@@ -50,7 +55,7 @@ struct ContentView: View {
 
 @TabNavigator {
     @Tab("iOS") {
-        On iOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static.
+        Shows light grey background during drag, none when static.
         @Row(numberOfColumns: 2) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iOS", alt: "Automatic Static") {
@@ -65,7 +70,7 @@ struct ContentView: View {
         }
     }
     @Tab("iPadOS") {
-        On iPadOS, the `automatic` style shows a light grey background during drag interactions (pressed state) and no background when static, optimized for larger touch interfaces.
+        Shows light grey background during drag, none when static.
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-iPadOS", alt: "Automatic Static") {
@@ -78,7 +83,7 @@ struct ContentView: View {
         }
     }
     @Tab("macOS") {
-        On macOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the mouse-based interaction model.
+        No background (equivalent to `minimal`).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-macOSTahoe", alt: "Automatic") {
@@ -88,7 +93,7 @@ struct ContentView: View {
         }
     }
     @Tab("tvOS") {
-        On tvOS, the `automatic` style always shows a light grey background, equivalent to the `prominent` style, due to the remote-based navigation model.
+        Always shows light grey background (equivalent to `prominent`).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-tvOS", alt: "Automatic") {
@@ -98,7 +103,7 @@ struct ContentView: View {
         }
     }
     @Tab("visionOS") {
-        On visionOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the focus-based interaction model.
+        No background (equivalent to `minimal`).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-visionOS", alt: "Automatic") {
@@ -108,7 +113,7 @@ struct ContentView: View {
         }
     }
     @Tab("watchOS") {
-        On watchOS, the `automatic` style shows no background, equivalent to the `minimal` style, due to the touch-based interaction model on small screens.
+        No background (equivalent to `minimal`).
         @Row(numberOfColumns: 1) {
             @Column {
                 @Image(source: "Documentation-Enums-PKPageControlIndicatorBackgroundStyle-Automatic-Static-watchOS", alt: "Automatic") {

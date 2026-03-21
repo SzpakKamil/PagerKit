@@ -17,17 +17,17 @@
     @AutomaticArticleSubheading(disabled)
 }
 
-Sets the visibility of the page control.
+Hides or shows the page control.
 
 ## Overview
 
-The `pkPageControlIndicatorHidden(_:)` modifier of the `PKPagesView` struct in the `PagerKit` framework controls whether the `PageControl` within the `PKPagesView` is visible or hidden. It sets the `isHidden` to the specified Boolean value, determining whether the page control dots are displayed. When set to `true`, the page control is hidden, and when set to `false`, it is visible.
+Controls the visibility of the `PageControl`. Set to `true` to hide the dots, `false` to show them.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| `hidden` | `Bool` | A Boolean value that determines whether the page control is hidden (`true`) or visible (`false`). Defaults to `false`. |
+| `hidden` | `Bool` | `true` hides the control; `false` shows it. Default: `false`. |
 
 ## Example Usage
 
@@ -38,16 +38,14 @@ import PagerKit
 struct ContentView: View {
     var body: some View {
         PKPagesView {
-            PKPage { Text("Page 1").font(.title) }
-            PKPage { Text("Page 2").font(.title) }
-            PKPage { Text("Page 3").font(.title) }
+            PKPage { Text("Page 1") }
+            PKPage { Text("Page 2") }
         }
         .pkPageControlIndicatorHidden(true)
     }
 }
 ```
 
-## Preview
 ## Read Also
 
 ### Related Types
