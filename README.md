@@ -4,7 +4,7 @@
 ![Banner](./Resources/PagerKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/PagerKit-Banner~dark.webp#gh-dark-mode-only)
 
-PagerKit is a SwiftUI library for building customizable, page-based navigation. It offers a flexible, layout-aware alternative to native tab views, giving you architectural control over paging components.
+Build customizable, page-based navigation in SwiftUI. PagerKit offers a layout-aware alternative to native tab views with full architectural control.
 
 Visit the [Site](https://kamilszpak.com/pagerkit) or [Documentation](https://documentation.kamilszpak.com/documentation/pagerkit).
 
@@ -23,24 +23,24 @@ Visit the [Site](https://kamilszpak.com/pagerkit) or [Documentation](https://doc
 
 ## Core Architecture
 
-* **Platform Parity**: Leverages native `UIPageViewController` on iOS/visionOS/tvOS and custom SwiftUI implementations on macOS/watchOS for authentic platform behavior.
-* **Lifecycle Precision**: Declaratively configure transition durations and respond to precise lifecycle events.
-* **Result Builders**: Uses `PKPageBuilder` for a native-like integration experience with support for conditionals and platform-specific logic.
-* **Adaptive Indicators**: Replace default page indicators. Customize style, alignment, orientation, and use custom images to match your app's design.
-* **Unified API**: Provides a consistent API that adapts to platform-specific behaviors without compromising architectural integrity.
+* **Platform Parity**: Wraps `UIPageViewController` on iOS/visionOS/tvOS. Uses custom SwiftUI implementations on macOS/watchOS.
+* **Lifecycle Precision**: Configure transition durations and lifecycle events declaratively.
+* **Result Builders**: Construct pages with `PKPageBuilder` supporting conditionals and platform logic.
+* **Adaptive Indicators**: Customize indicator style, alignment, orientation, and images.
+* **Unified API**: Adapt to platform behaviors with a consistent API.
 
 ## Layout Control
 
-PagerKit is designed to integrate into your existing view hierarchy without forcing a specific layout structure.
+Integrate PagerKit into any view hierarchy. No enforced layout structure.
 
-* **Container Integrity**: Provides reliable paging behavior, even within small, embedded container views where native solutions may fail.
-* **Hierarchy Awareness**: Integrates cleanly with your view hierarchy, avoiding full-screen takeovers.
-* **Brand Consistency**: Use custom assets for page indicators to maintain brand consistency with pixel-perfect alignment.
-* **Orientation Control**: Programmatically set the navigation flow to horizontal or vertical, independent of the SwiftUI layout direction.
+* **Container Integrity**: Page reliably within small, embedded containers.
+* **Hierarchy Awareness**: Avoid full-screen takeovers.
+* **Brand Consistency**: Style page indicators with custom assets.
+* **Orientation Control**: Set horizontal or vertical navigation flow programmatically.
 
 ## Implementation
 
-PagerKit components and modifiers are prefixed with `PK` for clarity and to avoid naming conflicts.
+PagerKit components and modifiers are prefixed with `PK`.
 
 ### Basic Usage
 Minimal setup for a functional page view:
@@ -61,7 +61,7 @@ struct ContentView: View {
 ```
 
 ### Advanced Configuration
-An enhanced configuration with custom indicators and lifecycle events:
+Enhanced configuration with custom indicators and lifecycle events:
 
 ```swift
 import SwiftUI
@@ -89,20 +89,20 @@ struct ContentView: View {
 ```
 
 ## Modifiers
-A selection of modifiers for customizing indicators and managing navigation logic.
+Key modifiers for customizing indicators and managing navigation logic.
 
 ### Style
-* `pkPageControlIndicatorAlignment(_:)`: Sets the alignment for the page indicator control.
-* `pkPageControlIndicatorBackgroundStyle(_:)`: Configures the background style of the indicator control.
-* `pkPageControlIndicatorDirection(_:)`: Defines the layout direction (horizontal/vertical) for the indicators.
-* `pkPageIndicatorImage(_:)`: Provides a custom image for a page's indicator.
+* `pkPageControlIndicatorAlignment(_:)`: Set alignment for the page indicator control.
+* `pkPageControlIndicatorBackgroundStyle(_:)`: Configure the background style.
+* `pkPageControlIndicatorDirection(_:)`: Define the layout direction (horizontal/vertical).
+* `pkPageIndicatorImage(_:)`: Provide a custom image for a page's indicator.
 
 ### Logic
-* `pkCurrentPageIndex(_:)`: Binds the current page index to a state variable.
-* `pkPageNavigationOrientation(_:)`: Sets the paging orientation (horizontal/vertical).
-* `pkOnManualPageChange(_:)`: Closure executed when the user manually swipes to a new page.
-* `pkOnAutoPageChange(_:)`: Closure executed for programmatic page transitions.
-* `pkOnTransitionStart(_:)` / `pkOnTransitionEnd(_:)`: Closures to sync UI with the paging animation lifecycle.
+* `pkCurrentPageIndex(_:)`: Bind the current page index to a state variable.
+* `pkPageNavigationOrientation(_:)`: Set paging orientation (horizontal/vertical).
+* `pkOnManualPageChange(_:)`: Execute closure on manual swipes.
+* `pkOnAutoPageChange(_:)`: Execute closure on programmatic transitions.
+* `pkOnTransitionStart(_:)` / `pkOnTransitionEnd(_:)`: Sync UI with paging animation lifecycle.
 
 ## Resources
 * **Documentation**: [API Reference](https://documentation.kamilszpak.com/documentation/pagerkit).
