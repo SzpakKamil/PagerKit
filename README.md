@@ -1,6 +1,7 @@
 # PagerKit
 ![Swift Version](https://img.shields.io/badge/Swift-5.9%2B-teal.svg)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%2014.0+%20|%20iPadOS%2014.0+%20|%20macOS%2011.0+%20|%20watchOS%2010.0+%20|%20tvOS%2014.0+%20|%20visionOS%201.0+-15437D.svg)
+![License](https://img.shields.io/badge/License-MIT-C8ECFE.svg)
 ![Banner](./Resources/PagerKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/PagerKit-Banner~dark.webp#gh-dark-mode-only)
 
