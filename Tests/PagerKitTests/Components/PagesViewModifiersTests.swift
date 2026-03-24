@@ -110,19 +110,19 @@ struct PKPagesViewModifiersTests {
     
     @Test("pkCurrentPageIndex property check")
     func testCurrentPageIndex() {
-        var index = 5
-        let binding = Binding(get: { index }, set: { index = $0 })
-        let pager = basePager.pkCurrentPageIndex(index: binding)
+        let index = 5
+        let pager = basePager.pkCurrentPageIndex(index: .constant(index))
         
         #if !(os(macOS) || os(watchOS))
-        #expect(pager.customPageIndexBinding?.wrappedValue == 5)
+        #expect(pager.customPageIndexBinding?.wrappedValue == index)
         #else
-        #expect(pager.customSelectedIndex?.wrappedValue == 5)
+        #expect(pager.customSelectedIndex?.wrappedValue == index)
         #endif
     }
     
     #if !(os(macOS) || os(watchOS))
     @Test("UIKit Image modifiers property check")
+    @available(iOS 16.0, tvOS 16.0, *)
     func testUIKitImageModifiers() {
         let image = UIImage()
         let pager = basePager

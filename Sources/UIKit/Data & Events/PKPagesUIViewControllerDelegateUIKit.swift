@@ -13,7 +13,7 @@ import SwiftUI
 extension PKPagesUIViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let visibleViewController = pageViewController.viewControllers?.first as? PKPageViewController else { return }
-        guard let previousVoiewController = previousViewControllers.first as? PKPageViewController else { return }
+        guard let previousViewController = previousViewControllers.first as? PKPageViewController else { return }
         
         
         if #available(iOS 17.0, tvOS 17.0, *) {
@@ -22,7 +22,7 @@ extension PKPagesUIViewController: UIPageViewControllerDelegate {
             }
         }
 
-        self.options.transitionEndFunction?(previousVoiewController.index, visibleViewController.index)
+        self.options.transitionEndFunction?(previousViewController.index, visibleViewController.index)
         self.navigateToPage(visibleViewController.index, isManualChange: true)
 
     }
