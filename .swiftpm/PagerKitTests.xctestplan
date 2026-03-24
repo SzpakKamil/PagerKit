@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "8ACEE5F0-73D5-4AA4-8D37-4EC2300FF96D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "PagerKitTests",
+        "name" : "PagerKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

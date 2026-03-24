@@ -27,8 +27,6 @@ PagerKit provides a SwiftUI page navigation component for iOS, iPadOS, macOS, tv
 
 @Image(source: "PagerKit-Banner", alt: "Pager app on iPhone and iPad, mac and tv with a sleek page navigation interface.")
 
-Whether adding custom styles, real-time callbacks, or data-driven pages, PagerKit offers a flexible API. Accessibility features like VoiceOver and Dynamic Type support ensure an inclusive experience.
-
 ## Getting Started
 
 @Links(visualStyle: detailedGrid) {

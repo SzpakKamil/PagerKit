@@ -16,6 +16,13 @@ let package = Package(
         .target(
             name: "PagerKit"
         ),
-
+        .testTarget(
+            name: "PagerKitTests",
+            dependencies: ["PagerKit"]
+        ),
+        .testTarget(
+            name: "PagerKitUITests",
+            dependencies: ["PagerKit"]
+        )
     ]
 )
