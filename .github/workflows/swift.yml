@@ -2,9 +2,9 @@ name: Swift
 
 on:
   push:
-    branches: [ "1.0", "2.0", "2.1" ]
+    branches: [ "1.0" ]
   pull_request:
-    branches: [ "1.0", "2.0", "2.1" ]
+    branches: [ "1.0" ]
 
 permissions:
   contents: read
