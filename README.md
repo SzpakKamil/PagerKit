@@ -5,7 +5,7 @@
 ![Banner](./Resources/PagerKit-Banner.webp#gh-light-mode-only)
 ![Banner](./Resources/PagerKit-Banner~dark.webp#gh-dark-mode-only)
 
-Build customizable, page-based navigation in SwiftUI. PagerKit offers a layout-aware alternative to native tab views with full architectural control.
+Page-based navigation for SwiftUI. A layout-aware alternative to native tab views with control over transitions, indicators, and lifecycle events.
 
 Visit the [Site](https://kamilszpak.com/pagerkit) or [Documentation](https://documentation.kamilszpak.com/documentation/pagerkit).
 
@@ -24,20 +24,18 @@ Visit the [Site](https://kamilszpak.com/pagerkit) or [Documentation](https://doc
 
 ## Core Architecture
 
-* **Platform Parity**: Wraps `UIPageViewController` on iOS/visionOS/tvOS. Uses custom SwiftUI implementations on macOS/watchOS.
-* **Lifecycle Precision**: Configure transition durations and lifecycle events declaratively.
-* **Result Builders**: Construct pages with `PKPageBuilder` supporting conditionals and platform logic.
-* **Adaptive Indicators**: Customize indicator style, alignment, orientation, and images.
-* **Unified API**: Adapt to platform behaviors with a consistent API.
+* Wraps `UIPageViewController` on iOS/visionOS/tvOS; uses custom SwiftUI on macOS/watchOS.
+* Configure transition durations and lifecycle events declaratively.
+* Construct pages with `PKPageBuilder`, which supports conditionals and platform logic.
+* Customize indicator style, alignment, orientation, and images.
 
 ## Layout Control
 
-Integrate PagerKit into any view hierarchy. No enforced layout structure.
+Pages reliably within small, embedded containers without full-screen takeovers.
 
-* **Container Integrity**: Page reliably within small, embedded containers.
-* **Hierarchy Awareness**: Avoid full-screen takeovers.
-* **Brand Consistency**: Style page indicators with custom assets.
-* **Orientation Control**: Set horizontal or vertical navigation flow programmatically.
+* Place the pager anywhere in the view hierarchy.
+* Style page indicators with custom assets.
+* Set horizontal or vertical navigation flow programmatically.
 
 ## Implementation
 
@@ -90,7 +88,6 @@ struct ContentView: View {
 ```
 
 ## Modifiers
-Key modifiers for customizing indicators and managing navigation logic.
 
 ### Style
 * `pkPageControlIndicatorAlignment(_:)`: Set alignment for the page indicator control.
