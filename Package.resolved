@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "harnesskit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SzpakKamil/HarnessKit.git",
+      "state" : {
+        "branch" : "1.0",
+        "revision" : "a58f7295f8368c9b3440dc2abd826dfa0b3127bd"
+      }
+    }
+  ],
+  "version" : 2
+}
